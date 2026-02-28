@@ -14,8 +14,9 @@ public class PlAtacks : MonoBehaviour
         if (Atackdureashen < 0) {
             StartCoroutine(timer(0.2f, (f) => HitBox.Bloking = f));
             StartCoroutine(timer(0.2f, (f) => arm.state = f ? 1 : 0));
-            Atackdureashen = Atacks[atack].GetComponent<HurtBox>().timer;
-            Destroy(Instantiate(Atacks[atack], transform.position, transform.rotation), atackLegf);
+            StartCoroutine(timer(0.2f, (f) => Atacks[atack].SetActive(f)));
+
+            Atackdureashen = 0.5f;
         }
     }
 
