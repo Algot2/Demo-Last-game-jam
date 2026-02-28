@@ -5,6 +5,7 @@ public class HellfSlider : MonoBehaviour
 {
     public float max, curnt;
     public Slider valu, frontjump;
+    public bool Inmune;
 
     private void Start()
     {
@@ -16,8 +17,11 @@ public class HellfSlider : MonoBehaviour
     }
     public void setValu(float val)
     {
-        curnt = val;
-        frontjump.value = val;
+        if (!Inmune)
+        {
+            curnt = val;
+            frontjump.value = val;
+        }
     }
 
     void Update() {

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,6 @@ public class EnemyMovment : MonoBehaviour
     public NavMeshAgent agent;
 
     void Update() {
-        agent.SetDestination(target);
+         agent.SetDestination(target);
     }
 }

@@ -16,7 +16,7 @@ public class PlAtacks : MonoBehaviour
             StartCoroutine(timer(0.2f, (f) => arm.state = f ? 1 : 0));
             StartCoroutine(timer(0.2f, (f) => Atacks[atack].SetActive(f)));
 
-            Atackdureashen = 0.5f;
+            Atackdureashen = atackLegf;
         }
     }
 

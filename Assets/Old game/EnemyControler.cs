@@ -1,54 +1,60 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyControler : MonoBehaviour
 {
     public EnemyMovment movment;
     public Transform player;
-    public HitBox hitBox;
+    public HellfSlider hellf;
     public Rigidbody rb;
     public GameObject[] Atacks;
     public GameObject sper1, sper2;
+    public Animator anim;
 
-    float Atackdureashen = 0.5f;
+    public float Atackdureashen = 0.5f;
     bool ded = false;
     void Update() {
-        if (hitBox.hellf <= 0 && !ded)
+        if (hellf.curnt <= 0 && !ded)
         {
             ded = true;
             movment.agent.enabled = false;
+            movment.enabled = false;
             rb.freezeRotation = false;
-           // rb.AddExplosionForce(50, (transform.position-player.position).normalized, 2, 2);
         }
         
-        if (Vector3.Distance(transform.position, player.position) > 4 || Atackdureashen < 0)
+        if (Vector3.Distance(rb.transform.position, player.position) > 4 || Atackdureashen < 0)
             movment.agent.speed = 5;
         
-        if (Vector3.Distance(transform.position, player.position) < 4 && Atackdureashen > 0)
+        if (Vector3.Distance(rb.transform.position, player.position) < 4 && Atackdureashen > 0)
             movment.agent.speed = 0;
 
 
-        if (Vector3.Distance(transform.position, player.position) < 5) Atackdureashen -= Time.deltaTime;
+        if (Vector3.Distance(rb.transform.position, player.position) < 5) Atackdureashen -= Time.deltaTime;
         else Atackdureashen = Mathf.Max(Atackdureashen, 1f);
 
-        if (Atackdureashen < 0 && Vector3.Distance(transform.position, player.position) < 1.5f && !ded) 
-            atack(Random.Range(0, Atacks.Length), 2);
+        if (Atackdureashen < 0 && Vector3.Distance(rb.transform.position, player.position) < 1.5f && !ded)
+        {
+            anim.SetTrigger("Atack");
+            atack(Random.Range(0, Atacks.Length), 1f);
+            Atackdureashen = 3;
+
+        }
 
 
         movment.target = player.position;
          
         sper1.SetActive(Atackdureashen < 0);
         sper2.SetActive(Atackdureashen < 0);
+
+
+        anim.SetBool("Run", movment.agent.speed != 0);
+       
     }
 
    
 
-    public void atack(int atack, float atackLegf)
-    {
-        if (Atackdureashen < 0)
-        {
-            Atackdureashen = 2;
-            Destroy(Instantiate(Atacks[atack], transform.position, transform.rotation), 0.1f);
-        }
+    public void atack(int atack, float atackLegf) {
+       StartCoroutine(Timer.RunAfterTimer(0.5f,() => StartCoroutine(Timer.StartTimer(atackLegf, (f) => Atacks[atack].SetActive(f)))));
     }
 
    
