@@ -121,6 +121,7 @@ MonoBehaviour:
   valu: {fileID: 1808791701836266379}
   frontjump: {fileID: 5386598849319212941}
   Inmune: 0
+  IsPlayer: 1
 --- !u!1 &428130365021923545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,7 +1282,8 @@ MonoBehaviour:
     time: 1
     AtackAnimasen: 1
   atackTimer: 0
-  HellfSlider: {fileID: 0}
+  HellfSlider: {fileID: 6161585229421125090}
+  PlMoment: {fileID: 5966069730297437065}
   Animator: {fileID: 8612837536540683718}
 --- !u!54 &8722332160852505816
 Rigidbody:
@@ -1513,7 +1515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7826648873025135366, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1611,14 +1613,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -16.198
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 6161585229421125090}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 84611517201845324}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1693,14 +1723,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 6161585229421125090}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 3168566128670489711}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1775,14 +1833,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 6161585229421125090}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 343816554696905832}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1857,14 +1943,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 12.538
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 6161585229421125090}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 4929338474327918365}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1939,14 +2053,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 6161585229421125090}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 4935858575590231222}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2021,14 +2163,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 6161585229421125090}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 3899539324481521629}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2103,6 +2273,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
@@ -2111,6 +2297,14 @@ PrefabInstance:
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 7128973569366123226}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2185,14 +2379,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 6161585229421125090}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 1631609006349583093}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     - target: {fileID: 8138533046171673134, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 128
@@ -2271,6 +2493,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.063999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969845326610238791, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
@@ -2279,6 +2517,14 @@ PrefabInstance:
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 8598629280252940977}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fdf1be0b07961409697e4c493f3a17, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

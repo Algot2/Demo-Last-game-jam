@@ -15,4 +15,10 @@ public class NewHuerBox : MonoBehaviour
             StartCoroutine(Efects.timeFrez(0.1f));
         }
     }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        Time.timeScale = 1.0f;
+    }
 }

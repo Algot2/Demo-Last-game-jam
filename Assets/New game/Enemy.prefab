@@ -453,6 +453,7 @@ MonoBehaviour:
   sper1: {fileID: 3663656552260924494}
   sper2: {fileID: 2218968245322488455}
   anim: {fileID: 320380372160486802}
+  Atackdureashen: 0.5
 --- !u!1 &3285167107270448508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,6 +1427,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7003848482915415975}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: IsEnemy
       value: 1
       objectReference: {fileID: 0}
@@ -1630,6 +1635,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7003848482915415975}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: IsEnemy
       value: 1
       objectReference: {fileID: 0}
@@ -1661,7 +1670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.19999997
+      value: 0.7039999
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.z
@@ -1669,47 +1678,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.038
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.142
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.001
+      value: 0.006
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.1101207
+      value: 0.117743134
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.07160455
+      value: -0.05822633
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9811267
+      value: -0.99099153
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.14190395
+      value: -0.026118092
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -17.111
+      value: -3.754
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -168.18
+      value: -166.655
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 6.564
+      value: 6.286
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7826648873025135366, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_Name
@@ -1750,7 +1759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnemy: 1
-  dam: 10
+  dam: 5
 --- !u!1001 &3089085742761201047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2036,6 +2045,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7003848482915415975}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: IsEnemy
       value: 1
       objectReference: {fileID: 0}
@@ -2134,6 +2147,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7003848482915415975}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: IsEnemy
       value: 1
       objectReference: {fileID: 0}
@@ -2231,6 +2248,10 @@ PrefabInstance:
       propertyPath: Slider
       value: 
       objectReference: {fileID: 7003848482915415975}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: IsEnemy
       value: 1
@@ -2419,6 +2440,10 @@ PrefabInstance:
       propertyPath: Slider
       value: 
       objectReference: {fileID: 7003848482915415975}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: efeckt
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: IsEnemy
       value: 1

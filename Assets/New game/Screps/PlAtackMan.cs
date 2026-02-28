@@ -14,6 +14,7 @@ public class PlAtackMan : MonoBehaviour
     public List<atack> atacks = new List<atack>();
     public float atackTimer = 0;
     public HellfSlider HellfSlider;
+    public PlMoment PlMoment;
     public Animator Animator;
     public void PreformAtack(int i, float time) {
         if (atackTimer < 0)
@@ -25,6 +26,9 @@ public class PlAtackMan : MonoBehaviour
                 () => StartCoroutine(Timer.StartTimer(0.5f, (f) => HellfSlider.Inmune = f))));
             Animator.SetTrigger("Atck");
 
+            float sped = PlMoment.Sped;
+            PlMoment.Sped = 0;
+            StartCoroutine(Timer.RunAfterTimer(atacks[i].time, () => PlMoment.Sped = sped));
             atackTimer = time;
         }
     }
