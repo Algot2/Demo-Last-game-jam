@@ -21,6 +21,7 @@ public class EnemyControler : MonoBehaviour
             movment.enabled = false;
             rb.freezeRotation = false;
         }
+       
         
         if (Vector3.Distance(rb.transform.position, player.position) > 4 || Atackdureashen < 0)
             movment.agent.speed = 5;

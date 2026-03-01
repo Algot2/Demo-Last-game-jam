@@ -25,7 +25,7 @@ public class PlMoment : MonoBehaviour
         Quaternion rotaashen = Quaternion.FromToRotation(Vector3.forward, dir);
 
         Vector3 orgPos = transform.position;
-        StartCoroutine(Timer.StartTimer(0.2f, (f) => HellfSlider.Inmune = f));
+        StartCoroutine(Timer.StartTimer(0.5f, (f) => HellfSlider.Inmune = f));
         StartCoroutine(Timer.StartFrameRepitTill(() => 
         { 
             transform.position += (rotaashen * input).normalized * dodshSped * Time.deltaTime;

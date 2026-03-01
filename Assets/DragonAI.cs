@@ -73,7 +73,8 @@ public class DragonAI : MonoBehaviour
 
 
         if (Vector3.Distance(transform.position, setY(TargetPos, transform.position)) < 1 ||
-           Vector3.Distance(transform.position, player.position) > disToPl)
+           Vector3.Distance(transform.position, player.position) > disToPl ||
+           !canAtack)
             TargetPos = SnapToNavMesh(pikeNewTarget());
 
 

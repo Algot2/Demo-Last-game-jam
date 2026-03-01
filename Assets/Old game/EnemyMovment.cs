@@ -10,6 +10,6 @@ public class EnemyMovment : MonoBehaviour
 
 
     void Update() {
-         agent.SetDestination(target);
+        agent.SetDestination(target);
     }
 }

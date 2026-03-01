@@ -455,6 +455,7 @@ MonoBehaviour:
   sper2: {fileID: 2218968245322488455}
   anim: {fileID: 320380372160486802}
   Atackdureashen: 0.5
+  ded: 0
 --- !u!1 &3285167107270448508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,8 +1784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53d27a44662e664aaf4f55e149166ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noNokBack: 0
   IsEnemy: 1
-  dam: 15
+  dam: 10
 --- !u!1001 &3089085742761201047
 PrefabInstance:
   m_ObjectHideFlags: 0

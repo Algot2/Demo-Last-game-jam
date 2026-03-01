@@ -10,6 +10,7 @@ public class CamraMoment : MonoBehaviour
     Vector2 mosePos;
     public void setCamraDireksen(Vector2 mosePosDelta) {
         mosePos += mosePosDelta * Time.deltaTime;
+        mosePos = new Vector2(mosePos.x, Mathf.Clamp(mosePos.y, -0.55f, -0.25f));
         direct = SphericalToCartesian(disToCam, mosePos.x * Mathf.PI, mosePos.y * Mathf.PI);
         cam.transform.position = head.position + new Vector3(direct.x, direct.y, direct.z);
         cam.transform.LookAt(head);

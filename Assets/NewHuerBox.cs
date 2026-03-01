@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class NewHuerBox : MonoBehaviour
 {
+    public bool noNokBack;
     public bool IsEnemy;
     public float dam;
 
@@ -10,10 +11,10 @@ public class NewHuerBox : MonoBehaviour
         NewHitBox hitBox = other.transform.root.GetComponentInChildren<NewHitBox>();
         if (hitBox == null || hitBox.IsEnemy == IsEnemy) return;
 
-        Vector3 back = (other.transform.position-transform.position).normalized * 50;
+        Vector3 back = (other.transform.position-transform.position).normalized * (noNokBack ? 0 : 1) * 50;
         hitBox.onHit(dam, back);
 
-        if (!IsEnemy) { 
+        if (!IsEnemy && noNokBack) { 
             StartCoroutine(Efects.camShake(0.05f, 0.1f)); 
             StartCoroutine(Efects.timeFrez(0.1f));
         }
