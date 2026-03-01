@@ -22,7 +22,7 @@ public class CamraMoment : MonoBehaviour
     public static Vector3 SphericalToCartesian(float radius, float theta, float phi)
     {
 
-        phi = Mathf.Clamp(phi, -1.5f, -0.5f);
+       // phi = Mathf.Clamp(phi, -1.5f, -0.5f);
         float x = radius * Mathf.Sin(phi) * Mathf.Cos(theta);
         float y = radius * Mathf.Cos(phi);
         float z = radius * Mathf.Sin(phi) * Mathf.Sin(theta);

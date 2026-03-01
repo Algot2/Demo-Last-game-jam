@@ -246,8 +246,8 @@ MonoBehaviour:
   player: {fileID: 421540332}
   TargetPos: {x: 0, y: 0, z: 0}
   Agent: {fileID: 73640844}
-  disToPl: 0
-  sped: 0
+  disToPl: 5
+  sped: 2
 --- !u!195 &73640844
 NavMeshAgent:
   m_ObjectHideFlags: 0
