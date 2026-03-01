@@ -12,28 +12,20 @@ public class PlAtackMan : MonoBehaviour
 {
     [SerializeField]
     public List<atack> atacks = new List<atack>();
-    public float atackTimer = 0;
     public HellfSlider HellfSlider;
     public PlMoment PlMoment;
     public Animator Animator;
     public void PreformAtack(int i, float time) {
-        if (atackTimer < 0)
-        {
             StartCoroutine(Timer.RunAfterTimer(0.5f, 
                 () => StartCoroutine(Timer.StartTimer(atacks[i].time, (f) => atacks[i].HurtBox.SetActive(f)))));
 
+           
             StartCoroutine(Timer.RunAfterTimer(0.5f, 
                 () => StartCoroutine(Timer.StartTimer(0.5f, (f) => HellfSlider.Inmune = f))));
             Animator.SetTrigger("Atck");
 
-            float sped = PlMoment.Sped;
-            PlMoment.Sped = 0;
-            StartCoroutine(Timer.RunAfterTimer(atacks[i].time, () => PlMoment.Sped = sped));
-            atackTimer = time;
-        }
-    }
-
-    void Update() {
-        atackTimer -= Time.deltaTime;
+            //float sped = PlMoment.Sped;
+            //PlMoment.Sped = 0;
+           // StartCoroutine(Timer.RunAfterTimer(atacks[i].time, () => PlMoment.Sped = sped));
     }
 }

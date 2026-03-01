@@ -14,4 +14,12 @@ public class Timer
         yield return new WaitForSeconds(t);
         F(false);
     }
+
+    public static IEnumerator StartFrameRepitTill(Action F, Func<bool> T) {
+        while (T()) {
+            yield return new WaitForEndOfFrame();
+            F();
+        }
+        
+    }
 }
