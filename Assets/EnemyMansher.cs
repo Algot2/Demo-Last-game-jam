@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyMansher : MonoBehaviour
 {
     public List<Rigidbody> Enemys;
+    public List<EnemyControler> EnemysCon;
     public float MinDis;
     void Update() {
         for (int i = 0; i < Enemys.Count; i++) 

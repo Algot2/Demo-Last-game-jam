@@ -12,7 +12,7 @@ public class EnemyControler : MonoBehaviour
     public Animator anim;
 
     public float Atackdureashen = 0.5f;
-    bool ded = false;
+    public bool ded = false;
     void Update() {
         if (hellf.curnt <= 0 && !ded)
         {
