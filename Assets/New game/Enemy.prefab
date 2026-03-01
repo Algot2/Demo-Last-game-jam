@@ -193,6 +193,7 @@ MonoBehaviour:
   valu: {fileID: 5448880606301957163}
   frontjump: {fileID: 3271483095515547013}
   Inmune: 0
+  IsPlayer: 0
 --- !u!1 &1595849347476668128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitBox (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.56986
@@ -1423,6 +1428,10 @@ PrefabInstance:
       value: 0.47861
       objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 4556379707665485838}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 7003848482915415975}
@@ -1459,6 +1468,10 @@ PrefabInstance:
     - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_Name
       value: HitBox (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.x
@@ -1533,6 +1546,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 4556379707665485838}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 7003848482915415975}
@@ -1565,6 +1582,10 @@ PrefabInstance:
     - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_Name
       value: HitBox (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.x
@@ -1630,6 +1651,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.47861
       objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 4556379707665485838}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
@@ -1759,7 +1784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnemy: 1
-  dam: 5
+  dam: 15
 --- !u!1001 &3089085742761201047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1944,11 +1969,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: a3f9c86ff10aa8146b8614445c9d4b22, type: 3}
   m_PrefabInstance: {fileID: 3089085742761201047}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7308411437539932539 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3480699329000672020, guid: a3f9c86ff10aa8146b8614445c9d4b22, type: 3}
-  m_PrefabInstance: {fileID: 3089085742761201047}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8120789104532754821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6515712193588681746, guid: a3f9c86ff10aa8146b8614445c9d4b22, type: 3}
@@ -1975,6 +1995,10 @@ PrefabInstance:
     - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_Name
       value: HitBox (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.x
@@ -2041,6 +2065,10 @@ PrefabInstance:
       value: 0.47861
       objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 4556379707665485838}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 7003848482915415975}
@@ -2077,6 +2105,10 @@ PrefabInstance:
     - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_Name
       value: HitBox (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.x
@@ -2143,6 +2175,10 @@ PrefabInstance:
       value: 0.47861
       objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 4556379707665485838}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 7003848482915415975}
@@ -2179,6 +2215,10 @@ PrefabInstance:
     - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_Name
       value: HitBox (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.x
@@ -2245,6 +2285,10 @@ PrefabInstance:
       value: 0.47861
       objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 4556379707665485838}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 7003848482915415975}
@@ -2283,12 +2327,24 @@ PrefabInstance:
       value: HitBox
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1.2186
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -2.029881
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: -1.2186
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2339,6 +2395,10 @@ PrefabInstance:
       value: -0.128
       objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 4556379707665485838}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
       objectReference: {fileID: 7003848482915415975}
@@ -2349,7 +2409,7 @@ PrefabInstance:
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: BodyPart
       value: 
-      objectReference: {fileID: 7308411437539932539}
+      objectReference: {fileID: 6264649567280869982}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2371,6 +2431,10 @@ PrefabInstance:
     - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_Name
       value: HitBox (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.x
@@ -2436,6 +2500,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.47861
       objectReference: {fileID: 0}
+    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 4556379707665485838}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 

@@ -24,7 +24,7 @@ public class HellfSlider : MonoBehaviour
             frontjump.value = val;
         }
 
-        if (IsPlayer && curnt == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (IsPlayer && curnt <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void Update() {

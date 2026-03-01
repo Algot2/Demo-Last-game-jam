@@ -364,6 +364,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1372403427184119728, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 43.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: Sped
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6603885685282790857, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -598,6 +606,21 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!54 &679811580 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4556379707665485838, guid: f0d9166ffe98e3b44815d525fc9d3557, type: 3}
+  m_PrefabInstance: {fileID: 1635866792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &764724834 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4556379707665485838, guid: f0d9166ffe98e3b44815d525fc9d3557, type: 3}
+  m_PrefabInstance: {fileID: 602104155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &792569262 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4556379707665485838, guid: f0d9166ffe98e3b44815d525fc9d3557, type: 3}
+  m_PrefabInstance: {fileID: 1937269890}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1208789768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -675,6 +698,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0d9166ffe98e3b44815d525fc9d3557, type: 3}
+--- !u!54 &1285597566 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4556379707665485838, guid: f0d9166ffe98e3b44815d525fc9d3557, type: 3}
+  m_PrefabInstance: {fileID: 1208789768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1612895227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612895229}
+  - component: {fileID: 1612895228}
+  m_Layer: 0
+  m_Name: EnemyManetsher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1612895228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612895227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fe13699e902f44f875ebbd8d5e41c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemys:
+  - {fileID: 764724834}
+  - {fileID: 679811580}
+  - {fileID: 792569262}
+  - {fileID: 1285597566}
+  MinDis: 3
+--- !u!4 &1612895229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612895227}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 656.4978, y: 99.93763, z: 185.93623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1635866792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -905,7 +983,7 @@ Transform:
   m_GameObject: {fileID: 1969726561}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 10.09, z: 0}
+  m_LocalPosition: {x: 0, y: 21.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1242,8 +1320,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.25
+      scalar: 0.25
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2203,8 +2281,8 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -3.1415925
-      minScalar: 3.1415925
+      scalar: -8.377581
+      minScalar: 8.377581
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5817,3 +5895,4 @@ SceneRoots:
   - {fileID: 1208789768}
   - {fileID: 1635866792}
   - {fileID: 602104155}
+  - {fileID: 1612895229}

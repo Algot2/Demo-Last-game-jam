@@ -6,15 +6,16 @@ public class NewHitBox : MonoBehaviour
     public HellfSlider Slider;
     public Transform BodyPart;
     public ParticleSystem ParticleSystem;
+    public Rigidbody Rb;
     public float efeckt = 1;
     Vector3 PosOfset = new();
     Quaternion rotashenOfset = new();
 
 
-    public void onHit(float dam) {
+    public void onHit(float dam, Vector3 back) {
+        Rb.AddForce(back);
         Slider.setValu(Slider.curnt - dam*efeckt);
         if (IsEnemy||Slider.Inmune) ParticleSystem.Play();
-       
     }
 
     void OnEnable()
