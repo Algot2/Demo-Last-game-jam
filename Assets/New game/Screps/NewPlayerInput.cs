@@ -21,7 +21,7 @@ public class NewPlayerInput : MonoBehaviour
    
     void Update() {
         Cursor.lockState = CursorLockMode.Locked;
-        cam.setCamraDireksen(new Vector2(-Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety, Input.mouseScrollDelta.y);
+        cam.setCamraDireksen(-new Vector2(Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety, Input.mouseScrollDelta.y);
 
         if (State == state.idel) 
             if (canDo[0] && Input.GetMouseButtonDown(0)) {
@@ -43,7 +43,7 @@ public class NewPlayerInput : MonoBehaviour
         if (State == state.idel)
             if (canDo[1] && Input.GetKeyDown(KeyCode.LeftShift)) {
                 canDo[1] = false;
-                plMoment.Dodsh(new Vector3(Input.GetAxisRaw("H"), 0, -Input.GetAxisRaw("V")));
+                plMoment.Dodsh(-new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
                 StartCoroutine(Timer.RunAfterTimer(1, () => canDo[1] = true));
                 animator.SetTrigger("Jump");
             }

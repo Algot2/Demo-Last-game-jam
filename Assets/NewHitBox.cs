@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class NewHitBox : MonoBehaviour
 {
+    public bool IsPlayer;
     public bool IsEnemy;
+    public GameObject hitEfect;
     public HellfSlider Slider;
     public Transform BodyPart;
     public ParticleSystem ParticleSystem;
@@ -16,6 +18,8 @@ public class NewHitBox : MonoBehaviour
         Rb.AddForce(back);
         Slider.setValu(Slider.curnt - dam*efeckt);
         if (IsEnemy||Slider.Inmune) ParticleSystem.Play();
+
+        if (IsPlayer && !Slider.Inmune) StartCoroutine(Timer.StartTimer(0.1f, (f) => hitEfect.SetActive(f)));
     }
 
     void OnEnable()
