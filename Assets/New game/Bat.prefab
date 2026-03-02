@@ -172,6 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8184569606945377425}
   - component: {fileID: 3203558797609051006}
+  - component: {fileID: 6769662183303118327}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -217,6 +218,22 @@ MonoBehaviour:
   HellfSlider: {fileID: 6097486151278449342}
   rb: {fileID: 547737287971173311}
   ded: 0
+--- !u!114 &6769662183303118327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708201295537187032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90dc71cb790330468d2a926ccd20876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  rb: {fileID: 547737287971173311}
+  timeTillDeath: 0
+  deathSettings: []
 --- !u!1 &2768924538375049505
 GameObject:
   m_ObjectHideFlags: 0

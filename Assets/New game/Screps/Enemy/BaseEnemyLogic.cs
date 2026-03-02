@@ -40,6 +40,16 @@ public class BaseEnemyLogic : MonoBehaviour
             rb = GetComponentInChildren<Rigidbody>();
         }
     }
+
+    private void Awake()
+    {
+        if (EnemyMansher.Instance != null)
+        {
+            int index = EnemyMansher.Instance.enemies.FindIndex(x => x = this);
+            if(index == -1)
+                EnemyMansher.Instance.enemies.Add(this);
+        }
+    }
 }
 
 [Serializable]
