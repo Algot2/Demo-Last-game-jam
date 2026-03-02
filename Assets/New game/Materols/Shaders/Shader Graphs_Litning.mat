@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shader Graphs_Litning
-  m_Shader: {fileID: -6465566751694194690, guid: 34072eba0d3b7264da0e8a14fdc081ce, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7bf0c491a06787e40968bebffc42fb68, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -38,12 +38,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Float: 0
+    - _Glow: 4.6
+    - _Ofset: 0.92
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _Scale: 6.63
+    - _Scale2: 0.47
+    - _TimeSped: 1
+    m_Colors:
+    - _A: {r: 1, g: 0, b: 0, a: 1}
+    - _B: {r: 0.7026625, g: 0.15718754, b: 0.8415094, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &448384487275275209
+--- !u!114 &4078798631311401998
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

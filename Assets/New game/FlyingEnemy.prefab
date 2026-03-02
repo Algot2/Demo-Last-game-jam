@@ -954,6 +954,7 @@ MonoBehaviour:
   Bat: {fileID: 1708201295537187032, guid: df2432794d6b4794e8eb621e4ea0b4b9, type: 3}
   moment: {fileID: 1880855359226150454}
   Vishols: {fileID: 3879123587351186812}
+  prodektile: {fileID: 3814647229669160960, guid: 292f2733cdcbb9742a54fa86c2d575dd, type: 3}
   sponDilay: 10
   aldileDistToPlayer: 5
   canSpone: 1
