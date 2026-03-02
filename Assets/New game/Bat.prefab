@@ -232,10 +232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 6097486151278449342}
   rb: {fileID: 547737287971173311}
-  timeTillDeath: 1
+  timeTillDeath: 2
   deathSettings:
-  - matIndex: 0
-    renderer: {fileID: 980220408801236962}
+  - renderer: {fileID: 980220408801236962}
     endValue: -1
     materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
     cutOff: _Cutoff
@@ -890,7 +889,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
+  - {fileID: 2100000, guid: cdfe5c952c1cc2f43af00460d9945954, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -941,8 +940,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8077681669716882965}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 2
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}

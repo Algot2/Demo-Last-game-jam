@@ -39,16 +39,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _Float: 0
-    - _Glow: 4.6
-    - _Ofset: 0.92
+    - _Glow: 10.31
+    - _Ofset: 1.03
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 6.63
-    - _Scale2: 0.47
-    - _TimeSped: 1
+    - _Scale: 7.05
+    - _Scale2: 1.29
+    - _TimeSped: 5.21
     m_Colors:
-    - _A: {r: 1, g: 0, b: 0, a: 1}
-    - _B: {r: 0.7026625, g: 0.15718754, b: 0.8415094, a: 1}
+    - _A: {r: 1, g: 0.0047169924, b: 0.27948725, a: 1}
+    - _B: {r: 0, g: 0.20181227, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4078798631311401998

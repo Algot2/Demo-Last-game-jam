@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < enemies.Count; i++) // Check Every Enemy
         {
+            if (enemies[i].IsUnityNull()) enemies.RemoveAt(i);
+
             for (int x = 0; x > enemies.Count; x++) // Check If Its To Close
             {
                 Vector3 dist = enemies[x].transform.position - enemies[i].transform.position;

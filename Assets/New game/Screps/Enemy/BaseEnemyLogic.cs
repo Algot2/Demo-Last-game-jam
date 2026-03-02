@@ -19,19 +19,24 @@ public class BaseEnemyLogic : MonoBehaviour
     {
         if (health.curnt <= 0 && !isDead)
         {
+
             StartCoroutine(Timer.RunAfterTimer(timeTillDeath + 0.1f, () =>
             {
                 GameManager.Instance.enemies.Remove(this);
                 Destroy(gameObject);
             }));
-            
-            for (int i = 0; i < deathSettings.Count; i++)
-            {
-                int matIndex = deathSettings[i].matIndex;
+            List<Material> materials = new List<Material>();
+
+         
+
+            for (int i = 0; i < deathSettings.Count; i++) {
                 float end = deathSettings[i].endValue;
                 string cutOff = deathSettings[i].cutOff;
-
-                deathSettings[i].renderer.materials[matIndex].DOFloat(end, cutOff, timeTillDeath);
+                for (int j = 0; j < deathSettings[i].renderer.materials.Length; j++) {
+                    materials.Add(Instantiate(deathSettings[i].materialToChangeTo));
+                    deathSettings[i].renderer.materials = materials.ToArray();
+                    deathSettings[i].renderer.materials[j].DOFloat(end, cutOff, timeTillDeath);
+                }
             }
 
             isDead = true;
@@ -61,7 +66,6 @@ public class BaseEnemyLogic : MonoBehaviour
 [Serializable]
 public class EnemyMaterialSettings
 {
-    public int matIndex;
     public Renderer renderer;
 
     public float endValue;
