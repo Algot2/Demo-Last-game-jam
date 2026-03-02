@@ -3,14 +3,20 @@ using UnityEngine;
 public class FlyingEnemy : MonoBehaviour
 {
     public GameObject Bat;
+    public GameObject Prodektile;
     public EnemyMovment moment;
     public Transform Vishols;
     public float sponDilay;
     public float aldileDistToPlayer;
     public bool canSpone;
-    void sponeBats() {
-        GameManager.Instance.enemies.Add(Instantiate(Bat, transform.position + transform.forward - transform.right, transform.rotation).GetComponentInChildren<BaseEnemyLogic>());
-        GameManager.Instance.enemies.Add(Instantiate(Bat, transform.position + transform.forward + transform.right, transform.rotation).GetComponentInChildren<BaseEnemyLogic>());
+    void spone(GameObject obj) {
+        GameObject a = Instantiate(obj, transform.position - transform.forward - transform.right, transform.rotation);
+        GameObject b = Instantiate(obj, transform.position - transform.forward + transform.right, transform.rotation);
+        GameManager.Instance.enemies.Add(a.GetComponentInChildren<BaseEnemyLogic>());
+        GameManager.Instance.enemies.Add(b.GetComponentInChildren<BaseEnemyLogic>());
+        a.transform.LookAt(GameManager.player);
+        b.transform.LookAt(GameManager.player);
+
         StartCoroutine(Timer.StartTimer(Random.Range(sponDilay*0.5f, sponDilay*1.5f), (f) => canSpone = !f));
     }
     void Update() {
@@ -27,7 +33,7 @@ public class FlyingEnemy : MonoBehaviour
         else if (dis.magnitude > aldileDistToPlayer - 0.5f) transform.position -= transform.right * Time.deltaTime;
 
         if (canSpone && dis.magnitude - aldileDistToPlayer < 1)
-            sponeBats();
+            spone(Random.Range(0, 5) == 0 ? Bat: Prodektile);
 
         Vishols.localPosition = Vector3.up * (0.5f + Mathf.Sin(Time.time * 2)*0.5f);
 
