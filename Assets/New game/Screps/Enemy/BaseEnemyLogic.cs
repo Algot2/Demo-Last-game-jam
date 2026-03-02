@@ -17,13 +17,13 @@ public class BaseEnemyLogic : MonoBehaviour
     {
         if (health.curnt <= 0)
         {
+            StartCoroutine(Timer.RunAfterTimer(timeTillDeath + 0.1f, () => Destroy(gameObject)));
+
             for (int i = 0; i < deathSettings.Count; i++)
             {
                 int matIndex = deathSettings[i].matIndex;
                 float end = deathSettings[i].endValue;
                 string cutOff = deathSettings[i].cutOff;
-
-                StartCoroutine(Timer.RunAfterTimer(timeTillDeath + 0.1f, () => Destroy(gameObject)));
                 
                 deathSettings[i].renderer.materials[matIndex].DOFloat(end, cutOff, timeTillDeath).OnComplete(() =>
                 {

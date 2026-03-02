@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90dc71cb790330468d2a926ccd20876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
+  health: {fileID: 6097486151278449342}
   rb: {fileID: 547737287971173311}
-  timeTillDeath: 0
+  timeTillDeath: 1
   deathSettings: []
 --- !u!1 &2768924538375049505
 GameObject:
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53d27a44662e664aaf4f55e149166ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noNokBack: 0
+  noNokBack: 1
   IsEnemy: 1
   dam: 5
 --- !u!1001 &3359657361487930614
