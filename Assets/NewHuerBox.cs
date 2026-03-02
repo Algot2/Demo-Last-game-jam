@@ -14,7 +14,7 @@ public class NewHuerBox : MonoBehaviour
         Vector3 back = (other.transform.position-transform.position).normalized * (noNokBack ? 0 : 1) * 50;
         hitBox.onHit(dam, back);
 
-        if (!IsEnemy && noNokBack) { 
+        if (!IsEnemy && !noNokBack) { 
             StartCoroutine(Efects.camShake(0.05f, 0.1f)); 
             StartCoroutine(Efects.timeFrez(0.1f));
         }

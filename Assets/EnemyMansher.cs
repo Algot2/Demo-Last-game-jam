@@ -3,38 +3,35 @@ using UnityEngine;
 
 public class EnemyMansher : MonoBehaviour
 {
-    public List<Rigidbody> Enemys;
-    public List<EnemyControler> EnemysCon;
-    public float MinDis;
+    public static EnemyMansher Instance;
+
+    public float minDist = 5;
+    
     public Transform PL;
     public static Transform player;
 
+    public List<BaseEnemyLogic> enemies;
+    
     private void Start()
     {
+        Instance = this;
         player = PL;
     }
-    void Update() {
-        for (int i = 0; i < Enemys.Count; i++) 
-            for (int j = 0; j < Enemys.Count; j++) {
 
-                if (EnemysCon[i].ded) {
-                    Rigidbody rb = Enemys[i];
-
-                    Enemys.RemoveAt(i);
-                    EnemysCon.RemoveAt(i);
-
-                    StartCoroutine(Timer.RunAfterTimer(2, () => Destroy(rb.transform.parent.gameObject)));
-                }
-
-                Rigidbody rbA = Enemys[i];
-                Rigidbody rbB = Enemys[j];
-                Vector3 dis = rbB.position - rbA.position;
-
-                if (dis.magnitude < MinDis)
+    private void Update()
+    {
+        for (int i = 0; i < enemies.Count; i++) // Check Every Enemy
+        {
+            for (int x = 0; x > enemies.Count; x++) // Check If Its To Close
+            {
+                Vector3 dist = enemies[x].transform.position - enemies[i].transform.position;
+                
+                if (dist.magnitude < minDist)
                 {
-                    rbA.AddForce(Vector3.one * MinDis - dis);
-                    rbB.AddForce(-(Vector3.one * MinDis - dis));
+                    enemies[i].rb.AddForce(Vector3.one * minDist - dist);
+                    enemies[x].rb.AddForce(-(Vector3.one * minDist - dist));
                 }
             }
+        }
     }
 }

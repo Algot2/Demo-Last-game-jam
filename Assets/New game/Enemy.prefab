@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 8766953634942109320}
   - component: {fileID: 8164365930937789959}
   - component: {fileID: 1411365752069817936}
+  - component: {fileID: 250618706105382820}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -456,6 +457,22 @@ MonoBehaviour:
   anim: {fileID: 320380372160486802}
   Atackdureashen: 0.5
   ded: 0
+--- !u!114 &250618706105382820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570682181458789243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90dc71cb790330468d2a926ccd20876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  rb: {fileID: 4556379707665485838}
+  timeTillDeath: 1
+  deathSettings: []
 --- !u!1 &3285167107270448508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53d27a44662e664aaf4f55e149166ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noNokBack: 0
+  noNokBack: 1
   IsEnemy: 1
   dam: 10
 --- !u!1001 &3089085742761201047
