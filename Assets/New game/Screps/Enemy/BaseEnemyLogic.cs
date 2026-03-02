@@ -23,11 +23,11 @@ public class BaseEnemyLogic : MonoBehaviour
                 float end = deathSettings[i].endValue;
                 string cutOff = deathSettings[i].cutOff;
 
+                StartCoroutine(Timer.RunAfterTimer(timeTillDeath + 0.1f, () => Destroy(gameObject)));
+                
                 deathSettings[i].renderer.materials[matIndex].DOFloat(end, cutOff, timeTillDeath).OnComplete(() =>
                 {
                     EnemyMansher.Instance.enemies.Remove(this);
-                    
-                    Destroy(gameObject);
                 });
             }
         }
