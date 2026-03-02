@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 public class SpawnEnemiesTrigger : Trigger
 {
     public EnemiesSpawnSettings spawnSettings;
-
+    
     public void SpawnEnemies()
     {
         float minX = transform.position.x - (spawnSettings.bounds.x / 2);
