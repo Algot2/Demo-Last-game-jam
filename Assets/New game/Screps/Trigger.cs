@@ -5,11 +5,6 @@ using UltEvents;
 
 public class Trigger : MonoBehaviour
 {
-    public bool triggerOnce = true;
-
-    [ShowIf("triggerOnce")] 
-    public bool hasTriggered;
-    
     [Tag]
     public string tagToDetect;
     
@@ -26,25 +21,21 @@ public class Trigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == tagToDetect && !hasTriggered)
+        if (other.tag == tagToDetect)
         {
             onEnter.Invoke();
 
             isInside = true;
-
-            hasTriggered = triggerOnce;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == tagToDetect && !hasTriggered)
+        if (other.tag == tagToDetect)
         {
             onExit.Invoke();
 
             isInside = false;
-
-            hasTriggered = triggerOnce;
         }
     }
 
@@ -52,15 +43,5 @@ public class Trigger : MonoBehaviour
     {
         if(isInside)
             onTrigger.Invoke();
-    }
-
-    private void Awake()
-    {
-        if (GameManager.Instance != null)
-        {
-            int index = GameManager.Instance.triggers.FindIndex(x => x == this);
-            if(index == -1)
-                GameManager.Instance.triggers.Add(this);
-        }
     }
 }

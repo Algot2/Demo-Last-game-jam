@@ -50,12 +50,12 @@ public class DragonAI : MonoBehaviour
     }
 
 
-    void Update() 
-    {
+    void Update() {
+       
         targetEn = false;
         float dis = MinDisToEn;
-        for (int i = 0; i < GameManager.Instance.enemies.Count; i++) { 
-            Rigidbody R = GameManager.Instance.enemies[i].rb;
+        for (int i = 0; i < EnemyMansher.Instance.enemies.Count; i++) { 
+            Rigidbody R = EnemyMansher.Instance.enemies[i].rb;
             // EnemyControler C = EnMan.EnemysCon[i];
             if (Vector3.Distance(R.position, transform.position) < dis) {
                 targetEn = true;

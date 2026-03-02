@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class EnemyMansher : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static EnemyMansher Instance;
 
     public float minDist = 5;
     
@@ -11,10 +11,8 @@ public class GameManager : MonoBehaviour
     public static Transform player;
 
     public List<BaseEnemyLogic> enemies;
-
-    public List<Trigger> triggers;
     
-    private void Awake()
+    private void Start()
     {
         Instance = this;
         player = PL;
