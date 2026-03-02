@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 
 public class BoltsSave
@@ -362,6 +363,20 @@ public class BoltsSave
         Debug.LogError($"Could Not Find Class Named: {name}");
         return null;
     }
+
+    public static List<string> GetAllClassesNameWithName(string name)
+    {
+        SaveData sd = LoadOrCreate();
+
+        if (_settings == null)
+        {
+            Debug.LogError("SaveSystem not initialized. Call SaveSystem.Initialize() once before saving.");
+
+            return null;
+        }
+        
+        return sd.classes.Where(x => x.name.StartsWith(name)).Select(x => x.name).ToList();
+    }
     
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Initialize()
@@ -399,6 +414,26 @@ public class BoltsSave
         sd = JsonUtility.FromJson<SaveData>(jsonFile);
 
         return sd;
+    }
+
+    public static void ResetSavedClassesWithName(string name)
+    {
+        SaveData sd = LoadOrCreate();
+
+        if (_settings == null)
+        {
+            Debug.LogError("SaveSystem not initialized. Call SaveSystem.Initialize() once before saving.");
+
+            return;
+        }
+
+        foreach (var c in sd.classes)
+        {
+            if (c.name.StartsWith(name))
+                sd.classes.Remove(c);
+        }
+        
+        SaveFile(sd);
     }
 }
 
