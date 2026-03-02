@@ -1674,8 +1674,8 @@
     "m_ObjectId": "21b71dd2dc9a4b81b9236035e649266b",
     "m_Title": "Edge Color",
     "m_Position": {
-        "x": -1443.199951171875,
-        "y": 82.39990234375
+        "x": -1443.19970703125,
+        "y": 82.39999389648438
     }
 }
 
@@ -2321,7 +2321,7 @@
     "m_Title": "Directional Dissolve",
     "m_Position": {
         "x": -2757.60009765625,
-        "y": 415.20001220703127
+        "y": 415.1999816894531
     }
 }
 
@@ -3087,7 +3087,7 @@
 }
 
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
     "m_ObjectId": "6cf63cf9e3d9878f8aa053c5aa1208ef",
     "m_Guid": {
@@ -3500,7 +3500,7 @@
 }
 
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
     "m_ObjectId": "887e6ad6a4110185aec76cbfcea69c95",
     "m_Guid": {
@@ -3676,10 +3676,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -811.199951171875,
-            "y": 508.79998779296877,
+            "x": -821.599853515625,
+            "y": 499.1999816894531,
             "width": 152.0,
-            "height": 33.60003662109375
+            "height": 33.599945068359378
         }
     },
     "m_Slots": [
@@ -4357,8 +4357,8 @@
     "m_ObjectId": "ad3df049ac424053a3ca27b304f5f31f",
     "m_Title": "Noise Selection",
     "m_Position": {
-        "x": -3559.199951171875,
-        "y": -775.2000122070313
+        "x": -3559.19970703125,
+        "y": -775.2000732421875
     }
 }
 

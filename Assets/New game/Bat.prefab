@@ -233,7 +233,13 @@ MonoBehaviour:
   health: {fileID: 6097486151278449342}
   rb: {fileID: 547737287971173311}
   timeTillDeath: 1
-  deathSettings: []
+  deathSettings:
+  - matIndex: 0
+    renderer: {fileID: 980220408801236962}
+    endValue: -1
+    materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
+    cutOff: _Cutoff
+  isDead: 0
 --- !u!1 &2768924538375049505
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +890,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdfe5c952c1cc2f43af00460d9945954, type: 2}
+  - {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
