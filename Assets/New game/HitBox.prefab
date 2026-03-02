@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7083891129514943260}
   - component: {fileID: 3669876084644472848}
   - component: {fileID: 8138533046171673134}
-  - component: {fileID: 5430548515910807945}
   m_Layer: 6
   m_Name: HitBox
   m_TagString: Untagged
@@ -111,33 +110,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5430548515910807945
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934014168227057256}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1901077704248968778
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +160,8 @@ MonoBehaviour:
   Slider: {fileID: 0}
   BodyPart: {fileID: 0}
   ParticleSystem: {fileID: 4952867922352629519}
+  Rb: {fileID: 0}
+  efeckt: 1
 --- !u!1 &3672402220309500584
 GameObject:
   m_ObjectHideFlags: 0
