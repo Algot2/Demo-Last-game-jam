@@ -609,6 +609,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1372403427184119728, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0869
+      objectReference: {fileID: 0}
     - target: {fileID: 3445154510841502646, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: IsPlayer
       value: 1
@@ -617,6 +621,10 @@ PrefabInstance:
       propertyPath: hitEfect
       value: 
       objectReference: {fileID: 1850852131}
+    - target: {fileID: 3661841566756732641, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4472473334040555806, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: animator
       value: 
