@@ -25,6 +25,11 @@ public class HellfSlider : MonoBehaviour
         }
 
         if (IsPlayer && curnt <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        if (IsPlayer && Inmune) {
+            StartCoroutine(Timer.RunAfterTimer(0.5f, () => Inmune = false));
+            StartCoroutine(Timer.StartTimer(5, (f) => NewPlayerInput.Instance.canDo[3] = !f)); 
+        }
     }
 
     void Update() {

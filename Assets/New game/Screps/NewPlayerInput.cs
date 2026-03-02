@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class NewPlayerInput : MonoBehaviour
 {
+    public static NewPlayerInput Instance;
     public CamraMoment cam;
     public PlMoment plMoment;
     public Animator animator;
     public PlAtackMan plAtacks;
+    public HellfSlider hellfSlider;
     public float sensetivety;
     public bool[] canDo;
 
@@ -18,7 +20,9 @@ public class NewPlayerInput : MonoBehaviour
 
     public state State;
 
-   
+    private void Start() {
+        Instance = this;
+    }
     void Update() {
         Cursor.lockState = CursorLockMode.Locked;
         cam.setCamraDireksen(-new Vector2(Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety, Input.mouseScrollDelta.y);
@@ -28,9 +32,21 @@ public class NewPlayerInput : MonoBehaviour
                 canDo[0] = false;
                 State = state.atack;
                 StartCoroutine(Timer.RunAfterTimer(0.5f, () => State = state.idel));
-                StartCoroutine(Timer.RunAfterTimer(1, () => canDo[0] = true));
+                StartCoroutine(Timer.RunAfterTimer(1.5f, () => canDo[0] = true));
                 plAtacks.PreformAtack(0, 2); 
             }
+
+        if (State == state.idel)
+            if (canDo[3] && Input.GetMouseButton(1)) {
+                hellfSlider.Inmune = true;
+                plMoment.Sped = 1.5f;
+            }
+            else { 
+                if (canDo[3] && Input.GetMouseButtonUp(1))
+                    hellfSlider.Inmune = false;
+                plMoment.Sped = 3f; 
+            }
+
 
         if (State == state.idel)
             if (canDo[2] && Input.GetKeyDown(KeyCode.Space)) {
@@ -47,6 +63,7 @@ public class NewPlayerInput : MonoBehaviour
                 StartCoroutine(Timer.RunAfterTimer(1, () => canDo[1] = true));
                 animator.SetTrigger("Jump");
             }
+
 
 
         if (State == state.move || State == state.idel) {

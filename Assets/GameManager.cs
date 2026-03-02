@@ -15,26 +15,25 @@ public class GameManager : MonoBehaviour
 
     public List<Trigger> triggers;
     
-    private void Awake()
+    void Awake()
     {
         Instance = this;
         player = PL;
     }
 
-    private void Update()
+    void Update()
     {
         for (int i = 0; i < enemies.Count; i++) // Check Every Enemy
         {
             if (enemies[i].IsUnityNull()) enemies.RemoveAt(i);
 
-            for (int x = 0; x > enemies.Count; x++) // Check If Its To Close
+            for (int x = 0; x < enemies.Count; x++) // Check If Its To Close
             {
                 Vector3 dist = enemies[x].transform.position - enemies[i].transform.position;
-                
                 if (dist.magnitude < minDist)
                 {
-                    enemies[i].rb.AddForce(Vector3.one * minDist - dist);
-                    enemies[x].rb.AddForce(-(Vector3.one * minDist - dist));
+                    //enemies[i].rb.AddForce(-(Vector3.one * minDist - dist));
+                    //enemies[x].rb.AddForce((Vector3.one * minDist - dist));
                 }
             }
         }

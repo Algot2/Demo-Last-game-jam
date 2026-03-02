@@ -15,6 +15,9 @@ public class BaseEnemyLogic : MonoBehaviour
 
     public bool isDead;
 
+    private void Start() {
+        GameManager.Instance.enemies.Add(this);
+    }
     private void Update()
     {
         if (health.curnt <= 0 && !isDead)
