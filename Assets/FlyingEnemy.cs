@@ -9,13 +9,13 @@ public class FlyingEnemy : MonoBehaviour
     public float aldileDistToPlayer;
     public bool canSpone;
     void sponeBats() {
-        EnemyMansher.Instance.enemies.Add(Instantiate(Bat, transform.position + transform.forward - transform.right, transform.rotation).GetComponentInChildren<BaseEnemyLogic>());
-        EnemyMansher.Instance.enemies.Add(Instantiate(Bat, transform.position + transform.forward + transform.right, transform.rotation).GetComponentInChildren<BaseEnemyLogic>());
+        GameManager.Instance.enemies.Add(Instantiate(Bat, transform.position + transform.forward - transform.right, transform.rotation).GetComponentInChildren<BaseEnemyLogic>());
+        GameManager.Instance.enemies.Add(Instantiate(Bat, transform.position + transform.forward + transform.right, transform.rotation).GetComponentInChildren<BaseEnemyLogic>());
         StartCoroutine(Timer.StartTimer(Random.Range(sponDilay*0.5f, sponDilay*1.5f), (f) => canSpone = !f));
     }
     void Update() {
 
-        Vector3 Pl = EnemyMansher.player.position;
+        Vector3 Pl = GameManager.player.position;
         Vector3 dis = transform.position - Pl;
         moment.target = Pl;
 
