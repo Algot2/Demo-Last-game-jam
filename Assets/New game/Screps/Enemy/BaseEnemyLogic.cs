@@ -13,23 +13,28 @@ public class BaseEnemyLogic : MonoBehaviour
     
     public List<EnemyMaterialSettings> deathSettings;
 
+    public bool isDead;
+
     private void Update()
     {
-        if (health.curnt <= 0)
+        if (health.curnt <= 0 && !isDead)
         {
+            StartCoroutine(Timer.RunAfterTimer(timeTillDeath + 0.1f, () =>
+            {
+                GameManager.Instance.enemies.Remove(this);
+                Destroy(gameObject);
+            }));
+            
             for (int i = 0; i < deathSettings.Count; i++)
             {
                 int matIndex = deathSettings[i].matIndex;
                 float end = deathSettings[i].endValue;
                 string cutOff = deathSettings[i].cutOff;
 
-                StartCoroutine(Timer.RunAfterTimer(timeTillDeath + 0.1f, () => Destroy(gameObject)));
-                
-                deathSettings[i].renderer.materials[matIndex].DOFloat(end, cutOff, timeTillDeath).OnComplete(() =>
-                {
-                    GameManager.Instance.enemies.Remove(this);
-                });
+                deathSettings[i].renderer.materials[matIndex].DOFloat(end, cutOff, timeTillDeath);
             }
+
+            isDead = true;
         }
     }
 
@@ -65,4 +70,14 @@ public class EnemyMaterialSettings
 
     [BoltsShaderProperty("materialToChangeTo")]
     public string cutOff;
+}
+
+[Serializable]
+public class SavedEnemy
+{
+    public GameObject obj;
+
+    public Vector3 pos;
+    
+    public float current;
 }
