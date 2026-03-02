@@ -248,7 +248,6 @@ MonoBehaviour:
   player: {fileID: 421540332}
   TargetPos: {x: 0, y: 0, z: 0}
   Agent: {fileID: 73640844}
-  EnMan: {fileID: 1612895228}
   Atacks: {fileID: 374197809}
   MinDisToEn: 3
   disToPl: 5
@@ -367,13 +366,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149971105}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.9245944, y: -0.07291332, z: 0.22675154, w: 0.2973089}
+  m_LocalRotation: {x: 0.9131513, y: -0.043492917, z: 0.30325156, w: 0.2688895}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 144.349, y: -27.559021, z: 0}
+  m_LocalEulerAnglesHint: {x: 148.838, y: -38.307007, z: -5.6099854}
 --- !u!114 &149971108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,18 +1219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fe13699e902f44f875ebbd8d5e41c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  EnemysCon:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  MinDis: 3
+  minDist: 5
   PL: {fileID: 421540332}
+  enemies: []
 --- !u!4 &1612895229
 Transform:
   m_ObjectHideFlags: 0
