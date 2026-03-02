@@ -11,7 +11,7 @@ public class PlayerInputs : MonoBehaviour
     void Update() {
         Cursor.lockState = CursorLockMode.Locked;
         PlMoment.Move(new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
-        CamraMoment.setCamraDireksen(new Vector2(-Input.mousePositionDelta.x/Screen.width, Input.mousePositionDelta.y/Screen.height) * sensetivety);
+        CamraMoment.setCamraDireksen(new Vector2(-Input.mousePositionDelta.x/Screen.width, Input.mousePositionDelta.y/Screen.height) * sensetivety,0);
         
         if (Input.GetMouseButtonDown(0)) {
             PlAtacks.atack(0, 0.25f);

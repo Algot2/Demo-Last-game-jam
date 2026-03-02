@@ -21,7 +21,7 @@ public class NewPlayerInput : MonoBehaviour
    
     void Update() {
         Cursor.lockState = CursorLockMode.Locked;
-        cam.setCamraDireksen(new Vector2(-Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety);
+        cam.setCamraDireksen(new Vector2(-Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety, Input.mouseScrollDelta.y);
 
         if (State == state.idel) 
             if (canDo[0] && Input.GetMouseButtonDown(0)) {
