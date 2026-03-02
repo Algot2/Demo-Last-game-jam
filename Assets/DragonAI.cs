@@ -6,7 +6,6 @@ public class DragonAI : MonoBehaviour
     public Transform player;
     public Vector3 TargetPos;
     public NavMeshAgent Agent;
-    public EnemyMansher EnMan;
     public GameObject Atacks;
 
     public float MinDisToEn;
@@ -55,10 +54,10 @@ public class DragonAI : MonoBehaviour
        
         targetEn = false;
         float dis = MinDisToEn;
-        for (int i = 0; i < EnMan.Enemys.Count; i++) { 
-            Rigidbody R = EnMan.Enemys[i];
-            EnemyControler C = EnMan.EnemysCon[i];
-            if (Vector3.Distance(R.position, transform.position) < dis && !C.ded) {
+        for (int i = 0; i < EnemyMansher.Instance.enemies.Count; i++) { 
+            Rigidbody R = EnemyMansher.Instance.enemies[i].rb;
+            // EnemyControler C = EnMan.EnemysCon[i];
+            if (Vector3.Distance(R.position, transform.position) < dis) {
                 targetEn = true;
                 dis = Vector3.Distance(R.position, transform.position);
                 TargetPos = SnapToNavMesh(R.position);
