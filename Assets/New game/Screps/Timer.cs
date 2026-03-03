@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Timer
 {
+    public static IEnumerator RunAfterCondishen(Action F, Func<bool> T)
     public static IEnumerator RunAfterTimer(float t, Action F) { 
         yield return new WaitForSeconds(t);
         F();

@@ -20,6 +20,8 @@ public class FlyingEnemy : MonoBehaviour
 
         StartCoroutine(Timer.StartTimer(Random.Range(sponDilay*0.5f, sponDilay*1.5f), (f) => canSpone = !f));
     }
+
+  
     void Update() {
 
 

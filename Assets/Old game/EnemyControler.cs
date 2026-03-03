@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyControler : MonoBehaviour
@@ -14,12 +15,11 @@ public class EnemyControler : MonoBehaviour
     public float Atackdureashen = 0.5f;
     public bool ded = false;
 
-    private void Start()
-    {
-        player = GameManager.Instance.PL;
-    }
+   
     void Update() {
 
+        if (player.IsUnityNull())
+            player = GameManager.Instance.PL;
 
         if (hellf.curnt <= 0 && !ded)
         {

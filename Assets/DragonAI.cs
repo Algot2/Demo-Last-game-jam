@@ -18,7 +18,7 @@ public class DragonAI : MonoBehaviour
     bool targetEn = false;
     float R(float min, float max) => Random.Range(min,max);
     
-    Vector3 pikeNewTarget() {
+    public Vector3 pikeNewTarget() {
         Vector3 dir = new Vector3(R(-1, 1), R(0.5f, 1), R(-1, 1)).normalized;
         Vector3 pos = player.position + dir * R(2.5f, disToPl);
 
