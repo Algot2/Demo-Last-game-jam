@@ -76,7 +76,9 @@ public class NewPlayerInput : MonoBehaviour
             {
                 canDo[4] = false;
                 DragonAI.Instens.TargetPos = transform.position;
-                StartCoroutine(Timer.RunAfterTimer(1, () => canDo[1] = true));
+
+                StartCoroutine(Timer.RunAfterTimer(10, () => canDo[4] = true));
+                StartCoroutine(Timer.RunAfterCondishen(() => hellfSlider.setValu(hellfSlider.curnt + 15),() => Vector3.Distance(DragonAI.Instens.transform.position, transform.position) < 1));
                 animator.SetTrigger("Jump");
             }
     }
