@@ -59,7 +59,7 @@ public class NewPlayerInput : MonoBehaviour
         if (State == state.idel)
             if (canDo[1] && Input.GetKeyDown(KeyCode.LeftShift)) {
                 canDo[1] = false;
-                plMoment.Dodsh(-new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
+                plMoment.Dodsh(plMoment.body.transform.forward);
                 StartCoroutine(Timer.RunAfterTimer(1, () => canDo[1] = true));
                 animator.SetTrigger("Jump");
             }
@@ -78,7 +78,7 @@ public class NewPlayerInput : MonoBehaviour
                 DragonAI.Instens.TargetPos = transform.position;
 
                 StartCoroutine(Timer.RunAfterTimer(10, () => canDo[4] = true));
-                StartCoroutine(Timer.RunAfterCondishen(() => hellfSlider.setValu(hellfSlider.curnt + 15),() => Vector3.Distance(DragonAI.Instens.transform.position, transform.position) < 1));
+                StartCoroutine(Timer.RunAfterCondishen(() => hellfSlider.setValu(hellfSlider.curnt + 35),() => Vector3.Distance(DragonAI.Instens.transform.position, transform.position) < 1));
                 animator.SetTrigger("Jump");
             }
     }
