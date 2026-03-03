@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,8 @@ public class MainMenuController : MonoBehaviour
 {
     public TMP_InputField sText;
     public Slider sSlider;
+
+    public int savedSensitivity;
     
     public void LoadScene(int index)
     {
@@ -28,22 +31,51 @@ public class MainMenuController : MonoBehaviour
     {
         int finalSensitivity = (int)Mathf.Lerp(1, 200, value);
 
+        NewPlayerInput.globalSensitivity = (float)finalSensitivity;
+
+        savedSensitivity = finalSensitivity;
+        
         sText.text = $"{finalSensitivity}";
     }
 
     public void SetSensitivity(string value)
     {
-        float textToInt = float.Parse(value);
+        if(string.IsNullOrEmpty(value))
+            return;
+     
+        float textToFloat = float.Parse(value);
 
-        if (textToInt > 200)
-            textToInt = 200;
-        if (textToInt < 1)
-            textToInt = 1;
+        if (textToFloat > 200)
+            textToFloat = 200;
+        if (textToFloat < 1)
+            textToFloat = 1;
+
+        NewPlayerInput.globalSensitivity = textToFloat;
+
+        savedSensitivity = (int)textToFloat;
         
-        float sliderValue = Mathf.Lerp(0, 1, (textToInt / 200));
+        float sliderValue = Mathf.Lerp(0, 1, (textToFloat / 200));
         sSlider.value = sliderValue;
         
-        sText.text = $"{textToInt}";
+        sText.text = $"{textToFloat}";
+    }
+
+    public void SaveSettings()
+    {
+        BoltsSave.SaveIntValue("Sensitivity", savedSensitivity);
+    }
+
+    private void Start()
+    {
+        int getSensitivity = BoltsSave.GetInt("Sensitivity");
+
+        if (getSensitivity == -1)
+            getSensitivity = 100;
+
+        savedSensitivity = getSensitivity;
+
+        sSlider.value = Mathf.Lerp(0, 1, ((float)getSensitivity / 200));
+        sText.text = $"{getSensitivity}";
     }
 
     public void Quit()

@@ -205,7 +205,7 @@ public class BoltsSave
         File.WriteAllText(fullPath, newJson);
     }
 
-    public float GetFloat(string name)
+    public static float GetFloat(string name)
     {
         SaveData sd = LoadOrCreate();
 
@@ -225,7 +225,7 @@ public class BoltsSave
         return -1;
     }
 
-    public int GetInt(string name)
+    public static int GetInt(string name)
     {
         SaveData sd = LoadOrCreate();
 
