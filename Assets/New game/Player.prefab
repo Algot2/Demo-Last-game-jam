@@ -6229,8 +6229,9 @@ MonoBehaviour:
   plMoment: {fileID: 5966069730297437065}
   animator: {fileID: 8612837536540683718}
   plAtacks: {fileID: 6816010320019522861}
+  hellfSlider: {fileID: 6161585229421125090}
   sensetivety: 50
-  canDo: 010101
+  canDo: 01010101
   State: 0
 --- !u!114 &6398698079536150007
 MonoBehaviour:
@@ -6918,6 +6919,10 @@ PrefabInstance:
     - target: {fileID: -797110238975247099, guid: f0ff3de16371b3942a16585866df9d33, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -797110238975247099, guid: f0ff3de16371b3942a16585866df9d33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0869
       objectReference: {fileID: 0}
     - target: {fileID: 701420837181973649, guid: f0ff3de16371b3942a16585866df9d33, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

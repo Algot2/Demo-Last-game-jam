@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyingEnemy : MonoBehaviour
@@ -20,6 +21,7 @@ public class FlyingEnemy : MonoBehaviour
         StartCoroutine(Timer.StartTimer(Random.Range(sponDilay*0.5f, sponDilay*1.5f), (f) => canSpone = !f));
     }
     void Update() {
+
 
         Vector3 Pl = GameManager.player.position;
         Vector3 dis = transform.position - Pl;

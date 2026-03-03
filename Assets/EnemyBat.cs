@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBat : MonoBehaviour
@@ -10,6 +11,16 @@ public class EnemyBat : MonoBehaviour
     public Rigidbody rb;
     public bool ded;
     void Update() {
+        List<BaseEnemyLogic> en = GameManager.Instance.enemies;
+        for (int i = 0; i < en.Count; i++)
+        {
+            Vector3 dis = transform.position - en[i].transform.position;
+            if (dis.magnitude < 1.5f && en[i].gameObject.GetInstanceID() != gameObject.GetInstanceID())
+            {
+                transform.position += (dis.normalized * Time.deltaTime);
+            }
+        }
+
         if (!ded) {
             if (HellfSlider.curnt < 0) { 
                 ded = true; 

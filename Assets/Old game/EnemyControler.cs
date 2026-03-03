@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyControler : MonoBehaviour
@@ -13,6 +14,8 @@ public class EnemyControler : MonoBehaviour
     public float Atackdureashen = 0.5f;
     public bool ded = false;
     void Update() {
+
+
         if (hellf.curnt <= 0 && !ded)
         {
             ded = true;
