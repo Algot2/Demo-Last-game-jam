@@ -409,11 +409,18 @@ public class BoltsBoxColliderDrawer : Editor
     }
 }
 
-public class OpenDocuments
+public class NonWindowTools
 {
     [MenuItem("Tools/Bolts Tools/Documentation")]
-    public static void OpenURL()
+    public static void OpenDocumentation()
     {
         Application.OpenURL("https://github.com/Bolt-Bug/Boolts-Tools");
+    }
+    
+    [MenuItem("Tools/Bolts Tools/Open Save Folder")]
+    public static void OpenSaveFolder()
+    {
+        string path = Path.GetDirectoryName(BoltsSave._settings.GetFullPath());
+        Application.OpenURL(path);
     }
 }

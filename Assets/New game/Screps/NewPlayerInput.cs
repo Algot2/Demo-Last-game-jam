@@ -11,6 +11,8 @@ public class NewPlayerInput : MonoBehaviour
     public float sensetivety;
     public bool[] canDo;
 
+    public static float globalSensitivity = 50;
+
     public enum state {
         idel,
         move,
@@ -81,5 +83,10 @@ public class NewPlayerInput : MonoBehaviour
                 StartCoroutine(Timer.RunAfterCondishen(() => hellfSlider.setValu(hellfSlider.curnt + 15),() => Vector3.Distance(DragonAI.Instens.transform.position, transform.position) < 1));
                 animator.SetTrigger("Jump");
             }
+
+        if (globalSensitivity != sensetivety)
+        {
+            sensetivety = globalSensitivity;
+        }
     }
 }
