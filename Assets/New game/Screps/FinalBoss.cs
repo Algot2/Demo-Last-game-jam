@@ -71,4 +71,10 @@ public class FinalBoss : MonoBehaviour
 
         return false;
     }
+
+    [Button]
+    void TestAttack()
+    {
+        Attack(attack1, 100, 1, Vector3.one * 10);
+    }
 }

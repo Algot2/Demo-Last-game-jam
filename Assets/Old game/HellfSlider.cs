@@ -24,7 +24,7 @@ public class HellfSlider : MonoBehaviour
             frontjump.value = val;
         }
 
-        if (IsPlayer && curnt <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (IsPlayer && curnt <= 0) CheckpointController.LoadGame();
 
         if (IsPlayer && Inmune) {
             StartCoroutine(Timer.RunAfterTimer(0.5f, () => Inmune = false));

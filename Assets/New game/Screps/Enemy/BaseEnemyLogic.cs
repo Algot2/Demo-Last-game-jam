@@ -14,10 +14,7 @@ public class BaseEnemyLogic : MonoBehaviour
     public List<EnemyMaterialSettings> deathSettings;
 
     public bool isDead;
-
-    private void Start() {
-        GameManager.Instance.enemies.Add(this);
-    }
+    
     private void Update()
     {
         if (health.curnt <= 0 && !isDead)
@@ -82,7 +79,7 @@ public class EnemyMaterialSettings
 [Serializable]
 public class SavedEnemy
 {
-    public GameObject obj;
+    public string obj;
 
     public Vector3 pos;
     

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,9 +6,13 @@ public class CheckpointController : MonoBehaviour
 {
     [BoltsSave(SavedVariableType.Vector3)]
     public string positionString;
+
+    public static string staticPositionString;
     
     public void SaveGame()
     {
+        Debug.Log("Saved Game");
+        
         // Saves The Player Position
         BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
 
@@ -29,17 +34,20 @@ public class CheckpointController : MonoBehaviour
         for (int i = 0; i < enemies.Count; i++)
         {
             SavedEnemy newSavedEnemy = new()
-                { obj = enemies[i].gameObject, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
+                { obj = enemies[i].gameObject.name, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
             BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
         }
         
         // Save Changes
     }
 
-    public void LoadGame()
+    public static void LoadGame()
     {
+        GameManager.player.GetComponent<PlMoment>().HellfSlider.curnt =
+            GameManager.player.GetComponent<PlMoment>().HellfSlider.max;
+        
         // Sets The Player Position To The Saved One
-        GameManager.player.position = BoltsSave.GetVector3(positionString);
+        GameManager.player.position = BoltsSave.GetVector3(staticPositionString);
         
         // Loads All Trigger States
         List<Trigger> triggers = GameManager.Instance.triggers;
@@ -51,13 +59,20 @@ public class CheckpointController : MonoBehaviour
                 triggers[i].hasTriggered = allBools[x].value;
             }
         }
+
+        foreach (var enemy in GameManager.Instance.enemies)
+        {
+            Destroy(enemy.gameObject);
+        }
         
         // Loads All Enemies
         List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");
         foreach (var e in savedEnemyClassNames)
         {
+            Debug.Log(e);
+            
             SavedEnemy newEnemy = BoltsSave.LoadClass<SavedEnemy>(e);
-            GameObject newEnemyObj = Instantiate(newEnemy.obj, newEnemy.pos, Quaternion.identity);
+            GameObject newEnemyObj = Instantiate(Resources.Load<GameObject>(newEnemy.obj), newEnemy.pos, Quaternion.identity);
             newEnemyObj.GetComponent<BaseEnemyLogic>().health.setValu(newEnemy.current);
         }
         
@@ -65,5 +80,10 @@ public class CheckpointController : MonoBehaviour
         BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
 
         // Load Changes
+    }
+
+    private void Awake()
+    {
+        staticPositionString = positionString;
     }
 }
