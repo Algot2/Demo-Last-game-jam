@@ -295,6 +295,66 @@ public class BoltsSaveAttributeDrawer : PropertyDrawer
     }
 }
 
+[CustomPropertyDrawer(typeof(BoltsAnimationClipAttribute))]
+public class BoltsAnimationClipDrawer : PropertyDrawer
+{
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        var attr = (BoltsAnimationClipAttribute)attribute;
+
+        EditorGUI.BeginProperty(position, label, property);
+
+        if (property.propertyType != SerializedPropertyType.String)
+        {
+            EditorGUI.LabelField(position, label.text, "Use [BoltsAnimationClip] On A string Field");
+            EditorGUI.EndProperty();
+            
+            return;
+        }
+
+        var assetProperty = property.serializedObject.FindProperty(attr.animator);
+
+        if (assetProperty == null || assetProperty.objectReferenceValue == null)
+        {
+            EditorGUI.PropertyField(position, property, label);
+            EditorGUI.HelpBox(position, $"BoltsAnimationClip {attr.animator} Not Found", MessageType.Error);
+            
+            return;
+        }
+
+        var asset = assetProperty.objectReferenceValue as Animator;
+
+        if (asset == null)
+        {
+            EditorGUI.LabelField(position, label.text, "Field is not an BoltsAnimationClip.");
+            EditorGUI.EndProperty();
+
+            return;
+        }
+
+        var clips = asset.runtimeAnimatorController.animationClips;
+
+        if (clips.Length == 0)
+        {
+            EditorGUI.LabelField(position, label.text, "No Clips Found In Animator.");
+            EditorGUI.EndProperty();
+
+            return;
+        }
+
+        string[] clipNames = clips.Select(m => m.name).ToArray();
+
+        int index = Mathf.Max(0, System.Array.IndexOf(clipNames, property.stringValue));
+        if (index >= clipNames.Length)
+            index = 0;
+
+        int newIndex = EditorGUI.Popup(position, label.text, index, clipNames);
+        property.stringValue = clipNames[newIndex];
+        
+        EditorGUI.EndProperty();
+    }
+}
+
 [CustomEditor(typeof(BoltsBoxCollider))]
 public class BoltsBoxColliderDrawer : Editor
 {
