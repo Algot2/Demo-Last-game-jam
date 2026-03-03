@@ -51,7 +51,7 @@ public class EnemyBat : MonoBehaviour
 
             hitbox.SetActive(canAtack);
             if (canAtack && dir.magnitude < 0.4f)
-                StartCoroutine(Timer.StartTimer(Random.Range(1f, 4f), (f) => canAtack = !f));
+                StartCoroutine(Timer.StartTimer(Random.Range(3f, 6f), (f) => canAtack = !f));
         }
     }
 }

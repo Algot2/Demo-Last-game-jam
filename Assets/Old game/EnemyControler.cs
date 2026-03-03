@@ -53,7 +53,7 @@ public class EnemyControler : MonoBehaviour
             {
                 anim.SetTrigger("Atack");
                 atack(Random.Range(0, Atacks.Length), 1f);
-                Atackdureashen = 3;
+                Atackdureashen = Random.Range(3f, 6f);
 
             }
 

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < enemies.Count; i++) // Check Every Enemy
         {
+            Debug.LogWarning(enemies[i].gameObject == null);
             if (enemies[i].gameObject == null) 
                 enemies.RemoveAt(i);
 
