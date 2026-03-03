@@ -211,13 +211,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b88c73aa8ea024a8bf4c39a8368cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sped: 2
+  sped: 1.5
   Body: {fileID: 9091018338113625086}
   canAtack: 0
   hitbox: {fileID: 7940127867754552799}
   HellfSlider: {fileID: 6097486151278449342}
   rb: {fileID: 547737287971173311}
   ded: 0
+  RorL: 0
 --- !u!114 &6769662183303118327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,7 +923,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1015
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 1024
@@ -931,7 +932,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &547737287971173311
 Rigidbody:
@@ -949,10 +950,10 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1015
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1

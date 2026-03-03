@@ -729,6 +729,10 @@ PrefabInstance:
       propertyPath: 'canDo.Array.data[4]'
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5863960996141604372, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6603885685282790857, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -748,6 +752,10 @@ PrefabInstance:
     - target: {fileID: 8976411641592926656, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976411641592926656, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
