@@ -38,8 +38,12 @@ public class CheckpointController : MonoBehaviour
         
         for (int i = 0; i < enemies.Count; i++)
         {
+            string enemyName = enemies[i].gameObject.name;
+            string[] nameSplit = enemyName.Split(" (");
+            enemyName = nameSplit[0];
+            
             SavedEnemy newSavedEnemy = new()
-                { obj = enemies[i].gameObject.name, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
+                { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
             BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
         }
         
