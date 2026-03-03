@@ -37,7 +37,7 @@ public class EnemyControler : MonoBehaviour
             if (Vector3.Distance(rb.transform.position, player.position) < 4 && Atackdureashen > 0) {
                 movment.agent.speed = 0;
 
-                if (Vector3.Distance(rb.transform.position, player.position) < 2) { 
+                if (Vector3.Distance(rb.transform.position, player.position) < 3) { 
                     movment.agent.speed = -5;
                 }
             }
