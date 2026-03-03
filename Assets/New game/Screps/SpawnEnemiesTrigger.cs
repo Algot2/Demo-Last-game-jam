@@ -24,7 +24,7 @@ public class SpawnEnemiesTrigger : Trigger
                 if (Physics.Raycast(spawnPos, Vector3.down, out var hit))
                     spawnPos.y = hit.point.y;
 
-                Instantiate(spawnSettings.enemiesToSpawn[x].enemy, spawnPos, Quaternion.identity);
+                Instantiate(spawnSettings.enemiesToSpawn[i].enemy, spawnPos, Quaternion.identity);
             }
         }
     }
