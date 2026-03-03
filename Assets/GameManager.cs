@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < enemies.Count; i++) // Check Every Enemy
         {
-            if (enemies[i].IsUnityNull()) enemies.RemoveAt(i);
+            if (enemies[i].gameObject == null) 
+                enemies.RemoveAt(i);
 
             for (int x = 0; x < enemies.Count; x++) // Check If Its To Close
             {
