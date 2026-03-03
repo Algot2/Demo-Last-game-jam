@@ -355,7 +355,7 @@ public class BoltsSave
             return null;
         }
 
-        int index = sd.bools.FindIndex(x => x.name == name);
+        int index = sd.classes.FindIndex(x => x.name == name);
 
         if (index > -1)
             return JsonUtility.FromJson<T>(sd.classes[index].value);
@@ -427,11 +427,23 @@ public class BoltsSave
             return;
         }
 
-        foreach (var c in sd.classes)
+        sd.classes.RemoveAll(c => c.name.StartsWith(name));
+        
+        SaveFile(sd);
+    }
+
+    public static void ResetAllBoolsWithName(string name)
+    {
+        SaveData sd = LoadOrCreate();
+
+        if (_settings == null)
         {
-            if (c.name.StartsWith(name))
-                sd.classes.Remove(c);
+            Debug.LogError("SaveSystem not initialized. Call SaveSystem.Initialize() once before saving.");
+
+            return;
         }
+
+        sd.bools.RemoveAll(b => b.name.StartsWith(name));
         
         SaveFile(sd);
     }

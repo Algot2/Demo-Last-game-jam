@@ -20,6 +20,8 @@ public class CheckpointController : MonoBehaviour
         GameManager.player.GetComponent<PlMoment>().HellfSlider.curnt =
             GameManager.player.GetComponent<PlMoment>().HellfSlider.max;
         
+        BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
+        
         // Saves All Trigger States
         List<Trigger> triggers = GameManager.Instance.triggers;
         for (int i = 0; i < triggers.Count; i++)
@@ -27,6 +29,9 @@ public class CheckpointController : MonoBehaviour
             string boolName = $"Trigger: Index = ({i})";
             BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
         }
+        
+        // Resets The List So It Can Be Used Again
+        BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
 
         // Saves All Enemies
         List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
@@ -69,15 +74,10 @@ public class CheckpointController : MonoBehaviour
         List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");
         foreach (var e in savedEnemyClassNames)
         {
-            Debug.Log(e);
-            
             SavedEnemy newEnemy = BoltsSave.LoadClass<SavedEnemy>(e);
             GameObject newEnemyObj = Instantiate(Resources.Load<GameObject>(newEnemy.obj), newEnemy.pos, Quaternion.identity);
             newEnemyObj.GetComponent<BaseEnemyLogic>().health.setValu(newEnemy.current);
         }
-        
-        // Resets The List So It Can Be Used Again
-        BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
 
         // Load Changes
     }
