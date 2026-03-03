@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sped: 2
   Body: {fileID: 9091018338113625086}
-  canAtack: 1
+  canAtack: 0
   hitbox: {fileID: 7940127867754552799}
   HellfSlider: {fileID: 6097486151278449342}
   rb: {fileID: 547737287971173311}

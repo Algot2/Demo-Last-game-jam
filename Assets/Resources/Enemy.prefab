@@ -434,6 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
   agent: {fileID: 8262873659928681727}
+  rb: {fileID: 4556379707665485838}
 --- !u!114 &1411365752069817936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,8 +474,7 @@ MonoBehaviour:
   rb: {fileID: 4556379707665485838}
   timeTillDeath: 2
   deathSettings:
-  - matIndex: 0
-    renderer: {fileID: 743382450143700741}
+  - renderer: {fileID: 743382450143700741}
     endValue: -1
     materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
     cutOff: _Cutoff

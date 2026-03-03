@@ -10,6 +10,11 @@ public class EnemyBat : MonoBehaviour
     public HellfSlider HellfSlider;
     public Rigidbody rb;
     public bool ded;
+
+    private void Start()
+    {
+         StartCoroutine(Timer.StartTimer(Random.Range(1f, 4f), (f) => canAtack = !f));
+    }
     void Update() {
         List<BaseEnemyLogic> en = GameManager.Instance.enemies;
         for (int i = 0; i < en.Count; i++)
@@ -22,6 +27,10 @@ public class EnemyBat : MonoBehaviour
         }
 
         if (!ded) {
+
+            if (transform.position.y - GameManager.player.position.y < -0.5f)
+                transform.position += Vector3.up * 50 * Time.deltaTime;
+
 
             transform.LookAt(GameManager.player.position);
             if (HellfSlider.curnt < 0) { 

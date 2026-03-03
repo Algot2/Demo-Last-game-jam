@@ -958,6 +958,7 @@ MonoBehaviour:
   sponDilay: 10
   aldileDistToPlayer: 5
   canSpone: 1
+  rOrl: 1
 --- !u!114 &1880855359226150454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,6 +973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
   agent: {fileID: 6804873852121854470}
+  rb: {fileID: 6267134292989894204}
 --- !u!195 &6804873852121854470
 NavMeshAgent:
   m_ObjectHideFlags: 0
