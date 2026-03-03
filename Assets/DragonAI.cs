@@ -1,8 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class DragonAI : MonoBehaviour
 {
+    public static DragonAI Instens;
     public Transform player;
     public Vector3 TargetPos;
     public NavMeshAgent Agent;
@@ -15,6 +17,7 @@ public class DragonAI : MonoBehaviour
     bool canAtack = true;
     bool targetEn = false;
     float R(float min, float max) => Random.Range(min,max);
+    
     Vector3 pikeNewTarget() {
         Vector3 dir = new Vector3(R(-1, 1), R(0.5f, 1), R(-1, 1)).normalized;
         Vector3 pos = player.position + dir * R(2.5f, disToPl);
@@ -46,6 +49,7 @@ public class DragonAI : MonoBehaviour
     }
     private void Start()
     {
+        Instens = this;
         TargetPos = SnapToNavMesh(pikeNewTarget());
     }
 

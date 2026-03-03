@@ -70,5 +70,14 @@ public class NewPlayerInput : MonoBehaviour
             plMoment.Move(new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
         }
 
+
+        if (State == state.idel)
+            if (canDo[4] && Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                canDo[4] = false;
+                plMoment.Dodsh(-new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
+                StartCoroutine(Timer.RunAfterTimer(1, () => canDo[1] = true));
+                animator.SetTrigger("Jump");
+            }
     }
 }

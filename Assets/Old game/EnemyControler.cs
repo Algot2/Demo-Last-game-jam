@@ -13,6 +13,11 @@ public class EnemyControler : MonoBehaviour
 
     public float Atackdureashen = 0.5f;
     public bool ded = false;
+
+    private void Start()
+    {
+        player = GameManager.Instance.PL;
+    }
     void Update() {
 
 
