@@ -9,11 +9,13 @@ public class SpawnEnemiesTrigger : Trigger
     
     public void SpawnEnemies()
     {
-        float minX = transform.position.x - (spawnSettings.bounds.x / 2);
-        float maxX = transform.position.x + (spawnSettings.bounds.x / 2);
+        Vector3 center = transform.position + transform.TransformDirection(spawnSettings.offset);
 
-        float minZ = transform.position.z - (spawnSettings.bounds.y / 2);
-        float maxZ = transform.position.z + (spawnSettings.bounds.y / 2);
+        float minX = center.x - (spawnSettings.bounds.x / 2);
+        float maxX = center.x + (spawnSettings.bounds.x / 2);
+
+        float minZ = center.z - (spawnSettings.bounds.y / 2);
+        float maxZ = center.z + (spawnSettings.bounds.y / 2);
 
         for (int i = 0; i < spawnSettings.enemiesToSpawn.Count; i++)
         {
