@@ -22,6 +22,8 @@ public class EnemyBat : MonoBehaviour
         }
 
         if (!ded) {
+
+            transform.LookAt(GameManager.player.position);
             if (HellfSlider.curnt < 0) { 
                 ded = true; 
                 rb.isKinematic = false;

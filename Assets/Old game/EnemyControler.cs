@@ -28,35 +28,40 @@ public class EnemyControler : MonoBehaviour
             movment.enabled = false;
             rb.freezeRotation = false;
         }
-       
-        
-        if (Vector3.Distance(rb.transform.position, player.position) > 4 || Atackdureashen < 0)
-            movment.agent.speed = 5;
-        
-        if (Vector3.Distance(rb.transform.position, player.position) < 4 && Atackdureashen > 0)
-            movment.agent.speed = 0;
 
-
-        if (Vector3.Distance(rb.transform.position, player.position) < 5) Atackdureashen -= Time.deltaTime;
-        else Atackdureashen = Mathf.Max(Atackdureashen, 1f);
-
-        if (Atackdureashen < 0 && Vector3.Distance(rb.transform.position, player.position) < 1.5f && !ded)
+        if (!ded)
         {
-            anim.SetTrigger("Atack");
-            atack(Random.Range(0, Atacks.Length), 1f);
-            Atackdureashen = 3;
+            if (Vector3.Distance(rb.transform.position, player.position) > 4 || Atackdureashen < 0)
+                movment.agent.speed = 5;
 
+            if (Vector3.Distance(rb.transform.position, player.position) < 4 && Atackdureashen > 0)
+                movment.agent.speed = 0;
+
+
+            if (Vector3.Distance(rb.transform.position, player.position) < 5)
+            {
+                Atackdureashen -= Time.deltaTime;
+                rb.transform.LookAt(player);
+            }
+            else Atackdureashen = Mathf.Max(Atackdureashen, 1f);
+
+            if (Atackdureashen < 0 && Vector3.Distance(rb.transform.position, player.position) < 1.5f && !ded)
+            {
+                anim.SetTrigger("Atack");
+                atack(Random.Range(0, Atacks.Length), 1f);
+                Atackdureashen = 3;
+
+            }
+
+
+            movment.target = player.position;
+
+            sper1.SetActive(Atackdureashen < 0);
+            sper2.SetActive(Atackdureashen < 0);
+
+
+            anim.SetBool("Run", movment.agent.speed != 0);
         }
-
-
-        movment.target = player.position;
-         
-        sper1.SetActive(Atackdureashen < 0);
-        sper2.SetActive(Atackdureashen < 0);
-
-
-        anim.SetBool("Run", movment.agent.speed != 0);
-       
     }
 
    
