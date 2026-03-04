@@ -15,8 +15,9 @@ public class BaseEnemyLogic : MonoBehaviour
 
     public bool isDead;
     
-    private void Update()
-    {
+    void Update() {
+
+            
         if (health.curnt <= 0 && !isDead)
         {
 

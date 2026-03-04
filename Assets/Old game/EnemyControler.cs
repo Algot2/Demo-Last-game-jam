@@ -17,54 +17,59 @@ public class EnemyControler : MonoBehaviour
 
    
     void Update() {
-
-        if (player.IsUnityNull())
-            player = GameManager.Instance.PL;
-
-        if (hellf.curnt <= 0 && !ded)
+        if (Vector3.Distance(transform.position, GameManager.player.position) < 50)
         {
-            ded = true;
-            movment.agent.enabled = false;
-            movment.enabled = false;
-            rb.freezeRotation = false;
-        }
+            if (player.IsUnityNull())
+                player = GameManager.Instance.PL;
 
-        if (!ded)
-        {
-            if (Vector3.Distance(rb.transform.position, player.position) > 4 || Atackdureashen < 0)
-                movment.agent.speed = 5;
-
-            if (Vector3.Distance(rb.transform.position, player.position) < 4 && Atackdureashen > 0) {
-                movment.agent.speed = 0;
-
-                if (Vector3.Distance(rb.transform.position, player.position) < 3) { 
-                    movment.agent.speed = -5;
-                }
-            }
-
-
-            if (Vector3.Distance(rb.transform.position, player.position) < 5) {
-                Atackdureashen -= Time.deltaTime;
-                rb.transform.LookAt(player);
-            }
-            else Atackdureashen = Mathf.Max(Atackdureashen, 0.5f);
-
-            if (Atackdureashen < 0 && Vector3.Distance(rb.transform.position, player.position) < 1.5f && !ded)
+            if (hellf.curnt <= 0 && !ded)
             {
-                anim.SetTrigger("Atack");
-                atack(Random.Range(0, Atacks.Length), 1f);
-                Atackdureashen = Random.Range(3f, 6f);
-
+                ded = true;
+                movment.agent.enabled = false;
+                movment.enabled = false;
+                rb.freezeRotation = false;
             }
 
+            if (!ded)
+            {
+                if (Vector3.Distance(rb.transform.position, player.position) > 4 || Atackdureashen < 0)
+                    movment.agent.speed = 5;
 
-            movment.target = player.position;
+                if (Vector3.Distance(rb.transform.position, player.position) < 4 && Atackdureashen > 0)
+                {
+                    movment.agent.speed = 0;
 
-            sper1.SetActive(Atackdureashen < 0);
-            sper2.SetActive(Atackdureashen < 0);
+                    if (Vector3.Distance(rb.transform.position, player.position) < 3)
+                    {
+                        movment.agent.speed = -5;
+                    }
+                }
 
 
-            anim.SetBool("Run", movment.agent.speed != 0);
+                if (Vector3.Distance(rb.transform.position, player.position) < 5)
+                {
+                    Atackdureashen -= Time.deltaTime;
+                    rb.transform.LookAt(player);
+                }
+                else Atackdureashen = Mathf.Max(Atackdureashen, 0.5f);
+
+                if (Atackdureashen < 0 && Vector3.Distance(rb.transform.position, player.position) < 1.5f && !ded)
+                {
+                    anim.SetTrigger("Atack");
+                    atack(Random.Range(0, Atacks.Length), 1f);
+                    Atackdureashen = Random.Range(3f, 6f);
+
+                }
+
+
+                movment.target = player.position;
+
+                sper1.SetActive(Atackdureashen < 0);
+                sper2.SetActive(Atackdureashen < 0);
+
+
+                anim.SetBool("Run", movment.agent.speed != 0);
+            }
         }
     }
 
