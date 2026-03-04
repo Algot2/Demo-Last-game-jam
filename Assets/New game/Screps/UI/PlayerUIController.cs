@@ -1,6 +1,8 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerUIController : MonoBehaviour
 {
@@ -8,18 +10,30 @@ public class PlayerUIController : MonoBehaviour
     
     public GameObject deathUIObj;
 
+    public Image transition;
+
     public void PlayerDied()
     {
         deathUIObj.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        
         Time.timeScale = 0;
     }
     
     public void LoadSave()
     {
-        Time.timeScale = 1;
-        CheckpointController.LoadGame();
+        Color endColor = new(0, 0, 0, 1);
+        transition.DOColor(endColor, 1).OnComplete(() =>
+        {
+            Time.timeScale = 1;
+            CheckpointController.LoadGame();
         
-        deathUIObj.SetActive(false);
+            deathUIObj.SetActive(false);
+
+            Color startColor = new(0, 0, 0, 0);
+            transition.DOColor(startColor, 1);
+        });
     }
 
     public void QuitGame()
@@ -33,13 +47,25 @@ public class PlayerUIController : MonoBehaviour
 
     public void LoadScene(int index)
     {
-        Time.timeScale = 1;
+        Color endColor = new(0, 0, 0, 1);
+        transition.DOColor(endColor, 1).OnComplete(() =>
+        {
+            Time.timeScale = 1;
 
-        SceneManager.LoadScene(index);
+            SceneManager.LoadScene(index);
+        });
     }
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        transition.color = Color.black;
+
+        Color endColor = new(0, 0, 0, 0);
+        transition.DOColor(endColor, 1);
     }
 }
