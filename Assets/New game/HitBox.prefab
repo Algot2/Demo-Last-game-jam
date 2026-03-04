@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934014168227057256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -156,7 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0311b0da775d40b4c8a1982c50acd596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   IsEnemy: 0
+  hitEfect: {fileID: 0}
   Slider: {fileID: 0}
   BodyPart: {fileID: 0}
   ParticleSystem: {fileID: 4952867922352629519}
