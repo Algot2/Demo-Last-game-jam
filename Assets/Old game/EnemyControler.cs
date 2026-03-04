@@ -17,8 +17,7 @@ public class EnemyControler : MonoBehaviour
 
    
     void Update() {
-        if (Vector3.Distance(transform.position, GameManager.player.position) < 50)
-        {
+       
             if (player.IsUnityNull())
                 player = GameManager.Instance.PL;
 
@@ -70,7 +69,6 @@ public class EnemyControler : MonoBehaviour
 
                 anim.SetBool("Run", movment.agent.speed != 0);
             }
-        }
     }
 
    

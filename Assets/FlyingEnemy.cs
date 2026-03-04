@@ -31,8 +31,7 @@ public class FlyingEnemy : MonoBehaviour
 
     void Update() {
 
-        if (Vector3.Distance(transform.position, GameManager.player.position) < 50)
-        {
+        
             Vector3 Pl = GameManager.player.position;
             Vector3 dis = transform.position - Pl;
             moment.target = Pl;
@@ -51,7 +50,6 @@ public class FlyingEnemy : MonoBehaviour
             }
 
             Vishols.localPosition = Vector3.up * (0.5f + Mathf.Sin(Time.time * 2) * 0.5f);
-        }
 
     }
 }
