@@ -27,10 +27,10 @@ public class PlayerUIController : MonoBehaviour
         transition.DOColor(endColor, 1).OnComplete(() =>
         {
             Time.timeScale = 1;
-            CheckpointController.LoadGame();
         
             deathUIObj.SetActive(false);
-
+            CheckpointController.LoadGame();
+            
             Color startColor = new(0, 0, 0, 0);
             transition.DOColor(startColor, 1);
         });
