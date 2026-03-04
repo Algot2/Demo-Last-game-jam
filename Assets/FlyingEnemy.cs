@@ -31,24 +31,27 @@ public class FlyingEnemy : MonoBehaviour
 
     void Update() {
 
+        if (Vector3.Distance(transform.position, GameManager.player.position) < 50)
+        {
+            Vector3 Pl = GameManager.player.position;
+            Vector3 dis = transform.position - Pl;
+            moment.target = Pl;
 
-        Vector3 Pl = GameManager.player.position;
-        Vector3 dis = transform.position - Pl;
-        moment.target = Pl;
-
-        if (dis.magnitude < aldileDistToPlayer + 0.5f) moment.agent.speed = 0;
-        else moment.agent.speed = 3;
+            if (dis.magnitude < aldileDistToPlayer + 0.5f) moment.agent.speed = 0;
+            else moment.agent.speed = 3;
 
 
-        if (dis.magnitude < aldileDistToPlayer + 0.5f) transform.position += dis.normalized * Time.deltaTime * 2;
-        else if (dis.magnitude > aldileDistToPlayer - 0.5f) transform.position += transform.right * rOrl * Time.deltaTime * 2;
+            if (dis.magnitude < aldileDistToPlayer + 0.5f) transform.position += dis.normalized * Time.deltaTime * 2;
+            else if (dis.magnitude > aldileDistToPlayer - 0.5f) transform.position += transform.right * rOrl * Time.deltaTime * 2;
 
-        if (canSpone && dis.magnitude - aldileDistToPlayer < 1) {
-            GameObject obj = Random.Range(0, 5) == 0 ? Bat : Prodektile;
-            spone(obj, obj == Bat);
-        } 
+            if (canSpone && dis.magnitude - aldileDistToPlayer < 1)
+            {
+                GameObject obj = Random.Range(0, 5) == 0 ? Bat : Prodektile;
+                spone(obj, obj == Bat);
+            }
 
-        Vishols.localPosition = Vector3.up * (0.5f + Mathf.Sin(Time.time * 2)*0.5f);
+            Vishols.localPosition = Vector3.up * (0.5f + Mathf.Sin(Time.time * 2) * 0.5f);
+        }
 
     }
 }
