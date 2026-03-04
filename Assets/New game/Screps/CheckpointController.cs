@@ -18,14 +18,15 @@ public class CheckpointController : MonoBehaviour
         if (StartingStetpont)
             SaveGame();
     }
-    public void SaveGame()
-    {
+    public void SaveGame() {
+
         if (GameManager.chekpont != gameObject)
         {
             FigerEfect.Play();
             lite.SetActive(true);
-            StartCoroutine(Timer.RunAfterCondishen(() =>{ FigerEfect.Stop(); lite.SetActive(false); }, () => GameManager.chekpont != gameObject));
             GameManager.chekpont = gameObject;
+            StartCoroutine(Timer.RunAfterCondishen(() => { FigerEfect.Stop(); lite.SetActive(false); }, () => GameManager.chekpont != gameObject));
+
             Debug.Log("Saved Game");
 
             // Saves The Player Position
