@@ -1631,7 +1631,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.25
   m_Height: 2
@@ -7484,7 +7484,7 @@ GameObject:
   - component: {fileID: 6398698079536150007}
   - component: {fileID: 5966069730297437065}
   - component: {fileID: 6816010320019522861}
-  - component: {fileID: 8722332160852505816}
+  - component: {fileID: 7504387827083734862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7565,7 +7565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56639de36ae36844a253b8a82d789b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8722332160852505816}
+  controller: {fileID: 7504387827083734862}
   HellfSlider: {fileID: 6161585229421125090}
   Sped: 2
   dodshSped: 10
@@ -7592,33 +7592,31 @@ MonoBehaviour:
   HellfSlider: {fileID: 6161585229421125090}
   PlMoment: {fileID: 5966069730297437065}
   Animator: {fileID: 8612837536540683718}
---- !u!54 &8722332160852505816
-Rigidbody:
+--- !u!143 &7504387827083734862
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8976411641592926656}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.6
+  m_Radius: 0.5
+  m_SlopeLimit: 70
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8993832015372513259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8088,10 +8086,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
-      propertyPath: Rb
-      value: 
-      objectReference: {fileID: 8722332160852505816}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Slider
       value: 
