@@ -8,52 +8,68 @@ public class CheckpointController : MonoBehaviour
     public string positionString;
 
     public static string staticPositionString;
-    
+
+    public ParticleSystem FigerEfect;
+    public GameObject lite;
+    public bool StartingStetpont;
+
+    void Start()
+    {
+        if (StartingStetpont)
+            SaveGame();
+    }
     public void SaveGame()
     {
-        Debug.Log("Saved Game");
-        
-        // Saves The Player Position
-        BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
-
-        // Sets Players HP To Full
-        GameManager.player.GetComponent<PlMoment>().HellfSlider.curnt =
-            GameManager.player.GetComponent<PlMoment>().HellfSlider.max;
-        
-        BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
-        
-        // Saves All Trigger States
-        List<Trigger> triggers = GameManager.Instance.triggers;
-        for (int i = 0; i < triggers.Count; i++)
+        if (GameManager.chekpont != gameObject)
         {
-            string boolName = $"Trigger: Index = ({i})";
-            BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
-        }
-        
-        // Resets The List So It Can Be Used Again
-        BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
+            FigerEfect.Play();
+            lite.SetActive(true);
+            StartCoroutine(Timer.RunAfterCondishen(() =>{ FigerEfect.Stop(); lite.SetActive(false); }, () => GameManager.chekpont != gameObject));
+            GameManager.chekpont = gameObject;
+            Debug.Log("Saved Game");
 
-        // Saves All Enemies
-        List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
-        
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            string enemyName = enemies[i].gameObject.name;
-            string[] nameSplit = enemyName.Split(" (");
-            enemyName = nameSplit[0];
-            
-            SavedEnemy newSavedEnemy = new()
+            // Saves The Player Position
+            BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
+
+            // Sets Players HP To Full
+            GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
+                GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
+
+            BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
+
+            // Saves All Trigger States
+            List<Trigger> triggers = GameManager.Instance.triggers;
+            for (int i = 0; i < triggers.Count; i++)
+            {
+                string boolName = $"Trigger: Index = ({i})";
+                BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
+            }
+
+            // Resets The List So It Can Be Used Again
+            BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
+
+            // Saves All Enemies
+            List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                string enemyName = enemies[i].gameObject.name;
+                string[] nameSplit = enemyName.Split(" (");
+                enemyName = nameSplit[0];
+
+                SavedEnemy newSavedEnemy = new()
                 { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
-            BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
+                BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
+            }
+
+            // Save Changes
         }
-        
-        // Save Changes
     }
 
     public static void LoadGame()
     {
-        GameManager.player.GetComponent<PlMoment>().HellfSlider.curnt =
-            GameManager.player.GetComponent<PlMoment>().HellfSlider.max;
+        GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
+            GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
         
         // Sets The Player Position To The Saved One
         GameManager.player.position = BoltsSave.GetVector3(staticPositionString);
@@ -71,17 +87,18 @@ public class CheckpointController : MonoBehaviour
 
         foreach (var enemy in GameManager.Instance.enemies)
         {
+            GameManager.Instance.enemies.Remove(enemy);
             Destroy(enemy.gameObject);
         }
         
         // Loads All Enemies
-        List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");
-        foreach (var e in savedEnemyClassNames)
-        {
-            SavedEnemy newEnemy = BoltsSave.LoadClass<SavedEnemy>(e);
-            GameObject newEnemyObj = Instantiate(Resources.Load<GameObject>(newEnemy.obj), newEnemy.pos, Quaternion.identity);
-            newEnemyObj.GetComponent<BaseEnemyLogic>().health.setValu(newEnemy.current);
-        }
+        //List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");
+        //foreach (var e in savedEnemyClassNames)
+        //{
+        //    SavedEnemy newEnemy = BoltsSave.LoadClass<SavedEnemy>(e);
+        //    GameObject newEnemyObj = Instantiate(Resources.Load<GameObject>(newEnemy.obj), newEnemy.pos, Quaternion.identity);
+        //    newEnemyObj.GetComponent<BaseEnemyLogic>().health.setValu(newEnemy.current);
+        //}
 
         // Load Changes
     }

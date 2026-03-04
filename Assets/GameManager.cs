@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public List<BaseEnemyLogic> enemies;
 
     public List<Trigger> triggers;
-    
+    public static GameObject chekpont;
     void Awake()
     {
         Instance = this;
