@@ -63,7 +63,7 @@ public class NewPlayerInput : MonoBehaviour
         if (State == state.idel)
             if (canDo[1] && Input.GetKeyDown(KeyCode.LeftShift)) {
                 canDo[1] = false;
-                plMoment.Dodsh(plMoment.body.transform.forward);
+                plMoment.Dodsh();
                 StartCoroutine(Timer.RunAfterTimer(1, () => canDo[1] = true));
                 animator.SetTrigger("Jump");
             }
