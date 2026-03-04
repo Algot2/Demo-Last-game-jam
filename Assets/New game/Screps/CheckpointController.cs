@@ -9,8 +9,7 @@ public class CheckpointController : MonoBehaviour
 
     public static string staticPositionString;
 
-    public ParticleSystem FigerEfect;
-    public GameObject lite;
+    public GameObject Efects;
     public bool StartingStetpont;
 
     void Start()
@@ -22,11 +21,10 @@ public class CheckpointController : MonoBehaviour
 
         if (GameManager.chekpont != gameObject)
         {
-            FigerEfect.Play();
-            lite.SetActive(true);
+            Efects.SetActive(true);
             GameManager.chekpont = gameObject;
-            StartCoroutine(Timer.RunAfterCondishen(() => { FigerEfect.Stop(); lite.SetActive(false); }, () => GameManager.chekpont != gameObject));
-
+            StartCoroutine(Timer.RunAfterCondishen(() => { Efects.SetActive(false); }, () => GameManager.chekpont != gameObject));
+            
             Debug.Log("Saved Game");
 
             // Saves The Player Position

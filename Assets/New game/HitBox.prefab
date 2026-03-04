@@ -162,7 +162,6 @@ MonoBehaviour:
   Slider: {fileID: 0}
   BodyPart: {fileID: 0}
   ParticleSystem: {fileID: 4952867922352629519}
-  Rb: {fileID: 0}
   efeckt: 1
 --- !u!1 &3672402220309500584
 GameObject:
