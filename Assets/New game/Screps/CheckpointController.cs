@@ -44,22 +44,22 @@ public class CheckpointController : MonoBehaviour
                 BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
             }
 
-            // Resets The List So It Can Be Used Again
-            BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
-
-            // Saves All Enemies
-            List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
-
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                string enemyName = enemies[i].gameObject.name;
-                string[] nameSplit = enemyName.Split(" (");
-                enemyName = nameSplit[0];
-
-                SavedEnemy newSavedEnemy = new()
-                { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
-                BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
-            }
+            // // Resets The List So It Can Be Used Again
+            // BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
+            //
+            // // Saves All Enemies
+            // List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
+            //
+            // for (int i = 0; i < enemies.Count; i++)
+            // {
+            //     string enemyName = enemies[i].gameObject.name;
+            //     string[] nameSplit = enemyName.Split(" (");
+            //     enemyName = nameSplit[0];
+            //
+            //     SavedEnemy newSavedEnemy = new()
+            //     { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
+            //     BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
+            // }
 
             // Save Changes
         }
@@ -84,11 +84,12 @@ public class CheckpointController : MonoBehaviour
             }
         }
 
-        foreach (var enemy in GameManager.Instance.enemies)
+        for (int i = 0; i < GameManager.Instance.enemies.Count; i++)
         {
-            GameManager.Instance.enemies.Remove(enemy);
-            Destroy(enemy.gameObject);
+            Destroy(GameManager.Instance.enemies[i].gameObject);
         }
+        
+        GameManager.Instance.enemies.Clear();
         
         // Loads All Enemies
         //List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");

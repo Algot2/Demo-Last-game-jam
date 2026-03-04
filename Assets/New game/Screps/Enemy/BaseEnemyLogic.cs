@@ -57,8 +57,7 @@ public class BaseEnemyLogic : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            int index = GameManager.Instance.enemies.FindIndex(x => x = this);
-            if(index == -1)
+            if(!GameManager.Instance.enemies.Contains(this))
                 GameManager.Instance.enemies.Add(this);
         }
     }

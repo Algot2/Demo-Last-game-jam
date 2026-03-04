@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -37,5 +38,11 @@ public class HellfSlider : MonoBehaviour
         transform.LookAt(Camera.main.transform);
         transform.forward = -transform.forward;
         valu.value = Mathf.Lerp(valu.value, curnt, Time.deltaTime * 10);
+    }
+
+    [Button]
+    void KillPlayer()
+    {
+        setValu(0);
     }
 }
