@@ -1,6 +1,8 @@
-using System.Collections.Generic;
+using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyControler : MonoBehaviour
 {
@@ -70,12 +72,8 @@ public class EnemyControler : MonoBehaviour
                 anim.SetBool("Run", movment.agent.speed != 0);
             }
     }
-
-   
-
+    
     public void atack(int atack, float atackLegf) {
        StartCoroutine(Timer.RunAfterTimer(0.5f,() => StartCoroutine(Timer.StartTimer(atackLegf, (f) => Atacks[atack].SetActive(f)))));
     }
-
-   
 }
