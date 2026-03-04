@@ -26,7 +26,9 @@ public class NewPlayerInput : MonoBehaviour
         Instance = this;
     }
     void Update() {
-        Cursor.lockState = CursorLockMode.Locked;
+        if(hellfSlider.curnt > 0)
+            Cursor.lockState = CursorLockMode.Locked;
+        
         cam.setCamraDireksen(-new Vector2(Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety, Input.mouseScrollDelta.y);
 
         if (State == state.idel) 

@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,12 +10,14 @@ public class MainMenuController : MonoBehaviour
     public TMP_InputField sText;
     public Slider sSlider;
 
+    public Image transition;
+    
     public int savedSensitivity;
     
     public void LoadScene(int index)
     {
-        // Play Transition Before
-        SceneManager.LoadScene(index);
+        Color endColor = Color.black;
+        transition.DOColor(endColor, 1).OnComplete(() => SceneManager.LoadScene(index));
     }
 
     public void LoadObj(GameObject obj)
@@ -67,6 +70,11 @@ public class MainMenuController : MonoBehaviour
 
     private void Start()
     {
+        transition.color = Color.black;
+
+        Color endColor = new(0, 0, 0, 0);
+        transition.DOColor(endColor, 1);
+        
         int getSensitivity = BoltsSave.GetInt("Sensitivity");
 
         if (getSensitivity == -1)
