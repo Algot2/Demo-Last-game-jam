@@ -71,7 +71,9 @@ public class NewPlayerInput : MonoBehaviour
 
 
         if (State == state.move || State == state.idel) {
-            plMoment.Move(new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
+            if (new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")).magnitude > 0) {
+                plMoment.Move(new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
+            }
         }
 
 

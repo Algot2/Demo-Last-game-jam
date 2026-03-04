@@ -37,6 +37,8 @@ public class PlMoment : MonoBehaviour
         
         animator.SetBool("Run", input.magnitude != 0);
         Dir = (rotaashen * input).normalized;
+
+        controller.Move(moveDir);
     }
 
     public void Dodsh()
@@ -62,7 +64,7 @@ public class PlMoment : MonoBehaviour
     {
         body.forward = Vector3.Lerp(body.forward, Dir, Time.deltaTime * 15);
 
-        controller.Move(moveDir);
+       
     }
 
 }
