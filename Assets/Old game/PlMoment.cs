@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlMoment : MonoBehaviour
 {
-    public Rigidbody rb;
+    public CharacterController controller;
     public HellfSlider HellfSlider;
     public float Sped;
     public float dodshSped;
@@ -11,11 +11,16 @@ public class PlMoment : MonoBehaviour
     public Transform body;
     public Animator animator;
     Vector3 Dir = new();
+    Vector3 moveDir;
+    
     public void Move(Vector3 input) {
 
         Vector3 dir = -head.forward;
         Quaternion rotaashen = Quaternion.FromToRotation(Vector3.forward, dir);
-        transform.position += (rotaashen * input).normalized * Sped * Time.deltaTime;
+
+        moveDir = (rotaashen * input).normalized * Sped * Time.deltaTime;
+        moveDir.y = -2;
+        
         animator.SetBool("Run", input.magnitude != 0);
         Dir = (rotaashen * input).normalized;
     }
@@ -38,6 +43,8 @@ public class PlMoment : MonoBehaviour
     void Update()
     {
         body.forward = Vector3.Lerp(body.forward, Dir, Time.deltaTime * 15);
+
+        controller.Move(moveDir);
     }
 
 }
