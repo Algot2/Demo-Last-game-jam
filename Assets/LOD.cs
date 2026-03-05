@@ -10,7 +10,7 @@ public class LOD : MonoBehaviour
     public Vector3 Max;
 
     void Start() {
-       if( randomiseSise )transform.lossyScal  
+        if (randomiseSise) ;
     }
     void Update() {
         float dis = Vector3.Distance(transform.position, Camera.main.transform.position);
