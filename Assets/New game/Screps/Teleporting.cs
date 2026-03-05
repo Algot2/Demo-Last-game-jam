@@ -2,16 +2,11 @@ using UnityEngine;
 
 public class Teleporting : MonoBehaviour
 {
-    public Transform player, destination;
-    public GameObject playerg;
+    public Transform destination;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            GameManager.player.position = destination.position;
-            //playerg.SetActive(false);
-            //playerg.SetActive(true);
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            CheckpointController.TeleportPlayer(destination.position);
         }
     }
 }
