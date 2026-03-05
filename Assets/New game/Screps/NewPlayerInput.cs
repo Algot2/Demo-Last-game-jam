@@ -48,7 +48,7 @@ public class NewPlayerInput : MonoBehaviour
             else { 
                 if (canDo[3] && Input.GetMouseButtonUp(1))
                     hellfSlider.Inmune = false;
-                plMoment.Sped = 3f; 
+                plMoment.Sped = 30f; 
             }
 
 

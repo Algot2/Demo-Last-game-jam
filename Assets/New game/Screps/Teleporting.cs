@@ -9,9 +9,9 @@ public class Teleporting : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerg.SetActive(false);
-            player.position = destination.position;
-            playerg.SetActive(true);
+            GameManager.player.position = destination.position;
+            //playerg.SetActive(false);
+            //playerg.SetActive(true);
         }
     }
 }
