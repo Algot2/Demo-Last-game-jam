@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -73,10 +74,9 @@ public class BoltsBoxCollider : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach (BoxCollider bc in gameObject.GetComponents<BoxCollider>())
-        {
-            if(bc.hideFlags == HideFlags.HideInInspector)
-                DestroyImmediate(bc);
-        }
+       if(boxCollider == null) return;
+       if(!gameObject.scene.isLoaded) return;
+       
+       DestroyImmediate(boxCollider);
     }
 }
