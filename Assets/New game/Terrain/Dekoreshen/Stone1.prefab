@@ -53,6 +53,7 @@ MonoBehaviour:
   - 117.38
   - 500
   Lev: 0
+  randomise: 1
 --- !u!1 &3957438936926177459
 GameObject:
   m_ObjectHideFlags: 0
