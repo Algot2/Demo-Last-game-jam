@@ -4,7 +4,6 @@ namespace NaughtyAttributes.Test
 {
     public class AnimatorParamTest : MonoBehaviour
     {
-        public Animator animator0;
 
         [AnimatorParam("animator0")]
         public int hash0;
