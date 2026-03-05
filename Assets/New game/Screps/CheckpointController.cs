@@ -71,7 +71,9 @@ public class CheckpointController : MonoBehaviour
             GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
         
         // Sets The Player Position To The Saved One
-        GameManager.player.position = BoltsSave.GetVector3(staticPositionString);
+        Vector3 savedPos = BoltsSave.GetVector3(staticPositionString);
+        GameManager.player.position = savedPos;
+        DragonAI.Instens.transform.position = savedPos;
         
         // Loads All Trigger States
         List<Trigger> triggers = GameManager.Instance.triggers;
@@ -101,6 +103,15 @@ public class CheckpointController : MonoBehaviour
         //}
 
         // Load Changes
+    }
+
+    public static void TeleportPlayer(Vector3 pos)
+    {
+        DragonAI.Instens.transform.position = pos;
+        
+        GameManager.player.GetComponent<CharacterController>().enabled = false;
+        GameManager.player.position = pos;
+        GameManager.player.GetComponent<CharacterController>().enabled = true;
     }
 
     private void Awake()

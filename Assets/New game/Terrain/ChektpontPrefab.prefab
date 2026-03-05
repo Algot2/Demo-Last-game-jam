@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3019f40a95b8fef469a551ccc06a7da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerOnce: 0
+  triggerOnce: 1
   hasTriggered: 0
   tagToDetect: Player
   onEnter:

@@ -22,8 +22,8 @@ public class IKController : MonoBehaviour
 
     void SolvFootIK(Transform footTarget)
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z) 
-            + Vector3.up * (footTarget.position.y - transform.position.y - 1.2f);
+        // transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z) 
+        //     + Vector3.up * (footTarget.position.y - transform.position.y - 1.2f);
         Ray ray = new Ray(footTarget.position + Vector3.up * 0.5f, Vector3.down);
 
         if (Physics.Raycast(ray, out var hit, raycastDistance, groundLayer))
