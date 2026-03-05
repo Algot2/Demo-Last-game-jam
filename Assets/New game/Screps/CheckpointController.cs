@@ -19,50 +19,49 @@ public class CheckpointController : MonoBehaviour
     }
     public void SaveGame() {
 
-        if (GameManager.chekpont != gameObject)
-        {
-            Efects.SetActive(true);
-            GameManager.chekpont = gameObject;
-            StartCoroutine(Timer.RunAfterCondishen(() => { Efects.SetActive(false); }, () => GameManager.chekpont != gameObject));
+        Efects.SetActive(true);
+        GameManager.chekpont = gameObject;
+        StartCoroutine(Timer.RunAfterCondishen(() => { Efects.SetActive(false); }, () => GameManager.chekpont != gameObject));
             
-            Debug.Log("Saved Game");
+        Debug.Log("Saved Game");
 
-            // Saves The Player Position
-            BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
+        // Saves The Player Position
+        BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
 
-            // Sets Players HP To Full
-            GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
-                GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
+        // Sets Players HP To Full
+        GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
+            GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
 
-            BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
+        BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
 
-            // Saves All Trigger States
-            List<Trigger> triggers = GameManager.Instance.triggers;
-            for (int i = 0; i < triggers.Count; i++)
-            {
-                string boolName = $"Trigger: Index = ({i})";
-                BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
-            }
-
-            // // Resets The List So It Can Be Used Again
-            // BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
-            //
-            // // Saves All Enemies
-            // List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
-            //
-            // for (int i = 0; i < enemies.Count; i++)
-            // {
-            //     string enemyName = enemies[i].gameObject.name;
-            //     string[] nameSplit = enemyName.Split(" (");
-            //     enemyName = nameSplit[0];
-            //
-            //     SavedEnemy newSavedEnemy = new()
-            //     { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
-            //     BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
-            // }
-
-            // Save Changes
+        // Saves All Trigger States
+        List<Trigger> triggers = GameManager.Instance.triggers;
+        for (int i = 0; i < triggers.Count; i++)
+        {
+            string boolName = $"Trigger: Index = ({i})";
+            BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
         }
+        
+        // Old Stuff
+        /*
+        // Resets The List So It Can Be Used Again
+        BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
+        
+        // Saves All Enemies
+        List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
+        
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            string enemyName = enemies[i].gameObject.name;
+            string[] nameSplit = enemyName.Split(" (");
+            enemyName = nameSplit[0];
+        
+            SavedEnemy newSavedEnemy = new()
+            { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
+            BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
+        }*/
+
+        // Save Changes
     }
 
     public static void LoadGame()
