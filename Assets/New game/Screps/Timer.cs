@@ -27,4 +27,13 @@ public class Timer
         }
         
     }
+    
+    public static IEnumerator StartFrameRepitTill(Action F, Func<bool> T, Action AF) {
+        while (T()) {
+            yield return new WaitForEndOfFrame();
+            F();
+        }
+
+        AF();
+    }
 }
