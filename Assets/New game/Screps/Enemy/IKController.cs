@@ -12,6 +12,7 @@ public class IKController : MonoBehaviour
     public float raycastDistance = 1.5f;
     public float footOffset = 0.1f;
     public float smoothing = 10f;
+    public Vector3 ofset;
 
     private void Update()
     {
@@ -21,6 +22,8 @@ public class IKController : MonoBehaviour
 
     void SolvFootIK(Transform footTarget)
     {
+        transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z) 
+            + Vector3.up * (footTarget.position.y - transform.position.y - 1.2f);
         Ray ray = new Ray(footTarget.position + Vector3.up * 0.5f, Vector3.down);
 
         if (Physics.Raycast(ray, out var hit, raycastDistance, groundLayer))
@@ -30,6 +33,8 @@ public class IKController : MonoBehaviour
 
             Quaternion targetRot = Quaternion.LookRotation(
                 Vector3.ProjectOnPlane(transform.forward, hit.normal), hit.normal);
+
+            targetRot *= Quaternion.Euler(ofset);
             footTarget.rotation = Quaternion.Slerp(footTarget.rotation, targetRot, Time.deltaTime * smoothing);
         }
     }
