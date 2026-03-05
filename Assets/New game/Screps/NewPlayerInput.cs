@@ -11,6 +11,8 @@ public class NewPlayerInput : MonoBehaviour
     public float sensetivety;
     public bool[] canDo;
 
+    public bool isPaused;
+
     public static float globalSensitivity = 50;
 
     public enum state {
@@ -22,13 +24,14 @@ public class NewPlayerInput : MonoBehaviour
 
     public state State;
 
-    private void Start() {
+    private void Start() 
+    {
         Instance = this;
-    }
-    void Update() {
-        if(hellfSlider.curnt > 0)
-            Cursor.lockState = CursorLockMode.Locked;
         
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    void Update() 
+    {
         cam.setCamraDireksen(-new Vector2(Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety, Input.mouseScrollDelta.y);
 
         if (State == state.idel) 
@@ -88,6 +91,16 @@ public class NewPlayerInput : MonoBehaviour
                 animator.SetTrigger("Jump");
             }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+            
+            if(isPaused)
+                PlayerUIController.Instance.Pause();
+            else
+                PlayerUIController.Instance.ResumeGame();
+        }
+        
         if (globalSensitivity != sensetivety)
         {
             sensetivety = globalSensitivity;
