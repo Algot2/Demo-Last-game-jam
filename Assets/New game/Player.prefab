@@ -11209,9 +11209,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7504387827083734862}
   HellfSlider: {fileID: 6161585229421125090}
-  Sped: 2
-  dodshSped: 5
-  dodshMove: 0.5
+  Sped: 5
+  parrySpeed: 2.5
+  currentSpeed: 0
+  dodshSped: 15
+  dodshMove: 4
   gravity: 10
   isDodsh: 0
   canMove: 1

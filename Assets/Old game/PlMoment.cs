@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlMoment : MonoBehaviour
@@ -5,6 +6,10 @@ public class PlMoment : MonoBehaviour
     public CharacterController controller;
     public HellfSlider HellfSlider;
     public float Sped;
+    public float parrySpeed = 1.5f;
+
+    public float currentSpeed;
+    
     public float dodshSped;
     public float dodshMove;
 
@@ -29,7 +34,7 @@ public class PlMoment : MonoBehaviour
 
         if (!isDodsh && canMove)
         {
-            moveDir = (rotaashen * input).normalized * Sped * Time.deltaTime;
+            moveDir = (rotaashen * input).normalized * currentSpeed * Time.deltaTime;
             
             Vector3 setLastMoveDir = moveDir;
             setLastMoveDir.y = 0;
@@ -77,4 +82,8 @@ public class PlMoment : MonoBehaviour
         controller.Move(moveDir);
     }
 
+    private void Awake()
+    {
+        currentSpeed = Sped;
+    }
 }
