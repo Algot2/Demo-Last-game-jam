@@ -11,7 +11,7 @@ public class BoltsSavingWindow : EditorWindow
 
     string jsonFilePath;
     SaveData sd;
-    const string ConfigPath = "Assets/Resources/BoltsSave/SaveSettings.savecfg";
+    const string ConfigPath = "Assets/Resources/SaveSettings.savecfg";
 
     [MenuItem("Tools/Bolts Tools/Save Settings")]
     static void ShowWindow()
