@@ -120,6 +120,7 @@ MonoBehaviour:
   - 15
   - 30
   Lev: 0
+  randomise: 0
 --- !u!1 &2021576363919823571
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8426171788938255146
 Transform:
   m_ObjectHideFlags: 0
@@ -4065,7 +4066,7 @@ ParticleSystem:
   LightsModule:
     enabled: 0
     ratio: 0
-    light: {fileID: 0}
+    light: {fileID: 4922525870807176097}
     randomDistribution: 1
     color: 1
     range: 1
@@ -4073,7 +4074,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 17.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8898,7 +8899,7 @@ ParticleSystem:
   LightsModule:
     enabled: 0
     ratio: 0
-    light: {fileID: 0}
+    light: {fileID: 4922525870807176097}
     randomDistribution: 1
     color: 1
     range: 1
@@ -8906,7 +8907,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 17.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -13731,7 +13732,7 @@ ParticleSystem:
   LightsModule:
     enabled: 0
     ratio: 0
-    light: {fileID: 0}
+    light: {fileID: 4922525870807176097}
     randomDistribution: 1
     color: 1
     range: 1
@@ -13739,7 +13740,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 17.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
