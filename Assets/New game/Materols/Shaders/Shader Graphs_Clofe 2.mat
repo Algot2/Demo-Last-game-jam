@@ -57,6 +57,7 @@ Material:
     - _Scale: 17.77
     - _Scale2: 3
     - _TimeSped: 0.42
+    - _glow: 3
     m_Colors:
     - _A: {r: 1, g: 0.1617376, b: 0, a: 1}
     - _B: {r: 1, g: 0.49363214, b: 0, a: 1}
