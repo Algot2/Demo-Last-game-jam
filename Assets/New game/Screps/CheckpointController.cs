@@ -32,6 +32,8 @@ public class CheckpointController : MonoBehaviour
         GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
             GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
 
+        GetComponent<Trigger>().hasTriggered = true;
+        
         BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
 
         // Saves All Trigger States
@@ -79,10 +81,7 @@ public class CheckpointController : MonoBehaviour
         List<SaveBool> allBools = BoltsSave.GetAllBools();
         for (int i = 0; i < triggers.Count; i++)
         {
-            for (int x = 0; x < allBools.Count && allBools[x].name == $"Trigger: Index = ({i})"; x++)
-            {
-                triggers[i].hasTriggered = allBools[x].value;
-            }
+            triggers[i].hasTriggered = allBools[i].value;
         }
 
         for (int i = 0; i < GameManager.Instance.enemies.Count; i++)

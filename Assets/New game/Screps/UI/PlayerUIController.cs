@@ -49,6 +49,8 @@ public class PlayerUIController : MonoBehaviour
         Color endColor = new(0, 0, 0, 1);
         transition.DOColor(endColor, 1).OnComplete(() =>
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            
             Time.timeScale = 1;
         
             deathUIObj.SetActive(false);

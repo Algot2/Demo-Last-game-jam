@@ -58,8 +58,7 @@ public class Trigger : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            int index = GameManager.Instance.triggers.FindIndex(x => x == this);
-            if(index == -1)
+            if(!GameManager.Instance.triggers.Contains(this))
                 GameManager.Instance.triggers.Add(this);
         }
     }

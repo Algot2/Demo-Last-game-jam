@@ -37,9 +37,14 @@ public class NewPlayerInput : MonoBehaviour
         if (State == state.idel) 
             if (canDo[0] && Input.GetMouseButtonDown(0)) {
                 canDo[0] = false;
+                
+                plMoment.canMove = false;
+                
                 State = state.atack;
                 StartCoroutine(Timer.RunAfterTimer(0.5f, () => State = state.idel));
-                StartCoroutine(Timer.RunAfterTimer(1.5f, () => canDo[0] = true));
+                StartCoroutine(Timer.RunAfterTimer(1.5f, () => { canDo[0] = true;
+                    plMoment.canMove = true;
+                }));
                 plAtacks.PreformAtack(0, 2); 
             }
 
@@ -48,9 +53,8 @@ public class NewPlayerInput : MonoBehaviour
                 hellfSlider.Inmune = true;
                 plMoment.Sped = 1.5f;
             }
-            else { 
-                if (canDo[3] && Input.GetMouseButtonUp(1))
-                    hellfSlider.Inmune = false;
+            else {
+                hellfSlider.Inmune = false;
                 plMoment.Sped = 3f; 
             }
 
@@ -73,10 +77,15 @@ public class NewPlayerInput : MonoBehaviour
 
 
 
-        if (State == state.move || State == state.idel) {
-            if (new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")).magnitude > 0) {
+        if (State == state.move || State == state.idel)
+        {
+            if (new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")).magnitude > 0)
+            {
+                plMoment.canMove = true;
                 plMoment.Move(new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
             }
+            else
+                plMoment.canMove = false;
         }
 
 
@@ -91,7 +100,7 @@ public class NewPlayerInput : MonoBehaviour
                 animator.SetTrigger("Jump");
             }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && hellfSlider.curnt > 0)
         {
             isPaused = !isPaused;
             
