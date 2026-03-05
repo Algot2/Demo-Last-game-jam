@@ -831,6 +831,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChektpontPrefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1256744627051955868, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: randomise
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1753846454181774422, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: m_LocalPosition.x
       value: 592.10004
@@ -873,7 +877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: StartingStetpont
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1719,9 +1723,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChektpontPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1256744627051955868, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: randomise
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753846454181774422, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 655.82855
+      value: 655.5985
       objectReference: {fileID: 0}
     - target: {fileID: 1753846454181774422, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1729,7 +1737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1753846454181774422, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 185.0665
+      value: 187.2765
       objectReference: {fileID: 0}
     - target: {fileID: 1753846454181774422, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1760,7 +1768,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: StartingStetpont
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

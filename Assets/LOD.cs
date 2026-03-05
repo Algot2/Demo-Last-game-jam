@@ -5,12 +5,19 @@ public class LOD : MonoBehaviour
     public GameObject[] LODLevels;
     public float[] Dist;
     public int Lev = 0;
-    public bool randomiseSise;
-    public Vector3 min;
-    public Vector3 Max;
+    public bool randomise;
 
     void Start() {
-        if (randomiseSise) ;
+        if (randomise) {
+            Vector3 S = transform.localScale;
+            transform.localScale = new Vector3 { 
+                x = S.x * Random.Range(0.9f,1.1f),
+                y = S.y * Random.Range(0.9f,1.1f),
+                z = S.z * Random.Range(0.9f,1.1f)
+            } * Random.Range(0.8f, 1.2f);
+
+            transform.rotation *= Quaternion.Euler(0, Random.Range(-180, 180), 0);
+        }
     }
     void Update() {
         float dis = Vector3.Distance(transform.position, Camera.main.transform.position);
