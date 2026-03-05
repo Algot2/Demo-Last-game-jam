@@ -51,11 +51,11 @@ public class NewPlayerInput : MonoBehaviour
         if (State == state.idel)
             if (canDo[3] && Input.GetMouseButton(1)) {
                 hellfSlider.Inmune = true;
-                plMoment.Sped = 1.5f;
+                plMoment.currentSpeed = 1.5f;
             }
             else {
                 hellfSlider.Inmune = false;
-                plMoment.Sped = 3f; 
+                plMoment.currentSpeed = plMoment.Sped; 
             }
 
 
