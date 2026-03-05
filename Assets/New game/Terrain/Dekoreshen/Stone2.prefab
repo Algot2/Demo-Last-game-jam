@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.10476208, y: 1.0958457, z: -0.66980886}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7151376421737725446}
@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 5188333519460089535}
   - {fileID: 5713345950861653721}
   Dist:
-  - 20
+  - 117.38
   - 500
   Lev: 0
 --- !u!1 &5188333519460089535
