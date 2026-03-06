@@ -1,14 +1,24 @@
 using System;
 using System.Collections.Generic;
+using UltEvents;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SpawnEnemiesTrigger : Trigger
 {
+    [BoltsComment("When All Enemies Are Dead")]
+    public UltEvent afterEnemiesDead;
+    
     public EnemiesSpawnSettings spawnSettings;
+
+    public int enemiesAlive = -1;
+
+    public bool hasSpawnedEnemies;
     
     public void SpawnEnemies()
     {
+        hasSpawnedEnemies = true;
+        
         Vector3 center = transform.position + transform.TransformDirection(spawnSettings.offset);
 
         float minX = center.x - (spawnSettings.bounds.x / 2);
@@ -26,7 +36,12 @@ public class SpawnEnemiesTrigger : Trigger
                 if (Physics.Raycast(spawnPos, Vector3.down, out var hit))
                     spawnPos.y = hit.point.y;
 
-                Instantiate(spawnSettings.enemiesToSpawn[i].enemy, spawnPos, Quaternion.identity);
+                BaseEnemyLogic newEnemy =
+                    Instantiate(spawnSettings.enemiesToSpawn[i].enemy, spawnPos, Quaternion.identity)
+                        .GetComponent<BaseEnemyLogic>();
+                newEnemy.owner = this;
+
+                enemiesAlive++;
             }
         }
     }

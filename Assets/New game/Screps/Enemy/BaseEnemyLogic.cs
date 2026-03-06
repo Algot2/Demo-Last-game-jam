@@ -13,6 +13,8 @@ public class BaseEnemyLogic : MonoBehaviour
     
     public List<EnemyMaterialSettings> deathSettings;
 
+    public SpawnEnemiesTrigger owner;
+
     public bool isDead;
     
     void Update() {
@@ -20,7 +22,14 @@ public class BaseEnemyLogic : MonoBehaviour
             
         if (health.curnt <= 0 && !isDead)
         {
-
+            if (owner != null)
+            {
+                owner.enemiesAlive--;
+                
+                if(owner.enemiesAlive == 0)
+                    owner.afterEnemiesDead.Invoke();
+            }
+            
             StartCoroutine(Timer.RunAfterTimer(timeTillDeath + 0.1f, () =>
             {
                 GameManager.Instance.enemies.Remove(this);

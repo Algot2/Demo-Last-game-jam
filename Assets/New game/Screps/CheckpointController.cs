@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheckpointController : MonoBehaviour
 {
+    public SpawnEnemiesTrigger spawner;
+    
     [BoltsSave(SavedVariableType.Vector3)]
     public string positionString;
 
@@ -17,53 +19,64 @@ public class CheckpointController : MonoBehaviour
         if (StartingStetpont)
             SaveGame();
     }
-    public void SaveGame() {
-
-        Efects.SetActive(true);
-        GameManager.chekpont = gameObject;
-        StartCoroutine(Timer.RunAfterCondishen(() => { Efects.SetActive(false); }, () => GameManager.chekpont != gameObject));
-            
-        Debug.Log("Saved Game");
-
-        // Saves The Player Position
-        BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
-
-        // Sets Players HP To Full
-        GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
-            GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
-
-        GetComponent<Trigger>().hasTriggered = true;
+    public void SaveGame()
+    {
+        bool runSave = true;
         
-        BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
-
-        // Saves All Trigger States
-        List<Trigger> triggers = GameManager.Instance.triggers;
-        for (int i = 0; i < triggers.Count; i++)
+        if(spawner != null)
         {
-            string boolName = $"Trigger: Index = ({i})";
-            BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
+            runSave = spawner.hasTriggered && spawner.enemiesAlive == 0;
         }
-        
-        // Old Stuff
-        /*
-        // Resets The List So It Can Be Used Again
-        BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
-        
-        // Saves All Enemies
-        List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
-        
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            string enemyName = enemies[i].gameObject.name;
-            string[] nameSplit = enemyName.Split(" (");
-            enemyName = nameSplit[0];
-        
-            SavedEnemy newSavedEnemy = new()
-            { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
-            BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
-        }*/
 
-        // Save Changes
+        if (runSave)
+        {
+            Efects.SetActive(true);
+            GameManager.chekpont = gameObject;
+            StartCoroutine(Timer.RunAfterCondishen(() => { Efects.SetActive(false); },
+                () => GameManager.chekpont != gameObject));
+
+            Debug.Log("Saved Game");
+
+            // Saves The Player Position
+            BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
+
+            // Sets Players HP To Full
+            GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
+                GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
+
+            GetComponent<Trigger>().hasTriggered = true;
+
+            BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
+
+            // Saves All Trigger States
+            List<Trigger> triggers = GameManager.Instance.triggers;
+            for (int i = 0; i < triggers.Count; i++)
+            {
+                string boolName = $"Trigger: Index = ({i})";
+                BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
+            }
+
+            // Old Stuff
+            /*
+            // Resets The List So It Can Be Used Again
+            BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
+
+            // Saves All Enemies
+            List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                string enemyName = enemies[i].gameObject.name;
+                string[] nameSplit = enemyName.Split(" (");
+                enemyName = nameSplit[0];
+
+                SavedEnemy newSavedEnemy = new()
+                { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
+                BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
+            }*/
+
+            // Save Changes
+        }
     }
 
     public static void LoadGame()
@@ -82,6 +95,17 @@ public class CheckpointController : MonoBehaviour
         for (int i = 0; i < triggers.Count; i++)
         {
             triggers[i].hasTriggered = allBools[i].value;
+
+            if (triggers[i] is SpawnEnemiesTrigger)
+            {
+                SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
+                if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
+                {
+                    spawner.enemiesAlive = 0;
+                    spawner.hasSpawnedEnemies = false;
+                    spawner.hasTriggered = false;
+                }
+            }
         }
 
         for (int i = 0; i < GameManager.Instance.enemies.Count; i++)
