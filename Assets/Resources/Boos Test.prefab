@@ -1173,7 +1173,11 @@ MonoBehaviour:
   rb: {fileID: 692375655346486106}
   timeTillDeath: 1
   deathSettings: []
+  owner: {fileID: 0}
+  mat: {fileID: 0}
+  AI: {fileID: 0}
   isDead: 0
+  curent: 0
 --- !u!95 &6162740128016050036
 Animator:
   serializedVersion: 7
@@ -1345,7 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noNokBack: 0
   IsEnemy: 1
-  dam: 0
+  dam: 100
 --- !u!65 &41992982840783560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1365,7 +1369,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8442810683513901094
 GameObject:

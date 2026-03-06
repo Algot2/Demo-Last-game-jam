@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FlyingEnemy : MonoBehaviour
 {
+    public int prodektileSponeCont = 2;
     public GameObject Bat;
     public GameObject Prodektile;
     public EnemyMovment moment;
@@ -11,6 +12,7 @@ public class FlyingEnemy : MonoBehaviour
     public float aldileDistToPlayer;
     public bool canSpone;
     public int rOrl = 1;
+    public float higet = 0;
     void spone(GameObject obj, bool enemy) {
         GameObject a = Instantiate(obj, transform.position - transform.forward - transform.right, transform.rotation);
         GameObject b = Instantiate(obj, transform.position - transform.forward + transform.right, transform.rotation);
@@ -49,7 +51,7 @@ public class FlyingEnemy : MonoBehaviour
                 spone(obj, obj == Bat);
             }
 
-            Vishols.localPosition = Vector3.up * (0.5f + Mathf.Sin(Time.time * 2) * 0.5f);
+            Vishols.localPosition = Vector3.up * (higet + 0.5f + Mathf.Sin(Time.time * 2) * 0.5f);
 
     }
 }
