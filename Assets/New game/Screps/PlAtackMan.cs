@@ -5,7 +5,8 @@ using UnityEngine;
 [Serializable]
 public class atack {
     public GameObject HurtBox;
-    public float time;
+    public float timeToAttack;
+    public float attackTime;
     public int AtackAnimasen;
 }
 public class PlAtackMan : MonoBehaviour
@@ -16,8 +17,8 @@ public class PlAtackMan : MonoBehaviour
     public PlMoment PlMoment;
     public Animator Animator;
     public void PreformAtack(int i, float time) {
-            StartCoroutine(Timer.RunAfterTimer(0.5f, 
-                () => StartCoroutine(Timer.StartTimer(atacks[i].time, (f) => atacks[i].HurtBox.SetActive(f)))));
+            StartCoroutine(Timer.RunAfterTimer(atacks[i].timeToAttack, 
+                () => StartCoroutine(Timer.StartTimer(atacks[i].attackTime, (f) => atacks[i].HurtBox.SetActive(f)))));
 
            
             StartCoroutine(Timer.RunAfterTimer(0.5f, 

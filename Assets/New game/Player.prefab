@@ -11491,7 +11491,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atacks:
   - HurtBox: {fileID: 4062976292814226307}
-    time: 0.5
+    timeToAttack: 1.25
+    attackTime: 0.5
     AtackAnimasen: 1
   HellfSlider: {fileID: 6161585229421125090}
   PlMoment: {fileID: 5966069730297437065}
@@ -12527,27 +12528,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.87
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.17
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.014
+      value: 0.014000044
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.682
+      value: 0.93200004
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.012
+      value: -0.012000121
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12587,7 +12588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7826648873025135366, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
