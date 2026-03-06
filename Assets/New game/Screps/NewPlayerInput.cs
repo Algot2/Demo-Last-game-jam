@@ -13,7 +13,7 @@ public class NewPlayerInput : MonoBehaviour
 
     public bool isPaused;
 
-    public GameObject snow;
+    public ParticleSystem snow;
 
     public static float globalSensitivity = 50;
 

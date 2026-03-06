@@ -136,16 +136,21 @@ public class CheckpointController : MonoBehaviour
         GameManager.player.GetComponent<CharacterController>().enabled = true;
     }
     
-    public static void TeleportPlayer(Vector3 pos, bool disableSnow)
+    public static void TeleportPlayer(Vector3 pos, bool showSnow)
     {
         DragonAI.Instens.transform.position = pos;
         
         GameManager.player.GetComponent<CharacterController>().enabled = false;
         GameManager.player.position = pos;
         GameManager.player.GetComponent<CharacterController>().enabled = true;
-        
-        if(GameManager.player.GetComponent<NewPlayerInput>().snow != null)
-            GameManager.player.GetComponent<NewPlayerInput>().snow.SetActive(disableSnow);
+
+        if (GameManager.player.GetComponent<NewPlayerInput>().snow != null)
+        {
+            if (showSnow)
+                GameManager.player.GetComponent<NewPlayerInput>().snow.Play();
+            else
+                GameManager.player.GetComponent<NewPlayerInput>().snow.Stop();
+        }
     }
 
     private void Awake()
