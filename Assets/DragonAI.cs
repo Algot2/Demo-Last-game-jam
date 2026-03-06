@@ -87,7 +87,8 @@ public class DragonAI : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(player.position, disToPl);
+        if(player != null)
+            Gizmos.DrawWireSphere(player.position, disToPl);
 
         Gizmos.DrawWireSphere(TargetPos, 0.5f);
     }
