@@ -14,9 +14,15 @@ public class BaseEnemyLogic : MonoBehaviour
     public List<EnemyMaterialSettings> deathSettings;
 
     public SpawnEnemiesTrigger owner;
-
+    public Material mat;
     public bool isDead;
-    
+
+
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.enemies.Remove(this);
+    }
     void Update() {
 
             
