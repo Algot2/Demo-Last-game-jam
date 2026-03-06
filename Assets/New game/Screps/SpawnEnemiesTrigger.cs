@@ -33,7 +33,7 @@ public class SpawnEnemiesTrigger : Trigger
             {
                 Vector3 spawnPos = new(Random.Range(minX, maxX), transform.position.y, Random.Range(minZ, maxZ));
 
-                if (Physics.Raycast(spawnPos, Vector3.down, out var hit))
+                if (Physics.Raycast(spawnPos, Vector3.down * 100, out var hit))
                     spawnPos.y = hit.point.y;
 
                 BaseEnemyLogic newEnemy =

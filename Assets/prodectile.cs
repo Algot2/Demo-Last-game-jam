@@ -3,6 +3,7 @@ using UnityEngine;
 public class prodectile : MonoBehaviour
 {
     public float Scale = 1;
+    public float sped = 10;
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);   
@@ -15,6 +16,6 @@ public class prodectile : MonoBehaviour
     void Update() {
 
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one* Scale, Time.deltaTime*15);
-        transform.position += transform.forward * 10*Time.deltaTime;
+        transform.position += transform.forward * sped * Time.deltaTime;
     }
 }

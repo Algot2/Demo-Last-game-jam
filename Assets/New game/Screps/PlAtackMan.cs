@@ -22,7 +22,7 @@ public class PlAtackMan : MonoBehaviour
 
            
             StartCoroutine(Timer.RunAfterTimer(0.5f, 
-                () => StartCoroutine(Timer.StartTimer(0.5f, (f) => HellfSlider.Inmune = f))));
+                () => StartCoroutine(Timer.StartTimer(1f, (f) => HellfSlider.Inmune = f))));
             Animator.SetTrigger("Atck");
 
             //float sped = PlMoment.Sped;

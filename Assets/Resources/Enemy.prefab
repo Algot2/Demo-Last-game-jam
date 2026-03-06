@@ -509,6 +509,8 @@ MonoBehaviour:
     endValue: -1
     materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
     cutOff: _Cutoff
+  owner: {fileID: 0}
+  mat: {fileID: 0}
   isDead: 0
 --- !u!1 &3285167107270448508
 GameObject:
@@ -2133,7 +2135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noNokBack: 1
   IsEnemy: 1
-  dam: 10
+  dam: 7
 --- !u!1001 &3089085742761201047
 PrefabInstance:
   m_ObjectHideFlags: 0
