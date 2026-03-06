@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 7003848482915415975}
+  hurtBox: {fileID: 5685759884172143522}
   rb: {fileID: 4556379707665485838}
   timeTillDeath: 2
   deathSettings:

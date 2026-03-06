@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BossLodick : MonoBehaviour
 {
-    public Transform LiteA, LiteB;
     public GameObject Enemy1, Prodektile;
     public GameObject Enemy2;
     public EnemyMovment moment;
@@ -14,7 +13,7 @@ public class BossLodick : MonoBehaviour
     public Fase curent;
     int rOrl = 1;
     float higet = 1.5f;
-    public bool canSpone = true;
+    public bool canSpone = false;
 
 
     bool canMaleyAtack = true;
@@ -38,6 +37,7 @@ public class BossLodick : MonoBehaviour
 
     private void Start()  {
         rOrl = Random.Range(0, 2) == 1 ? 1 : -1;
+        StartCoroutine(Timer.StartTimer(Random.Range(sponDilay * 0.5f, sponDilay * 1.5f), (f) => canSpone = !f));
     }
 
 
@@ -79,9 +79,7 @@ public class BossLodick : MonoBehaviour
             }
         }
 
-        Vishols.localPosition = Vector3.up * (higet + 0.5f + Mathf.Sin(Time.time * 2) * 0.5f);
-        LiteA.LookAt(GameManager.player);
-        LiteB.LookAt(GameManager.player);
+    //    Vishols.localPosition = Vector3.up * (higet + 0.5f + Mathf.Sin(Time.time * 2) * 0.5f);
     }
 
     

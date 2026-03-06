@@ -37,7 +37,6 @@ RectTransform:
   - {fileID: 6267060866811072219}
   - {fileID: 3961873380606541790}
   - {fileID: 1430097189310099353}
-  - {fileID: 564714984072588545}
   m_Father: {fileID: 394456298342394596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1385,6 +1384,7 @@ RectTransform:
   m_Children:
   - {fileID: 5839347795277254575}
   - {fileID: 4079719081841069182}
+  - {fileID: 564714984072588545}
   m_Father: {fileID: 3291533152162069468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2040,8 +2040,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -688.91675, y: 498.3966}
-  m_SizeDelta: {x: 789.9711, y: 34.9686}
+  m_AnchoredPosition: {x: -660.99994, y: -488.9}
+  m_SizeDelta: {x: 789.9711, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5386598849319212941
 MonoBehaviour:
@@ -2534,8 +2534,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -688.91675, y: 498.3966}
-  m_SizeDelta: {x: 789.9711, y: 34.9686}
+  m_AnchoredPosition: {x: -661, y: -488.9}
+  m_SizeDelta: {x: 789.9711, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808791701836266379
 MonoBehaviour:
@@ -2613,16 +2613,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4853285375509200407}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.9375, y: 2.50005, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3291533152162069468}
+  m_Father: {fileID: 7273650084939434702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -523.9547, y: 501.68518}
+  m_AnchoredPosition: {x: -655.14197, y: -486.61145}
   m_SizeDelta: {x: 126.0743, y: 101.3481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2998737331033790164
@@ -6341,7 +6341,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.3
+      value: 0.4
       mode: 0
       spread: 0
       speed:
@@ -6398,7 +6398,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 200
+      value: 360
       mode: 0
       spread: 0
       speed:

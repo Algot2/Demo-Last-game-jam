@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class HellfSlider : MonoBehaviour
     public Slider valu, frontjump;
     public bool Inmune;
     public bool IsPlayer;
+    public Action Onhit = () => { };
 
     private void Start()
     {
@@ -20,6 +22,7 @@ public class HellfSlider : MonoBehaviour
     }
     public void setValu(float val)
     {
+        Onhit();
         if (!Inmune) {
             curnt = val;
             frontjump.value = val;

@@ -9,7 +9,7 @@ public class DragonAI : MonoBehaviour
     public Vector3 TargetPos;
     public NavMeshAgent Agent;
     public GameObject Atacks;
-
+    public Animator Animator;
     public float MinDisToEn;
     public float disToPl;
     public float atacDis;
@@ -56,6 +56,7 @@ public class DragonAI : MonoBehaviour
 
     void Update() 
     {
+        Animator.SetBool("Run", Agent.remainingDistance > 0.01f);
         targetEn = false;
         float dis = MinDisToEn;
         for (int i = 0; i < GameManager.Instance.enemies.Count; i++) { 

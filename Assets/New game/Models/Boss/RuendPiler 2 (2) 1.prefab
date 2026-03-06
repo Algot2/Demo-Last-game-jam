@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7347802519122017398}
   - component: {fileID: 8634213723131299383}
+  - component: {fileID: 8504215042911290495}
+  - component: {fileID: 7568630667853882690}
   m_Layer: 0
   m_Name: RuendPiler 2 (2) 1
   m_TagString: Untagged
@@ -41,7 +43,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500419426016239600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b54e60f85e20e8e4da6f95e6d03b7fdf, type: 3}
   m_Name: 
@@ -55,6 +57,48 @@ MonoBehaviour:
   Lev: 0
   randomise: 0
   ForeTranssform: 0
+--- !u!65 &8504215042911290495
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500419426016239600}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 29.5, y: 11.44, z: 15}
+  m_Center: {x: 33.77, y: -6.5, z: 0}
+--- !u!65 &7568630667853882690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500419426016239600}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18.36, y: 10.01, z: 11.58}
+  m_Center: {x: 78.9, y: -6.61, z: -6.07}
 --- !u!1 &2576878814449656494
 GameObject:
   m_ObjectHideFlags: 0

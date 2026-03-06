@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8518396051566519523}
   - component: {fileID: 5548720665833209292}
+  - component: {fileID: 160117199958419575}
   m_Layer: 0
   m_Name: RuendPiler 2 (1)
   m_TagString: Untagged
@@ -55,6 +56,29 @@ MonoBehaviour:
   Lev: 0
   randomise: 0
   ForeTranssform: 0
+--- !u!136 &160117199958419575
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8180011663187995539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.57
+  m_Height: 41.61
+  m_Direction: 1
+  m_Center: {x: 0, y: -10.03, z: 0}
 --- !u!1 &8629154519051201529
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Old game/Sens/Inverement construktor.unity
+    guid: 926cdb0cffd226f4b9fc3d54fd3438a6
+  - enabled: 0
     path: Assets/New game/New Cene/Main Menu.unity
     guid: 543f048268c32b5468223a6675863afe
-  - enabled: 1
+  - enabled: 0
     path: Assets/New game/New Cene/Moltas map.unity
     guid: 21335c8df7389af4f9a7069d77114bfb
   m_configObjects:

@@ -6,7 +6,7 @@ using UnityEngine;
 public class BaseEnemyLogic : MonoBehaviour
 {
     public HellfSlider health;
-
+    public GameObject hurtBox;
     public Rigidbody rb;
     
     public float timeTillDeath;
@@ -18,18 +18,16 @@ public class BaseEnemyLogic : MonoBehaviour
     public bool isDead;
 
 
-
     private void OnDestroy()
     {
         GameManager.Instance.enemies.Remove(this);
     }
     void Update() {
-
             
-        if (health.curnt <= 0 && !isDead)
-        {
-            if (owner != null)
-            {
+        if (health.curnt <= 0 && !isDead) {
+            hurtBox.SetActive(false);
+
+            if (owner != null) {
                 owner.enemiesAlive--;
                 
                 if(owner.enemiesAlive == 0)

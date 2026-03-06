@@ -14,6 +14,7 @@ public class EnemyBat : MonoBehaviour
     float higet = -0.5f;
     private void Start()
     {
+        HellfSlider.Onhit += () => StartCoroutine(Timer.StartTimer(Random.Range(1f, 4f), (f) => canAtack = !f));
         RorL = Random.Range(0,2)==0?-1:1;
          StartCoroutine(Timer.StartTimer(Random.Range(1f, 4f), (f) => canAtack = !f));
     }
