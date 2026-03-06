@@ -13,6 +13,8 @@ public class NewPlayerInput : MonoBehaviour
 
     public bool isPaused;
 
+    public GameObject snow;
+
     public static float globalSensitivity = 50;
 
     public enum state {

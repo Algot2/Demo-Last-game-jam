@@ -1329,6 +1329,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boos Test
       objectReference: {fileID: 0}
+    - target: {fileID: 7736188432184386281, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.465
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736188432184386281, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736188432184386281, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.465
+      objectReference: {fileID: 0}
     - target: {fileID: 8578630058634462579, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1336,6 +1348,18 @@ PrefabInstance:
     - target: {fileID: 8578630058634462579, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831002921431605538, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.465
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831002921431605538, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831002921431605538, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.465
       objectReference: {fileID: 0}
     - target: {fileID: 8944741616988731256, guid: 9cbb540c2f50cff428e31e09f1dccfb5, type: 3}
       propertyPath: m_LocalPosition.x
