@@ -43,7 +43,6 @@ public class PlMoment : MonoBehaviour
                 lastMoveDir = setLastMoveDir;
         }
         
-        animator.SetBool("Run", input.magnitude != 0);
         Dir = (rotaashen * input).normalized;
     }
 
@@ -77,6 +76,8 @@ public class PlMoment : MonoBehaviour
         
         if (!canMove && !isDodsh)
             moveDir = Vector3.zero;
+        
+        animator.SetBool("Run", moveDir.magnitude != 0 && !isDodsh && canMove);
         
         moveDir.y = -gravity * Time.deltaTime;
         controller.Move(moveDir);
