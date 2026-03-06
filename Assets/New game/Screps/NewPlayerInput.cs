@@ -97,7 +97,6 @@ public class NewPlayerInput : MonoBehaviour
 
                 StartCoroutine(Timer.RunAfterTimer(10, () => canDo[4] = true));
                 StartCoroutine(Timer.RunAfterCondishen(() => hellfSlider.setValu(hellfSlider.curnt + 35),() => Vector3.Distance(DragonAI.Instens.transform.position, transform.position) < 1));
-                animator.SetTrigger("Jump");
             }
 
         if (Input.GetKeyDown(KeyCode.Escape) && hellfSlider.curnt > 0)
