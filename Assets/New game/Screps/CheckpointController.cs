@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UltEvents;
 using UnityEngine;
 
 public class CheckpointController : MonoBehaviour
@@ -14,10 +15,15 @@ public class CheckpointController : MonoBehaviour
     public GameObject Efects;
     public bool StartingStetpont;
 
+    public UltEvent onLoadGame;
+    public static UltEvent staticOnLoadGame;
+    
     void Start()
     {
         if (StartingStetpont)
             SaveGame();
+        
+        onLoadGame.Invoke();
     }
     public void SaveGame()
     {
@@ -113,6 +119,8 @@ public class CheckpointController : MonoBehaviour
             Destroy(GameManager.Instance.enemies[i].gameObject);
         }
         
+        staticOnLoadGame.Invoke();
+        
         GameManager.Instance.enemies.Clear();
         
         // Loads All Enemies
@@ -153,8 +161,15 @@ public class CheckpointController : MonoBehaviour
         }
     }
 
-    private void Awake()
+    void Awake()
     {
         staticPositionString = positionString;
+
+        staticOnLoadGame = onLoadGame;
+    }
+
+    public void SpawnBoos(GameObject boos, Transform position)
+    {
+        Instantiate(boos, position.position, Quaternion.identity);
     }
 }

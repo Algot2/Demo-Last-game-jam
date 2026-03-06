@@ -17,6 +17,7 @@ public class SpawnEnemiesTrigger : Trigger
     
     public void SpawnEnemies()
     {
+        enemiesAlive = 0;
         hasSpawnedEnemies = true;
         
         Vector3 center = transform.position + transform.TransformDirection(spawnSettings.offset);
