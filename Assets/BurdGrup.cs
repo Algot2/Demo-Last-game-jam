@@ -12,7 +12,7 @@ public class BurdGrup : MonoBehaviour
     void Update() {
         Vector3 dis = transform.position - GameManager.Instance.PL.position;
 
-        if (dis.magnitude < 20 && activeBurds.Count < NuberOfBurds && canSpone) {
+        if (dis.magnitude < 50 && activeBurds.Count < NuberOfBurds && canSpone) {
             float ang = Random.Range(0, 360);
             Vector3 Lpos = new Vector3(Mathf.Cos(ang), 1, Mathf.Sin(ang)) * Random.Range(0, radius);
             Ray ray = new Ray(Lpos + transform.position + Vector3.up * 0.5f, Vector3.down);
@@ -20,7 +20,7 @@ public class BurdGrup : MonoBehaviour
                 activeBurds.Add(Instantiate(burd, hit.point, Quaternion.LookRotation(hit.normal)));
             }
         }
-        if (dis.magnitude < 10 && canSpone) {
+        if (dis.magnitude < 6 && canSpone) {
             canSpone = false;
             float t = 0;
             StartCoroutine(Timer.StartFrameRepitTill(() => BurdFly(), () => (t += Time.deltaTime) < 5));
