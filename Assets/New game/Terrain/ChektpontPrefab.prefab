@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6173059549790402436}
   - component: {fileID: 1041594587876377542}
   - component: {fileID: 1256744627051955868}
+  - component: {fileID: 4019435655240996267}
   m_Layer: 0
   m_Name: ChektpontPrefab
   m_TagString: Untagged
@@ -68,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3019f40a95b8fef469a551ccc06a7da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTriger: 1
   triggerOnce: 1
   hasTriggered: 0
   tagToDetect: Player
@@ -125,6 +127,32 @@ MonoBehaviour:
   Lev: 0
   randomise: 0
   ForeTranssform: 0
+--- !u!114 &4019435655240996267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779229919021417288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e6a4a8f5791884ebc048dbf6c4930c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NeseserySpanTrigers: []
+  OnDed:
+    _PersistentCalls:
+    - _Target: {fileID: 6173059549790402436}
+      _MemberName: canTriger=
+      _PersistentArguments:
+      - _Type: 1
+        _Int: 1
+        _String: 
+        _X: 0
+        _Y: 0
+        _Z: 0
+        _W: 0
+        _Object: {fileID: 0}
 --- !u!1 &2021576363919823571
 GameObject:
   m_ObjectHideFlags: 0

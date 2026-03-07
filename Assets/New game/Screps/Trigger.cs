@@ -5,6 +5,7 @@ using UltEvents;
 
 public class Trigger : MonoBehaviour
 {
+    public bool canTriger = true;
     public bool triggerOnce = true;
 
     [ShowIf("triggerOnce")] 

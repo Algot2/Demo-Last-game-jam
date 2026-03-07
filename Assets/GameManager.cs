@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    public GameObject dragon;
     public float minDist = 5;
     
     public Transform PL;

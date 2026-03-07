@@ -5,7 +5,6 @@ using UnityEngine.AI;
 public class DragonAI : MonoBehaviour
 {
     public static DragonAI Instens;
-    public Transform player;
     public Vector3 TargetPos;
     public NavMeshAgent Agent;
     public GameObject Atacks;
@@ -14,6 +13,7 @@ public class DragonAI : MonoBehaviour
     public float disToPl;
     public float atacDis;
     public float TimeInbetinAtacks;
+    Transform player;
     bool canAtack = true;
     bool targetEn = false;
     float R(float min, float max) => Random.Range(min,max);
@@ -49,6 +49,7 @@ public class DragonAI : MonoBehaviour
     }
     private void Start()
     {
+        player = GameManager.player;
         Instens = this;
         TargetPos = SnapToNavMesh(pikeNewTarget());
     }

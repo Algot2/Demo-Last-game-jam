@@ -143,9 +143,9 @@ public class CheckpointController : MonoBehaviour
 
     public static void TeleportPlayer(Vector3 pos)
     {
-        DragonAI.Instens.gameObject.SetActive(false);
-        DragonAI.Instens.transform.position = pos + Vector3.forward*1.5f;
-        DragonAI.Instens.gameObject.SetActive(true);
+        Destroy(DragonAI.Instens.gameObject);
+
+        Instantiate(GameManager.Instance.dragon, pos, Quaternion.identity);
 
 
         GameManager.player.GetComponent<CharacterController>().enabled = false;
@@ -155,8 +155,10 @@ public class CheckpointController : MonoBehaviour
     
     public static void TeleportPlayer(Vector3 pos, bool showSnow)
     {
-        DragonAI.Instens.transform.position = pos;
-        
+        Destroy(DragonAI.Instens.gameObject);
+
+        Instantiate(GameManager.Instance.dragon, pos, Quaternion.identity);
+
         GameManager.player.GetComponent<CharacterController>().enabled = false;
         GameManager.player.position = pos;
         GameManager.player.GetComponent<CharacterController>().enabled = true;
