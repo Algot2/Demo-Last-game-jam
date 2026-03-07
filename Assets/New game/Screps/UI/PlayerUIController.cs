@@ -11,7 +11,7 @@ public class PlayerUIController : MonoBehaviour
     public static PlayerUIController Instance;
 
     public GameObject deathUIObj, pauseUIObj;
-
+    public NewPlayerInput inputs;
     public List<GameObject> pauseUIs;
 
     public TMP_InputField sText;
@@ -26,8 +26,8 @@ public class PlayerUIController : MonoBehaviour
         deathUIObj.SetActive(true);
 
         Cursor.lockState = CursorLockMode.None;
-        
-        Time.timeScale = 0;
+        inputs.isDed = true;
+        //Time.timeScale = 0;
     }
 
     public void Pause()

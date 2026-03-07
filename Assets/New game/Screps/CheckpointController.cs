@@ -87,6 +87,9 @@ public class CheckpointController : MonoBehaviour
 
     public static void LoadGame()
     {
+        NewPlayerInput plIn = GameManager.player.GetComponent<NewPlayerInput>();
+        plIn.isDed = false;
+
         GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
             GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
         
