@@ -97,8 +97,10 @@ public class CheckpointController : MonoBehaviour
         // Sets The Player Position To The Saved One
         Vector3 savedPos = BoltsSave.GetVector3(staticPositionString);
         GameManager.player.position = savedPos;
+        DragonAI.Instens.gameObject.SetActive(false);
         DragonAI.Instens.transform.position = savedPos;
-        
+        DragonAI.Instens.gameObject.SetActive(true);
+
         // Loads All Trigger States
         List<Trigger> triggers = GameManager.Instance.triggers;
         List<SaveBool> allBools = BoltsSave.GetAllBools();
