@@ -20,10 +20,9 @@ public class EnemyBat : MonoBehaviour
     }
     void Update() {
         List<BaseEnemyLogic> en = GameManager.Instance.enemies;
-        for (int i = 0; i < en.Count; i++)
-        {
+        for (int i = 0; i < en.Count; i++) {
             Vector3 dis = transform.position - en[i].transform.position;
-            if (dis.magnitude < 1.5f && en[i].gameObject.GetInstanceID() != gameObject.GetInstanceID())
+            if (dis.magnitude < 2.5f && en[i].gameObject.GetInstanceID() != gameObject.GetInstanceID())
             {
                 transform.position += (dis.normalized * Time.deltaTime);
             }
@@ -32,11 +31,11 @@ public class EnemyBat : MonoBehaviour
         if (!ded) {
 
             if (transform.position.y - GameManager.player.position.y < -higet)
-                transform.position += Vector3.up * 10 * Time.deltaTime;
+                transform.position += Vector3.up * 2 * Time.deltaTime;
 
             higet = canAtack ? 0.5f : -0.2f;
             transform.LookAt(GameManager.player.position);
-            if (HellfSlider.curnt < 0) { 
+            if (HellfSlider.curnt <= 0) { 
                 ded = true; 
                 rb.isKinematic = false;
             }
@@ -51,7 +50,7 @@ public class EnemyBat : MonoBehaviour
             Body.localPosition = Vector3.up * Mathf.Sin(Time.time * 10) * 0.1f;
 
             hitbox.SetActive(canAtack);
-            if (canAtack && dir.magnitude < 0.4f)
+            if (canAtack && dir.magnitude < 0.5f)
                 StartCoroutine(Timer.StartTimer(Random.Range(3f, 6f), (f) => canAtack = !f));
         }
     }

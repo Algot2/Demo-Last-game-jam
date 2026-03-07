@@ -15,8 +15,8 @@ public class NewHuerBox : MonoBehaviour
         hitBox.onHit(dam, back);
 
         if (!IsEnemy && !noNokBack) { 
-            StartCoroutine(Efects.camShake(0.05f, 0.1f)); 
-            StartCoroutine(Efects.timeFrez(0.1f));
+            StartCoroutine(Efects.camShake(0.05f, 0.2f)); 
+            StartCoroutine(Efects.timeFrez(0.2f));
         }
     }
 

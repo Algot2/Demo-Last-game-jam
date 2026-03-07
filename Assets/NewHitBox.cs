@@ -17,7 +17,7 @@ public class NewHitBox : MonoBehaviour
         Slider.setValu(Slider.curnt - dam*efeckt);
         if (IsEnemy||Slider.Inmune) ParticleSystem.Play();
 
-        if (IsPlayer && !Slider.Inmune) StartCoroutine(Timer.StartTimer(0.1f, (f) => hitEfect.SetActive(f)));
+        if (IsPlayer && !Slider.Inmune) StartCoroutine(Timer.StartTimer(0.2f, (f) => hitEfect.SetActive(f)));
     }
 
     void OnEnable()

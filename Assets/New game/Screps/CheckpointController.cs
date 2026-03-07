@@ -89,6 +89,7 @@ public class CheckpointController : MonoBehaviour
     {
         NewPlayerInput plIn = GameManager.player.GetComponent<NewPlayerInput>();
         plIn.isDed = false;
+        plIn.animator.SetBool("Ded", false);
 
         GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
             GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
@@ -140,8 +141,11 @@ public class CheckpointController : MonoBehaviour
 
     public static void TeleportPlayer(Vector3 pos)
     {
-        DragonAI.Instens.transform.position = pos;
-        
+        DragonAI.Instens.gameObject.SetActive(false);
+        DragonAI.Instens.transform.position = pos + Vector3.forward*1.5f;
+        DragonAI.Instens.gameObject.SetActive(true);
+
+
         GameManager.player.GetComponent<CharacterController>().enabled = false;
         GameManager.player.position = pos;
         GameManager.player.GetComponent<CharacterController>().enabled = true;
