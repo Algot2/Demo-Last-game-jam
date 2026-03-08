@@ -13279,6 +13279,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4017510853968871630}
     m_Modifications:
+    - target: {fileID: 1025860360234681914, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -13293,7 +13297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.014000044
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13352,14 +13356,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7826648873025135366, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 553801322099932518}
+      addedObject: {fileID: 1429715345893518147}
   m_SourcePrefab: {fileID: 100100000, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
 --- !u!1 &4062976292814226307 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7826648873025135366, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
   m_PrefabInstance: {fileID: 6124685244547817605}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &553801322099932518
+--- !u!114 &1429715345893518147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13368,12 +13372,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4062976292814226307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e53d27a44662e664aaf4f55e149166ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 531b39cb9d290024aa6336a1405e21ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noNokBack: 0
-  IsEnemy: 0
-  dam: 25
+  radius: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  locolPos: []
+  LastPos: []
+  dam: 5
 --- !u!4 &4889602710211025157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}

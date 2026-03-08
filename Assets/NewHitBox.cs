@@ -22,12 +22,12 @@ public class NewHitBox : MonoBehaviour
 
     void OnEnable()
     {
-        PosOfset = transform.position-BodyPart.position;
+        PosOfset = transform.position - BodyPart.position;
         rotashenOfset = transform.rotation * Quaternion.Inverse(BodyPart.rotation);
     }
 
     void Update() {
-        transform.position = BodyPart.position - BodyPart.TransformDirection(PosOfset);
-        transform.rotation = BodyPart.rotation * Quaternion.Inverse(rotashenOfset);
+        //transform.position = BodyPart.position - BodyPart.TransformDirection(PosOfset);
+        //transform.rotation = BodyPart.rotation * Quaternion.Inverse(rotashenOfset);
     }
 }

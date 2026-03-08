@@ -74,6 +74,7 @@ public class DragonAI : MonoBehaviour
             canAtack = false;
             StartCoroutine(Timer.RunAfterTimer(TimeInbetinAtacks, () => canAtack = true));
             StartCoroutine(Timer.StartTimer(0.5f, (f) => Atacks.SetActive(f)));
+            Animator.SetTrigger("Atack");
         }
 
 

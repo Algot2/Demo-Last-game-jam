@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b88c73aa8ea024a8bf4c39a8368cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sped: 2
+  sped: 3
   Body: {fileID: 4265855304670966352}
   canAtack: 0
   hitbox: {fileID: 3663159861407961493}
@@ -1302,6 +1302,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2312258067491401952}
     m_Modifications:
+    - target: {fileID: 934014168227057256, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1901077704248968778, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_Name
       value: HitBox
@@ -1312,15 +1316,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1371,8 +1375,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3704340680097698596, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704340680097698596, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704340680097698596, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704340680097698596, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704340680097698596, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5374647005019055470, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: Rb
@@ -1431,7 +1451,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3710420235748091936
 PrefabInstance:
   m_ObjectHideFlags: 0
