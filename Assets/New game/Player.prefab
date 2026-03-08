@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathUIObj: {fileID: 2610328875697825114}
   pauseUIObj: {fileID: 7661098542331649097}
+  inputs: {fileID: 0}
   pauseUIs:
   - {fileID: 5342914836636135554}
   - {fileID: 6737982140762538418}
@@ -11432,6 +11433,7 @@ MonoBehaviour:
   hellfSlider: {fileID: 6161585229421125090}
   sensetivety: 50
   canDo: 01010101
+  isDed: 0
   isPaused: 0
   snow: {fileID: 0}
   State: 0
@@ -11492,8 +11494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atacks:
   - HurtBox: {fileID: 4062976292814226307}
-    timeToAttack: 1.25
-    attackTime: 0.5
+    timeToAttack: 1
+    attackTime: 1
     AtackAnimasen: 1
   HellfSlider: {fileID: 6161585229421125090}
   PlMoment: {fileID: 5966069730297437065}
@@ -13279,7 +13281,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.y
@@ -13287,7 +13289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1667487472750377344, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13331,7 +13333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774683042512024958, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7826648873025135366, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_Name
@@ -13339,7 +13341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7826648873025135366, guid: 4c25b99e525adc74a85ab79b17e9cfa4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

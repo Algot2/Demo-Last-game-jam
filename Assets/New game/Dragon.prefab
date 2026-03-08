@@ -343,10 +343,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc9a0950ca55214985a8ec3f375585a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   TargetPos: {x: 0, y: 0, z: 0}
   Agent: {fileID: 5721746204186398987}
   Atacks: {fileID: 6699611160327871584}
+  Animator: {fileID: 1376980734582003513}
   MinDisToEn: 3
   disToPl: 5
   atacDis: 1

@@ -17,7 +17,8 @@ public class PlAtackMan : MonoBehaviour
     public PlMoment PlMoment;
     public Animator Animator;
     public void PreformAtack(int i, float time) {
-            StartCoroutine(Timer.RunAfterTimer(atacks[i].timeToAttack, 
+
+        StartCoroutine(Timer.RunAfterTimer(atacks[i].timeToAttack, 
                 () => StartCoroutine(Timer.StartTimer(atacks[i].attackTime, (f) => atacks[i].HurtBox.SetActive(f)))));
 
            

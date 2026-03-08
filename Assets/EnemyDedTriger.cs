@@ -16,12 +16,11 @@ public class EnemyDedTriger : MonoBehaviour
                 if (!Sponer.hasSpawnedEnemies || Sponer.enemiesAlive != 0)
                     IsCoplit = false;
             }
-            Debug.Log("IsAreaComplit : " + IsCoplit);
-            if (IsCoplit || triger)
-            {
+
+            if (IsCoplit || triger) {
                 OnDed.Invoke();
+                hasTrigerd = true;
             }
-            hasTrigerd = true;
         }
     }
 }
