@@ -34,6 +34,8 @@ public class HellfSlider : MonoBehaviour
             StartCoroutine(Timer.RunAfterTimer(0.5f, () => Inmune = false));
             StartCoroutine(Timer.StartTimer(5, (f) => NewPlayerInput.Instance.canDo[3] = !f)); 
         }
+
+        curnt = Mathf.Clamp(curnt, -1, max);
     }
 
     void Update() {

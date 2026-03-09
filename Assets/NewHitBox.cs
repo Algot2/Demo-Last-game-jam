@@ -27,7 +27,7 @@ public class NewHitBox : MonoBehaviour
     }
 
     void Update() {
-        //transform.position = BodyPart.position - BodyPart.TransformDirection(PosOfset);
-        //transform.rotation = BodyPart.rotation * Quaternion.Inverse(rotashenOfset);
+        ////transform.position = BodyPart.position - BodyPart.TransformDirection(PosOfset);
+        ////transform.rotation = BodyPart.rotation * Quaternion.Inverse(rotashenOfset);
     }
 }

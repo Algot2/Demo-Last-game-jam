@@ -8,6 +8,7 @@ public class EnemyBat : MonoBehaviour
     public bool canAtack;
     public GameObject hitbox;
     public HellfSlider HellfSlider;
+    public Transform Hitbox;
     public Rigidbody rb;
     public bool ded;
     public int RorL;
@@ -34,14 +35,14 @@ public class EnemyBat : MonoBehaviour
                 transform.position += Vector3.up * 2 * Time.deltaTime;
 
             higet = canAtack ? 0.5f : -0.2f;
-            transform.LookAt(GameManager.player.position);
+            Body.transform.LookAt(GameManager.player.position);
             if (HellfSlider.curnt <= 0) { 
                 ded = true; 
                 rb.isKinematic = false;
             }
 
             Vector3 dir = transform.position - GameManager.player.position;
-            transform.position += (dir.normalized * sped * Time.deltaTime) * ((dir.magnitude > 3 || canAtack) ? -1 : 1);
+            transform.position += (dir.normalized * sped * Time.deltaTime) * ((dir.magnitude > 3 || canAtack) ? -1 : 0.5f);
 
 
             if (dir.magnitude > 2 && dir.magnitude < 4 && !canAtack) {
