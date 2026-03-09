@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Teleporting : MonoBehaviour
+public class TeleportingScre : MonoBehaviour
 {
     public Transform destination;
 

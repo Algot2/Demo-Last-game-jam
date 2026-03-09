@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Teleporting : MonoBehaviour
+public class TeleportingScrep : MonoBehaviour
 {
     public Transform destination;
     public GameObject[] AnabolDisabol;
