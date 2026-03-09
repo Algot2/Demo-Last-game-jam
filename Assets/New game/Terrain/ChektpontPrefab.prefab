@@ -153,6 +153,8 @@ MonoBehaviour:
         _Z: 0
         _W: 0
         _Object: {fileID: 0}
+  hasTrigerd: 0
+  triger: 0
 --- !u!1 &2021576363919823571
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8426171788938255146
 Transform:
   m_ObjectHideFlags: 0
@@ -199,7 +201,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 0.4394947, b: 0, a: 1}
+  m_Color: {r: 0.57254905, g: 0.106494114, b: 0.37281108, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
