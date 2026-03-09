@@ -13,6 +13,8 @@ public class DragonAI : MonoBehaviour
     public float disToPl;
     public float atacDis;
     public float TimeInbetinAtacks;
+
+    float timer = 0;
     Transform player;
     bool canAtack = true;
     bool targetEn = false;
@@ -22,41 +24,35 @@ public class DragonAI : MonoBehaviour
         Vector3 dir = new Vector3(R(-1, 1), R(0.5f, 1), R(-1, 1)).normalized;
         Vector3 pos = player.position + dir * R(2.5f, disToPl);
 
-
         return pos;
     }
-    public Vector3 SnapToNavMesh(Vector3 vec)
-    {
+    public Vector3 SnapToNavMesh(Vector3 vec) {
         NavMeshHit hit;
 
         // Try to find nearest point on NavMesh
-        if (NavMesh.SamplePosition(vec, out hit, disToPl*2, NavMesh.AllAreas))
-        {
+        if (NavMesh.SamplePosition(vec, out hit, disToPl*2, NavMesh.AllAreas)) {
             Vector3 newPosition = vec;
             newPosition.y = hit.position.y; // Set height to NavMesh height
             return newPosition;
         }
-        else
-        {
+        else {
             Debug.LogWarning("No NavMesh found near this object.");
         }
-
+        
         return vec;
     }
 
     Vector3 setY(Vector3 A, Vector3 B) {
         return new Vector3(A.x, B.y, A.z);
     }
-    private void Start()
-    {
+    private void Start() {
         player = GameManager.player;
         Instens = this;
         TargetPos = SnapToNavMesh(pikeNewTarget());
     }
 
 
-    void Update() 
-    {
+    void Update() {
         Animator.SetBool("Run", Agent.remainingDistance > 0.01f);
         targetEn = false;
         float dis = MinDisToEn;
@@ -78,9 +74,11 @@ public class DragonAI : MonoBehaviour
         }
 
 
-        if ((Vector3.Distance(transform.position, setY(TargetPos, transform.position)) < 0.5f && !canAtack) ||
-           Vector3.Distance(transform.position, player.position) > disToPl)
+        if ((Vector3.Distance(transform.position, setY(TargetPos, transform.position)) < 0.5f && !canAtack && (timer += Time.deltaTime) > Random.Range(5f, 10f)) ||
+           Vector3.Distance(transform.position, player.position) > disToPl) {
+            timer = 0;
             TargetPos = SnapToNavMesh(pikeNewTarget());
+        }
 
 
         Agent.SetDestination(TargetPos);

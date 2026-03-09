@@ -1088,8 +1088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7c3c5687a50634d9ab7103ede9c982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max: 50
-  curnt: 50
+  max: 100
+  curnt: 100
   valu: {fileID: 3032405613832761897}
   frontjump: {fileID: 4487325416867565378}
   Inmune: 0
