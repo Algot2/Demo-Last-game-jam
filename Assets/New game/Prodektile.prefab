@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48463068e53636a45a46c05c9f28c0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scale: 2
+  sped: 25
 --- !u!1 &3937995285428855087
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,4 +5528,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noNokBack: 0
   IsEnemy: 1
-  dam: 10
+  dam: 25
