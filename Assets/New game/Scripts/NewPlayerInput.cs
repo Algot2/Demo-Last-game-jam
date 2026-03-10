@@ -13,7 +13,6 @@ public class NewPlayerInput : MonoBehaviour
     public bool isDed;
     public bool isPaused;
 
-    public ParticleSystem snow;
 
     public static float globalSensitivity = 50;
 
@@ -103,10 +102,9 @@ public class NewPlayerInput : MonoBehaviour
                 if (canDo[4] && Input.GetKeyDown(KeyCode.LeftControl))
                 {
                     canDo[4] = false;
-                    DragonAI.Instens.TargetPos = transform.position;
 
+                    DragonAI.Instens.tryHellPlayer = true;
                     StartCoroutine(Timer.RunAfterTimer(10, () => canDo[4] = true));
-                    StartCoroutine(Timer.RunAfterCondishen(() => hellfSlider.setValu(hellfSlider.curnt + 35), () => Vector3.Distance(DragonAI.Instens.transform.position, transform.position) < 1));
                 }
 
             if (Input.GetKeyDown(KeyCode.Escape) && hellfSlider.curnt > 0)

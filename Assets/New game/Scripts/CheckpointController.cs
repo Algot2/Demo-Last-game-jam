@@ -162,14 +162,6 @@ public class CheckpointController : MonoBehaviour
         GameManager.player.GetComponent<CharacterController>().enabled = false;
         GameManager.player.position = pos;
         GameManager.player.GetComponent<CharacterController>().enabled = true;
-
-        if (GameManager.player.GetComponent<NewPlayerInput>().snow != null)
-        {
-            if (showSnow)
-                GameManager.player.GetComponent<NewPlayerInput>().snow.Play();
-            else
-                GameManager.player.GetComponent<NewPlayerInput>().snow.Stop();
-        }
     }
 
     void Awake()

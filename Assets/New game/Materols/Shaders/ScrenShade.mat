@@ -45,10 +45,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Exposher: 2
     - _F: -60
     - _FogStregf: -100
     - _TexterScale: 0.1
     m_Colors:
-    - _FongColer: {r: 0.09834, g: 0.091608, b: 0.132, a: 1}
+    - _FongColer: {r: 0.23921837, g: 0.23437801, b: 0.261, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

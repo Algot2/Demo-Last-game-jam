@@ -9,8 +9,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 5590610322032383095}
     m_Modifications:
     - target: {fileID: 785875888397348298, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 785875888397348298, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
       propertyPath: m_Intensity
-      value: 0.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1566019483121180291, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -115,8 +119,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 5590610322032383095}
     m_Modifications:
     - target: {fileID: 785875888397348298, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 785875888397348298, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
       propertyPath: m_Intensity
-      value: 0.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1566019483121180291, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,8 +388,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 5590610322032383095}
     m_Modifications:
     - target: {fileID: 785875888397348298, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 785875888397348298, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
       propertyPath: m_Intensity
-      value: 0.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1566019483121180291, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -486,8 +498,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 5590610322032383095}
     m_Modifications:
     - target: {fileID: 785875888397348298, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 785875888397348298, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
       propertyPath: m_Intensity
-      value: 0.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1566019483121180291, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
       propertyPath: m_LocalPosition.x

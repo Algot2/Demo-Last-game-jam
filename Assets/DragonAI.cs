@@ -18,6 +18,7 @@ public class DragonAI : MonoBehaviour
     Transform player;
     bool canAtack = true;
     bool targetEn = false;
+    public bool tryHellPlayer = false;
     float R(float min, float max) => Random.Range(min,max);
     
     public Vector3 pikeNewTarget() {
@@ -53,6 +54,15 @@ public class DragonAI : MonoBehaviour
 
 
     void Update() {
+
+        if (tryHellPlayer) {
+            TargetPos = player.position;
+            if (Vector3.Distance(transform.position, setY(TargetPos, transform.position)) < 0.5f) {
+                tryHellPlayer = false;
+
+            }
+        }
+
         Animator.SetBool("Run", Agent.remainingDistance > 0.01f);
         targetEn = false;
         float dis = MinDisToEn;
@@ -76,6 +86,7 @@ public class DragonAI : MonoBehaviour
 
         if ((Vector3.Distance(transform.position, setY(TargetPos, transform.position)) < 0.5f && !canAtack && (timer += Time.deltaTime) > Random.Range(5f, 10f)) ||
            Vector3.Distance(transform.position, player.position) > disToPl) {
+            tryHellPlayer = false;
             timer = 0;
             TargetPos = SnapToNavMesh(pikeNewTarget());
         }

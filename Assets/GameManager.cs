@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameObject dragon;
     public float minDist = 5;
+    public Material BaseShader;
     
     public Transform PL;
     public static Transform player;
