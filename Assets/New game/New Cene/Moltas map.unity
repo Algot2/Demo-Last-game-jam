@@ -8698,7 +8698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: Sped
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: dodshMove
@@ -9897,8 +9897,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df94f5342e820243861aca11043ff1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destnation: {fileID: 0}
-  AnabolDiabol: []
+  destnation: {fileID: 2073768729}
+  AnabolDiabol:
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  - {fileID: 1803609370}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0, g: 0, b: 0, a: 0}
   setFogColr: 0
 --- !u!65 &450452525
@@ -21397,8 +21402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df94f5342e820243861aca11043ff1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destnation: {fileID: 0}
-  AnabolDiabol: []
+  destnation: {fileID: 1019715215}
+  AnabolDiabol:
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
+  - {fileID: 1803609370}
   FogColor: {r: 0, g: 0, b: 0, a: 0}
   setFogColr: 0
 --- !u!65 &861556718
@@ -27105,6 +27115,7 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 1803609370}
   - {fileID: 763800066}
+  - {fileID: 1554169720}
   - {fileID: 149971105}
   - {fileID: 2060808526}
   FogColor: {r: 0, g: 0, b: 0, a: 1}
@@ -29076,8 +29087,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df94f5342e820243861aca11043ff1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destnation: {fileID: 0}
-  AnabolDiabol: []
+  destnation: {fileID: 990264572}
+  AnabolDiabol:
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  - {fileID: 1803609370}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0, g: 0, b: 0, a: 0}
   setFogColr: 0
 --- !u!65 &1274580318
@@ -35205,7 +35221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1554169721
 Transform:
   m_ObjectHideFlags: 0
@@ -41917,8 +41933,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df94f5342e820243861aca11043ff1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destnation: {fileID: 0}
-  AnabolDiabol: []
+  destnation: {fileID: 293317936}
+  AnabolDiabol:
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  - {fileID: 1803609370}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0, g: 0, b: 0, a: 0}
   setFogColr: 0
 --- !u!65 &1627445863
@@ -48021,8 +48042,9 @@ MonoBehaviour:
   - {fileID: 2060808526}
   - {fileID: 1803609370}
   - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
-  setFogColr: 0
+  setFogColr: 1
 --- !u!65 &1981015360
 BoxCollider:
   m_ObjectHideFlags: 0
