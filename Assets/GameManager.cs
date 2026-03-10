@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject dragon;
+    public LayerMask ground;
     public float minDist = 5;
     public Material BaseShader;
     public Color FogStartColor;

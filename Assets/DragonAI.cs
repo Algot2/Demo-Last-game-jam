@@ -13,7 +13,7 @@ public class DragonAI : MonoBehaviour
     public float disToPl;
     public float atacDis;
     public float TimeInbetinAtacks;
-
+    public Transform Body;
     float timer = 0;
     Transform player;
     bool canAtack = true;
@@ -54,6 +54,13 @@ public class DragonAI : MonoBehaviour
 
 
     void Update() {
+
+        if (Physics.Raycast(transform.position + Vector3.up * 5, Vector3.down, out var hit, 100, GameManager.Instance.ground)) {
+            Body.localRotation = Quaternion.Euler(Vector3.right);
+            float ang = Body.transform.rotation.ToEuler().y;
+            Body.transform.up = hit.normal;
+            Body.transform.RotateAround(Body.transform.TransformDirection(Vector3.up), ang);
+        }
 
         if (tryHellPlayer) {
             TargetPos = player.position;

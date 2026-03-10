@@ -3,10 +3,10 @@ using UnityEngine;
 public class Fotstep : MonoBehaviour
 {
     bool can = true;
-
-    public LayerMask ground;
+    public float scale;
 
     void OnTriggerEnter(Collider other) {
+        LayerMask ground = GameManager.Instance.ground;
         if (can) {
             Transform T = transform.GetChild(0);
             GameObject fotStep = Instantiate(T.gameObject, T.position, T.rotation);
@@ -17,6 +17,7 @@ public class Fotstep : MonoBehaviour
                 float ang = fotStep.transform.rotation.ToEuler().y;
                 fotStep.transform.up = hit.normal;
                 fotStep.transform.RotateAround(fotStep.transform.TransformDirection(Vector3.up), ang);
+                fotStep.SetActive(true);
             }
 
             Destroy(fotStep, 5);

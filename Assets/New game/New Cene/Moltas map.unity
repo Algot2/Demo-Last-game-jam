@@ -41571,6 +41571,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragon: {fileID: 2485638738524498555, guid: 2986d8a4411e1ae4396a25358ec140cd, type: 3}
+  ground:
+    serializedVersion: 2
+    m_Bits: 8
   minDist: 5
   BaseShader: {fileID: 2100000, guid: fcc2fcdc5f088c54194781b0b12477a8, type: 2}
   FogStartColor: {r: 0.23529413, g: 0.22352943, b: 0.24705884, a: 1}
