@@ -6540,9 +6540,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4019435655240996267, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27103,7 +27107,7 @@ MonoBehaviour:
   - {fileID: 763800066}
   - {fileID: 149971105}
   - {fileID: 2060808526}
-  FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
+  FogColor: {r: 0, g: 0, b: 0, a: 1}
   setFogColr: 1
 --- !u!65 &1189224766
 BoxCollider:

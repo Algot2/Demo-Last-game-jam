@@ -27,7 +27,7 @@ public class Trigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == tagToDetect && !hasTriggered)
+        if (other.tag == tagToDetect && !hasTriggered && canTriger)
         {
             onEnter.Invoke();
 
@@ -39,7 +39,7 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == tagToDetect && !hasTriggered)
+        if (other.tag == tagToDetect && !hasTriggered && canTriger)
         {
             onExit.Invoke();
 
@@ -51,7 +51,7 @@ public class Trigger : MonoBehaviour
 
     private void Update()
     {
-        if(isInside)
+        if(isInside && canTriger)
             onTrigger.Invoke();
     }
 
