@@ -8530,7 +8530,7 @@ PrefabInstance:
       objectReference: {fileID: 553302953}
     - target: {fileID: 4472473334040555806, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: sensetivety
-      value: 3
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4472473334040555806, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: canDo.Array.size
@@ -8702,7 +8702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: Sped
-      value: 50
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: dodshMove
