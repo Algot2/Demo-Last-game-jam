@@ -11435,7 +11435,6 @@ MonoBehaviour:
   canDo: 01010101
   isDed: 0
   isPaused: 0
-  snow: {fileID: 9071508363961635695}
   State: 0
 --- !u!114 &6398698079536150007
 MonoBehaviour:

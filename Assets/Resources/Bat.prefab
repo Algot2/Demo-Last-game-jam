@@ -791,7 +791,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdfe5c952c1cc2f43af00460d9945954, type: 2}
+  - {fileID: 2100000, guid: 9da7d3d7ff90145488119d8a38c0ab67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1411,6 +1411,10 @@ PrefabInstance:
       propertyPath: BodyPart
       value: 
       objectReference: {fileID: 4265855304670966352}
+    - target: {fileID: 5494802790217616892, guid: b350e1358b9a5094d872310337bffab5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f2163ea26be30584a8494faf9810d72b, type: 2}
     m_RemovedComponents:
     - {fileID: 8138533046171673134, guid: b350e1358b9a5094d872310337bffab5, type: 3}
     m_RemovedGameObjects: []
@@ -1796,7 +1800,7 @@ PrefabInstance:
     - target: {fileID: 2174045033509735636, guid: d6171a15b3033c9469f7e6af96fa558f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 636299f9315377240905e63045b86d29, type: 2}
+      objectReference: {fileID: 2100000, guid: 9da7d3d7ff90145488119d8a38c0ab67, type: 2}
     - target: {fileID: 2302685011088964640, guid: d6171a15b3033c9469f7e6af96fa558f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -33.293747
