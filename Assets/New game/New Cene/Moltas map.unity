@@ -8529,6 +8529,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 553302953}
     - target: {fileID: 4472473334040555806, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: sensetivety
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472473334040555806, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: canDo.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -29919,7 +29923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1302648196
 Transform:
   m_ObjectHideFlags: 0
