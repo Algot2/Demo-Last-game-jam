@@ -62,13 +62,7 @@ public class DragonAI : MonoBehaviour
             Body.transform.RotateAround(Body.transform.TransformDirection(Vector3.up), ang);
         }
 
-        if (tryHellPlayer) {
-            TargetPos = player.position;
-            if (Vector3.Distance(transform.position, setY(TargetPos, transform.position)) < 0.5f) {
-                tryHellPlayer = false;
-                player.GetComponentInChildren<HellfSlider>().setValu(player.GetComponentInChildren<HellfSlider>().curnt + 25);
-            }
-        }
+      
 
         Animator.SetBool("Run", Agent.remainingDistance > 0.01f);
         targetEn = false;
@@ -98,6 +92,15 @@ public class DragonAI : MonoBehaviour
             TargetPos = SnapToNavMesh(pikeNewTarget());
         }
 
+        if (tryHellPlayer)
+        {
+            TargetPos = player.position;
+            if (Vector3.Distance(transform.position, setY(TargetPos, transform.position)) < 0.5f)
+            {
+                tryHellPlayer = false;
+                player.GetComponentInChildren<HellfSlider>().setValu(player.GetComponentInChildren<HellfSlider>().curnt + 25);
+            }
+        }
 
         Agent.SetDestination(TargetPos);
 

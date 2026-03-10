@@ -4843,6 +4843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6763719247077462281}
   - component: {fileID: 6393068452661025225}
+  - component: {fileID: 6825435887485383344}
   m_Layer: 0
   m_Name: Tortsh
   m_TagString: Untagged
@@ -4888,6 +4889,81 @@ MonoBehaviour:
   Lev: 0
   randomise: 0
   ForeTranssform: 0
+--- !u!114 &6825435887485383344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199747483633171327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39a7a9147b57884c9fe0e085593d263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 785875888397348298}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0041656494
+      value: 0.29244995
+      inSlope: 0.5498811
+      outSlope: 0.5498811
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.38705984
+    - serializedVersion: 3
+      time: 0.38094035
+      value: 0.615003
+      inSlope: 1.4734694
+      outSlope: 1.4734694
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4864614
+      value: 0.9966773
+      inSlope: 0.4428669
+      outSlope: 0.4428669
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.83132887
+      value: 0.91231537
+      inSlope: -1.5090103
+      outSlope: -1.5090103
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9074778
+      value: 0.4365306
+      inSlope: -3.8199775
+      outSlope: -3.8199775
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0041809
+      value: 0.29480743
+      inSlope: -0.5660241
+      outSlope: -0.5660241
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  sped: 2
+  britnes: 0
 --- !u!1 &6287564265126053380
 GameObject:
   m_ObjectHideFlags: 0

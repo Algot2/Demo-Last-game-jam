@@ -4,10 +4,14 @@ public class NewHuerBox : MonoBehaviour
 {
     public bool noNokBack;
     public bool IsEnemy;
+    public bool SetEmune;
     public float dam;
 
     void OnTriggerEnter(Collider other) {
-        
+
+        if ( SetEmune) {
+            StartCoroutine(Timer.StartTimer(0.2f, (f)=>GameManager.Instance.PL.GetComponentInChildren<HellfSlider>().Inmune = f));
+        }
         NewHitBox hitBox = other.transform.root.GetComponentInChildren<NewHitBox>();
         if (hitBox == null || hitBox.IsEnemy == IsEnemy) return;
 
@@ -15,8 +19,8 @@ public class NewHuerBox : MonoBehaviour
         hitBox.onHit(dam, back);
 
         if (!IsEnemy && !noNokBack) { 
-            StartCoroutine(Efects.camShake(0.05f, 0.2f)); 
-            StartCoroutine(Efects.timeFrez(0.2f));
+            StartCoroutine(Efects.camShake(0.1f, 0.2f)); 
+            StartCoroutine(Efects.timeFrez(0.3f));
         }
     }
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1041594587876377542}
   - component: {fileID: 1256744627051955868}
   - component: {fileID: 4019435655240996267}
+  - component: {fileID: 244639765248578950}
   m_Layer: 0
   m_Name: ChektpontPrefab
   m_TagString: Untagged
@@ -155,6 +156,72 @@ MonoBehaviour:
         _Object: {fileID: 0}
   hasTrigerd: 0
   triger: 0
+--- !u!114 &244639765248578950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779229919021417288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39a7a9147b57884c9fe0e085593d263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 4922525870807176097}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0083351135
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.07207419
+      value: 0.87701344
+      inSlope: 0.3641593
+      outSlope: 0.3641593
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.32236907
+      value: 0.8285547
+      inSlope: -0.1963
+      outSlope: -0.1963
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.49529487
+      value: 1.000494
+      inSlope: 0.012809039
+      outSlope: 0.012809039
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.35487565
+    - serializedVersion: 3
+      time: 0.9999857
+      value: 0.48584732
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  sped: 2
+  britnes: 0
 --- !u!1 &2021576363919823571
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,12 +18,15 @@ public class GameManager : MonoBehaviour
 
     public List<Trigger> triggers;
     public static GameObject chekpont ;
+
+ 
     void Awake()
     {
         chekpont = gameObject;
         Instance = this;
         player = PL;
         BaseShader.SetColor("_FongColer", FogStartColor);
+
     }
 
     //void Update()

@@ -564,7 +564,7 @@ Transform:
   m_GameObject: {fileID: 7192736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 425.4, y: 34.35, z: 927.29}
+  m_LocalPosition: {x: 421.75, y: 34.35, z: 918.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41568,7 +41568,7 @@ MonoBehaviour:
     m_Bits: 8
   minDist: 5
   BaseShader: {fileID: 2100000, guid: fcc2fcdc5f088c54194781b0b12477a8, type: 2}
-  FogStartColor: {r: 0.23529413, g: 0.22352943, b: 0.24705884, a: 1}
+  FogStartColor: {r: 0.1331657, g: 0.12482198, b: 0.14150941, a: 1}
   PL: {fileID: 421540332}
   enemies: []
   triggers: []

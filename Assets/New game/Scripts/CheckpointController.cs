@@ -86,10 +86,8 @@ public class CheckpointController : MonoBehaviour
         }
     }
 
-    public static void LoadGame()
-    {
-
-        GameManager.Instance.BaseShader.SetColor("_FongColer", GameManager.Instance.FogStartColor);
+    public static void LoadGame() {
+        //GameManager.Instance.BaseShader.SetColor("_FongColer", GameManager.Instance.FogStartColor);
         NewPlayerInput plIn = GameManager.player.GetComponent<NewPlayerInput>();
         plIn.isDed = false;
         plIn.animator.SetBool("Ded", false);

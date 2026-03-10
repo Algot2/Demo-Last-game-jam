@@ -7,7 +7,6 @@ public class PlMoment : MonoBehaviour
     public HellfSlider HellfSlider;
     public float Sped;
     public float parrySpeed = 1.5f;
-
     public float currentSpeed;
     
     public float dodshSped;
@@ -21,6 +20,8 @@ public class PlMoment : MonoBehaviour
     
     public Transform head;
     public Transform body;
+    public Transform vishols;
+    public Transform RotashenTarget;
     public Animator animator;
     Vector3 Dir = new();
     Vector3 moveDir;
@@ -69,6 +70,14 @@ public class PlMoment : MonoBehaviour
     }
     void Update()
     {
+        if (Physics.Raycast(transform.position + Vector3.up * 5, Vector3.down, out var hit, 100, GameManager.Instance.ground))
+        {
+            RotashenTarget.localRotation = Quaternion.Euler(Vector3.right);
+            float ang = RotashenTarget.transform.rotation.ToEuler().y;
+            RotashenTarget.transform.up = hit.normal;
+            RotashenTarget.transform.RotateAround(RotashenTarget.transform.TransformDirection(Vector3.up), ang);
+        }
+        vishols.transform.rotation = Quaternion.Lerp(vishols.transform.rotation, RotashenTarget.transform.rotation, Time.deltaTime*5);
         body.forward = Vector3.Lerp(body.forward, Dir, Time.deltaTime * 15);
 
         curentPos = transform.position;

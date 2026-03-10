@@ -347,7 +347,7 @@ MonoBehaviour:
   Agent: {fileID: 5721746204186398987}
   Atacks: {fileID: 6699611160327871584}
   Animator: {fileID: 1376980734582003513}
-  MinDisToEn: 3
+  MinDisToEn: 4.5
   disToPl: 5
   atacDis: 1
   TimeInbetinAtacks: 2
