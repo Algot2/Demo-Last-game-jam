@@ -27108,7 +27108,7 @@ MonoBehaviour:
   - {fileID: 149971105}
   - {fileID: 2060808526}
   FogColor: {r: 0, g: 0, b: 0, a: 1}
-  setFogColr: 1
+  setFogColr: 0
 --- !u!65 &1189224766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41545,6 +41545,7 @@ MonoBehaviour:
   dragon: {fileID: 2485638738524498555, guid: 2986d8a4411e1ae4396a25358ec140cd, type: 3}
   minDist: 5
   BaseShader: {fileID: 2100000, guid: fcc2fcdc5f088c54194781b0b12477a8, type: 2}
+  FogStartColor: {r: 0.23529413, g: 0.22352943, b: 0.24705884, a: 1}
   PL: {fileID: 421540332}
   enemies: []
   triggers: []
@@ -48021,7 +48022,7 @@ MonoBehaviour:
   - {fileID: 1803609370}
   - {fileID: 763800066}
   FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
-  setFogColr: 1
+  setFogColr: 0
 --- !u!65 &1981015360
 BoxCollider:
   m_ObjectHideFlags: 0

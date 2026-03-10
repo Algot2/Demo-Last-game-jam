@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject dragon;
     public float minDist = 5;
     public Material BaseShader;
+    public Color FogStartColor;
     
     public Transform PL;
     public static Transform player;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         chekpont = gameObject;
         Instance = this;
         player = PL;
+        BaseShader.SetColor("_FongColer", FogStartColor);
     }
 
     //void Update()
