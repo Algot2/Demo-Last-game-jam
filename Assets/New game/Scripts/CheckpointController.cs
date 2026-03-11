@@ -20,7 +20,7 @@ public class CheckpointController : MonoBehaviour
     
     void Start()
     {
-        if (StartingStetpont && !BoltsSave.GetBool("hasSave"))
+        if (StartingStetpont)// && !BoltsSave.GetBool("hasSave"))
             SaveGame();
         
         onLoadGame.Invoke();

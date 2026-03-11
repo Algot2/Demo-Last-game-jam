@@ -42,7 +42,7 @@ public class EnemyBat : MonoBehaviour
             }
 
             Vector3 dir = transform.position - GameManager.player.position;
-            transform.position += (dir.normalized * sped * Time.deltaTime) * ((dir.magnitude > 3 || canAtack) ? -1 : 0.5f);
+            transform.position += (dir.normalized * sped * Time.deltaTime) * ((dir.magnitude > 3 || canAtack) ? -1 : 0.15f);
 
 
             if (dir.magnitude > 2 && dir.magnitude < 4 && !canAtack) {

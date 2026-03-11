@@ -8,6 +8,9 @@ public class LOD : MonoBehaviour
     public bool randomise;
     public bool ForeTranssform;
 
+    private void Awake() {
+        LODGruper.LODs.Add(this);
+    }
     void Start() {
         if (ForeTranssform) {
             LODLevels[1].transform.position = LODLevels[0].transform.position;
