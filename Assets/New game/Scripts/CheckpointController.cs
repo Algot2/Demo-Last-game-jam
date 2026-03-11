@@ -20,7 +20,7 @@ public class CheckpointController : MonoBehaviour
     
     void Start()
     {
-        if (StartingStetpont)
+        if (StartingStetpont && !BoltsSave.GetBool("hasSave"))
             SaveGame();
         
         onLoadGame.Invoke();
@@ -36,6 +36,8 @@ public class CheckpointController : MonoBehaviour
 
         if (runSave)
         {
+            BoltsSave.SaveBoolValue("hasSave", true);
+            
             Efects.SetActive(true);
             GameManager.chekpont = gameObject;
             StartCoroutine(Timer.RunAfterCondishen(() => { Efects.SetActive(false); },

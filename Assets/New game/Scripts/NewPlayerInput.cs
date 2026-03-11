@@ -13,8 +13,13 @@ public class NewPlayerInput : MonoBehaviour
     public bool isDed;
     public bool isPaused;
 
+    public Material screenShade;
+    [BoltsShaderProperty("screenShade")]
+    public string shade;
 
-    public static float globalSensitivity = 50;
+    public static float globalSensitivity = 50, globalBrightnes = 2;
+
+    float currentBrightnes;
 
     public enum state {
         idel,
@@ -120,6 +125,12 @@ public class NewPlayerInput : MonoBehaviour
             if (globalSensitivity != sensetivety)
             {
                 sensetivety = globalSensitivity;
+            }
+
+            if (globalBrightnes != currentBrightnes)
+            {
+                currentBrightnes = globalBrightnes;
+                screenShade.SetFloat(shade, currentBrightnes);
             }
         }
         else { animator.SetBool("Ded", true); 
