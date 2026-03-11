@@ -126,9 +126,9 @@ public class CheckpointController : MonoBehaviour
             Destroy(GameManager.Instance.enemies[i].gameObject);
         }
         
-        staticOnLoadGame.Invoke();
-        
         GameManager.Instance.enemies.Clear();
+        
+        staticOnLoadGame.Invoke();
         
         // Loads All Enemies
         //List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");

@@ -466,39 +466,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5240237573781091931}
+  hurtBox: {fileID: 0}
   rb: {fileID: 6296229454994156284}
   timeTillDeath: 1
   deathSettings:
-  - renderer: {fileID: 0}
-    endValue: 0
-    materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
-    cutOff: _Cutoff
-  - renderer: {fileID: 0}
-    endValue: 0
-    materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
-    cutOff: _Cutoff
-  - renderer: {fileID: 0}
-    endValue: 0
-    materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
-    cutOff: _Cutoff
-  - renderer: {fileID: 0}
-    endValue: 0
-    materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
-    cutOff: _Cutoff
-  - renderer: {fileID: 0}
-    endValue: 0
-    materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
-    cutOff: _Cutoff
-  - renderer: {fileID: 0}
-    endValue: 0
-    materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
-    cutOff: _Cutoff
-  - renderer: {fileID: 0}
+  - renderer: {fileID: 2086383600198987431}
     endValue: 0
     materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
     cutOff: _Cutoff
   owner: {fileID: 0}
-  mat: {fileID: 0}
   isDead: 0
 --- !u!54 &6296229454994156284
 Rigidbody:
@@ -1746,6 +1722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noNokBack: 0
   IsEnemy: 1
+  SetEmune: 0
   dam: 30
 --- !u!1 &8430651413227996730
 GameObject:
@@ -2113,6 +2090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noNokBack: 0
   IsEnemy: 1
+  SetEmune: 0
   dam: 30
 --- !u!1001 &1283599368322415044
 PrefabInstance:
@@ -2286,6 +2264,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7210409963019144183}
   m_SourcePrefab: {fileID: 100100000, guid: a451911850d583c468d8bd844cc0f6d4, type: 3}
+--- !u!23 &2086383600198987431 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5837673113759572641, guid: a451911850d583c468d8bd844cc0f6d4, type: 3}
+  m_PrefabInstance: {fileID: 3605195204405801976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3855785597921776659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a451911850d583c468d8bd844cc0f6d4, type: 3}

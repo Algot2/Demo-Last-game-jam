@@ -14,16 +14,17 @@ public class BaseEnemyLogic : MonoBehaviour
     public List<EnemyMaterialSettings> deathSettings;
 
     public SpawnEnemiesTrigger owner;
-    public Material mat;
     public bool isDead;
-
 
     private void OnDestroy()
     {
         GameManager.Instance.enemies.Remove(this);
     }
-    void Update() {
-            
+    void Update() 
+    {
+        // if (GameManager.Instance != null && !GameManager.Instance.enemies.Contains(this))
+        //     GameManager.Instance.enemies.Add(this);
+        
         if (health.curnt <= 0 && !isDead) {
             hurtBox.SetActive(false);
 
@@ -71,7 +72,9 @@ public class BaseEnemyLogic : MonoBehaviour
         if (GameManager.Instance != null)
         {
             if(!GameManager.Instance.enemies.Contains(this))
+            {
                 GameManager.Instance.enemies.Add(this);
+            }
         }
     }
 }

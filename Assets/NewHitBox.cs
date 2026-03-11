@@ -17,13 +17,16 @@ public class NewHitBox : MonoBehaviour
         Slider.setValu(Slider.curnt - dam*efeckt);
         if (IsEnemy||Slider.Inmune) ParticleSystem.Play();
 
-        if (IsPlayer && !Slider.Inmune) StartCoroutine(Timer.StartTimer(0.2f, (f) => hitEfect.SetActive(f)));
+        if (IsPlayer && !Slider.Inmune && hitEfect != null) StartCoroutine(Timer.StartTimer(0.2f, (f) => hitEfect.SetActive(f)));
     }
 
     void OnEnable()
     {
-        PosOfset = transform.position - BodyPart.position;
-        rotashenOfset = transform.rotation * Quaternion.Inverse(BodyPart.rotation);
+        if (BodyPart != null)
+        {
+            PosOfset = transform.position - BodyPart.position;
+            rotashenOfset = transform.rotation * Quaternion.Inverse(BodyPart.rotation);
+        }
     }
 
     void Update() {
