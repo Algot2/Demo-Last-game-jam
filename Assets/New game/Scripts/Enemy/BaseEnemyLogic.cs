@@ -26,7 +26,8 @@ public class BaseEnemyLogic : MonoBehaviour
         //     GameManager.Instance.enemies.Add(this);
         
         if (health.curnt <= 0 && !isDead) {
-            hurtBox.SetActive(false);
+            try { hurtBox.SetActive(false); }
+            catch { }
 
             if (owner != null) {
                 owner.enemiesAlive--;

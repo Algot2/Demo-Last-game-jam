@@ -16,7 +16,8 @@ public class LOD : MonoBehaviour
         }
     }
     void Update() {
-        float dis = Vector3.Distance(LODLevels[0].transform.position, Camera.main.transform.position);
+        Vector3 difrens = LODLevels[0].transform.position - Camera.main.transform.position;
+        float dis = difrens.magnitude;
 
         int lev = 0;
         foreach (float D in Dist) {
@@ -24,12 +25,18 @@ public class LOD : MonoBehaviour
         }
 
         lev = Mathf.Clamp(lev, 0, Dist.Length-1);
+        
 
-        if (lev != Lev)
-        {
+        if (lev != Lev) {
             LODLevels[Lev].SetActive(false);
             LODLevels[lev].SetActive(true);
             Lev = lev;
+        }
+
+        if (lev != Dist.Length - 1)
+        {
+            float dotProdoct = Vector3.Dot(difrens.normalized, Camera.main.transform.forward);
+            LODLevels[Lev].SetActive(dotProdoct > 0.2f);
         }
 
     }

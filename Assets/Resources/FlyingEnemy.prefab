@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 4249916853727397933}
-  hurtBox: {fileID: 0}
+  hurtBox: {fileID: 3986927692087334833}
   rb: {fileID: 6267134292989894204}
   timeTillDeath: 1
   deathSettings:
@@ -1224,7 +1224,6 @@ MonoBehaviour:
     materialToChangeTo: {fileID: 2100000, guid: 2f96899d66bfeb94ab4164c5f5cea941, type: 2}
     cutOff: _Cutoff
   owner: {fileID: 0}
-  mat: {fileID: 0}
   isDead: 0
 --- !u!54 &6267134292989894204
 Rigidbody:
