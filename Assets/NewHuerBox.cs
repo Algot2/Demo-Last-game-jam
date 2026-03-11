@@ -7,7 +7,11 @@ public class NewHuerBox : MonoBehaviour
     public bool SetEmune;
     public float dam;
 
-    void OnTriggerEnter(Collider other) {
+    public static bool CanDamage = true;
+
+    void OnTriggerEnter(Collider other) 
+    {
+        if(!CanDamage) return;
 
         if ( SetEmune) {
             StartCoroutine(Timer.StartTimer(0.2f, (f)=>GameManager.Instance.PL.GetComponentInChildren<HellfSlider>().Inmune = f));
