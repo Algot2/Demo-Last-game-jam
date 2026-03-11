@@ -27,6 +27,9 @@ public class PlayerUIController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         inputs.isDed = true;
+
+        NewHuerBox.CanDamage = false;
+
         //Time.timeScale = 0;
     }
 

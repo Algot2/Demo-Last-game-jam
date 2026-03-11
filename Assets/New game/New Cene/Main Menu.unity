@@ -6702,9 +6702,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44ba3f85c9bad3449afe4882d409744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sText: {fileID: 0}
-  sSlider: {fileID: 0}
-  transition: {fileID: 0}
+  sText: {fileID: 1756453943}
+  sSlider: {fileID: 2143209869}
+  transition: {fileID: 1830261132}
   savedSensitivity: 0
 --- !u!4 &1112356013
 Transform:
@@ -13027,7 +13027,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2607152041934539480, guid: 2986d8a4411e1ae4396a25358ec140cd, type: 3}
+    - {fileID: 5721746204186398987, guid: 2986d8a4411e1ae4396a25358ec140cd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -8,8 +8,7 @@ public class CheckpointController : MonoBehaviour
 {
     public SpawnEnemiesTrigger spawner;
     
-    [BoltsSave(SavedVariableType.Vector3)]
-    public string positionString;
+    public string positionString = "playerPos";
 
     public static string staticPositionString;
 
@@ -128,6 +127,8 @@ public class CheckpointController : MonoBehaviour
         
         GameManager.Instance.enemies.Clear();
         
+        NewHuerBox.CanDamage = true;
+        
         staticOnLoadGame.Invoke();
         
         // Loads All Enemies
@@ -147,7 +148,6 @@ public class CheckpointController : MonoBehaviour
         Destroy(DragonAI.Instens.gameObject);
 
         Instantiate(GameManager.Instance.dragon, pos, Quaternion.identity);
-
 
         GameManager.player.GetComponent<CharacterController>().enabled = false;
         GameManager.player.position = pos;
