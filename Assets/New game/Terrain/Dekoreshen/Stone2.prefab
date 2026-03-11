@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4339976090071813481}
   - component: {fileID: 5233299746940328684}
   - component: {fileID: -1699856996164650958}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,6 +55,7 @@ MonoBehaviour:
   - 500
   Lev: 0
   randomise: 0
+  ForeTranssform: 0
 --- !u!65 &-1699856996164650958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87,7 +88,7 @@ GameObject:
   - component: {fileID: 5104759051650555485}
   - component: {fileID: 8940894163583662245}
   - component: {fileID: 689768129277742764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7151376421737725446}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Unlode
   m_TagString: Untagged
   m_Icon: {fileID: 0}

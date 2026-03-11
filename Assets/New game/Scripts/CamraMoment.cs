@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CamraMoment : MonoBehaviour
 {
-    public Transform bodyVisols;
     public Vector3 direct;
     public Transform head;
     public float disToCam;
@@ -20,16 +19,17 @@ public class CamraMoment : MonoBehaviour
         cam.transform.position -= head.right * 1.2f;
         head.forward = new Vector3(direct.x, 0, direct.z).normalized;
 
-       // bodyVisols.forward = -head.forward;
     }
 
-    public static Vector3 SphericalToCartesian(float radius, float theta, float phi)
-    {
-
-       // phi = Mathf.Clamp(phi, -1.5f, -0.5f);
-        float x = radius * Mathf.Sin(phi) * Mathf.Cos(theta);
-        float y = radius * Mathf.Cos(phi);
-        float z = radius * Mathf.Sin(phi) * Mathf.Sin(theta);
-        return new Vector3(x, y, z);
+    public Vector3 SphericalToCartesian(float radius, float theta, float phi) {
+        float x = Mathf.Sin(phi) * Mathf.Cos(theta);
+        float y = Mathf.Cos(phi);
+        float z = Mathf.Sin(phi) * Mathf.Sin(theta);
+        Vector3 dir = new Vector3(x, y, z); 
+        
+        if (Physics.Raycast(head.transform.position, dir, out var hit, radius, GameManager.Instance.ground)) {
+            radius = Mathf.Clamp(Vector3.Distance(head.transform.position, hit.point) - 0.5f, 1, radius);
+        }
+        return new Vector3(x, y, z) * radius;
     }
 }

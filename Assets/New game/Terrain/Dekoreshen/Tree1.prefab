@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4521133728380900443}
   - component: {fileID: 5543904675194015652}
   - component: {fileID: 7830550205175769469}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4785353415822895490}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Unlode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4349283966421698233}
   - component: {fileID: 7843514189087472338}
   - component: {fileID: 5037059065648842563}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,15 @@ PrefabInstance:
       value: Tree 1 DECIMATE
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0490e3fbdc74e914485678df1bf23bae, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0490e3fbdc74e914485678df1bf23bae, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0490e3fbdc74e914485678df1bf23bae, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3718613074394134538}
   - component: {fileID: 1089453957698196159}
   - component: {fileID: 8457259951280047471}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4887680750252033241}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Unlode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 2577829189334560272}
   - component: {fileID: 2665426298314877252}
   - component: {fileID: 4004498149039388373}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,8 +266,16 @@ PrefabInstance:
       value: Spiky Stone decimate
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a17a8c82c3db3e745812f3872f1f9c48, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a17a8c82c3db3e745812f3872f1f9c48, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a17a8c82c3db3e745812f3872f1f9c48, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
