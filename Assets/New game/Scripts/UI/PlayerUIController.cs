@@ -1,8 +1,9 @@
-using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,12 +17,17 @@ public class PlayerUIController : MonoBehaviour
 
     public TMP_InputField sText, bText;
     public Slider sSlider, bSlider;
+
+    public GameObject cheatVolume;
     
     public int savedSensitivity;
 
     public float savedBrightnes;
     
     public Image transition;
+
+    public bool cheatActive;
+    public float normalMaxHP;
 
     public void PlayerDied()
     {
@@ -169,6 +175,29 @@ public class PlayerUIController : MonoBehaviour
         BoltsSave.SaveFloatValue("Brightnes", savedBrightnes);
     }
 
+    public void ChatActive()
+    {
+        if (!cheatActive)
+        {
+            cheatVolume.SetActive(true);
+            
+            normalMaxHP = inputs.hellfSlider.max;
+            inputs.hellfSlider.max = 1000;
+            inputs.hellfSlider.setValu(1000);
+
+            cheatActive = true;
+        }
+        else
+        {
+            cheatVolume.SetActive(false);
+            
+            inputs.hellfSlider.max = normalMaxHP;
+            inputs.hellfSlider.setValu(normalMaxHP);
+
+            cheatActive = false;
+        }
+    }
+    
     public void ResumeGame()
     {
         pauseUIObj.SetActive(false);
@@ -177,12 +206,12 @@ public class PlayerUIController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void Awake()
+    void Awake()
     {
         Instance = this;
     }
 
-    private void Start()
+    void Start()
     {
         transition.color = Color.black;
 
@@ -208,5 +237,14 @@ public class PlayerUIController : MonoBehaviour
         
         bSlider.value = Mathf.Lerp(0.5f, 5, getBrightnes / 5);
         bText.text = $"{getBrightnes}";
+    }
+
+    void Update()
+    {
+        if (inputs.isPaused)
+        {
+            if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.T))
+                ChatActive();
+        }
     }
 }
