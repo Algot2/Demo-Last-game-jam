@@ -2094,6 +2094,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1753846454181774422, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
   m_PrefabInstance: {fileID: 802805247}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &75741269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+  m_PrefabInstance: {fileID: 802805247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a18ee60faf84a429669a94d687063d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &81046384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3718613074394134538, guid: d09141bd52005f24aaeaceea848c1ae1, type: 3}
@@ -4441,7 +4452,7 @@ GameObject:
   - component: {fileID: 179666575}
   - component: {fileID: 179666577}
   - component: {fileID: 179666576}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6788,7 +6799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8020,6 +8031,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4339976090071813481, guid: a92d43d04d187de4cab9c11ff0ff6169, type: 3}
   m_PrefabInstance: {fileID: 391021289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &398762413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398762416}
+  - component: {fileID: 398762415}
+  - component: {fileID: 398762414}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &398762414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398762413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
+--- !u!114 &398762415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398762413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &398762416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398762413}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &404063387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10238,10 +10328,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destnation: {fileID: 2073768729}
   AnabolDiabol:
-  - {fileID: 1457610656}
-  - {fileID: 1931393702}
-  FogColor: {r: 0, g: 0, b: 0, a: 0}
-  setFogColr: 0
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  FogColor: {r: 0.17254902, g: 0.18039216, b: 0.29411766, a: 1}
+  setFogColr: 1
 --- !u!65 &450452525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12890,6 +12980,60 @@ MonoBehaviour:
   burd: {fileID: 396463487316384904, guid: 20f67ac4aef68f749a4faaf1f5614124, type: 3}
   activeBurds: []
   canSpone: 1
+--- !u!1 &617716943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 617716945}
+  - component: {fileID: 617716944}
+  m_Layer: 0
+  m_Name: DebogMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &617716944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617716943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd0ed98e62404642920ff26a3150023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePos: {x: 50, y: 50, z: 0}
+  Ofset: {x: 0, y: 50, z: 0}
+  SetNewChekpont:
+  - {fileID: 937325046}
+  - {fileID: 1051984153}
+  - {fileID: 1399274826}
+  - {fileID: 1157966018}
+  - {fileID: 1527322034}
+  - {fileID: 75741269}
+  teleportCont: 6
+--- !u!4 &617716945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617716943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 963.17926, y: 944.6448, z: -952.66614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &617760108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21970,10 +22114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destnation: {fileID: 1019715215}
   AnabolDiabol:
-  - {fileID: 1457610656}
-  - {fileID: 1931393702}
-  FogColor: {r: 0, g: 0, b: 0, a: 0}
-  setFogColr: 0
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
+  setFogColr: 1
 --- !u!65 &861556718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23589,6 +23733,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1753846454181774422, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
   m_PrefabInstance: {fileID: 937325039}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &937325046 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+  m_PrefabInstance: {fileID: 937325039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a18ee60faf84a429669a94d687063d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &941230170
 GameObject:
   m_ObjectHideFlags: 0
@@ -25472,6 +25627,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4339976090071813481, guid: a92d43d04d187de4cab9c11ff0ff6169, type: 3}
   m_PrefabInstance: {fileID: 1049728151}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1051984153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+  m_PrefabInstance: {fileID: 1689625402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a18ee60faf84a429669a94d687063d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1054341699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27051,6 +27217,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3718613074394134538, guid: 45094d16449399944bfc9b8d87223cbb, type: 3}
   m_PrefabInstance: {fileID: 552517983}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1157966018 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+  m_PrefabInstance: {fileID: 324886097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a18ee60faf84a429669a94d687063d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1162224718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6763719247077462281, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
@@ -27897,8 +28074,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destnation: {fileID: 723370498}
   AnabolDiabol:
-  - {fileID: 1457610656}
-  - {fileID: 1931393702}
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
   FogColor: {r: 0.17139499, g: 0.1819897, b: 0.295, a: 1}
   setFogColr: 1
 --- !u!65 &1189224766
@@ -29579,8 +29756,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destnation: {fileID: 1276782314}
   AnabolDiabol:
-  - {fileID: 1457610656}
-  - {fileID: 1931393702}
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
   FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
   setFogColr: 1
 --- !u!1001 &1253807178
@@ -29891,10 +30068,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destnation: {fileID: 990264572}
   AnabolDiabol:
-  - {fileID: 1457610656}
-  - {fileID: 1931393702}
-  FogColor: {r: 0, g: 0, b: 0, a: 0}
-  setFogColr: 0
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 0}
+  setFogColr: 1
 --- !u!65 &1274580318
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30272,9 +30449,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destnation: {fileID: 1183126694}
   AnabolDiabol:
-  - {fileID: 1457610656}
-  - {fileID: 1931393702}
-  FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  FogColor: {r: 0.17254902, g: 0.18039216, b: 0.29411766, a: 1}
   setFogColr: 1
 --- !u!65 &1286205965
 BoxCollider:
@@ -32615,6 +32792,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4339976090071813481, guid: a92d43d04d187de4cab9c11ff0ff6169, type: 3}
   m_PrefabInstance: {fileID: 883387418}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1399274826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+  m_PrefabInstance: {fileID: 524673730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a18ee60faf84a429669a94d687063d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1404079060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6763719247077462281, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
@@ -35741,6 +35929,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4339976090071813481, guid: a92d43d04d187de4cab9c11ff0ff6169, type: 3}
   m_PrefabInstance: {fileID: 1524588097}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1527322034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+  m_PrefabInstance: {fileID: 375324582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a18ee60faf84a429669a94d687063d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1527565130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43045,10 +43244,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destnation: {fileID: 293317936}
   AnabolDiabol:
-  - {fileID: 1457610656}
-  - {fileID: 1931393702}
-  FogColor: {r: 0, g: 0, b: 0, a: 0}
-  setFogColr: 0
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
+  FogColor: {r: 0.17254902, g: 0.18039216, b: 0.29411766, a: 1}
+  setFogColr: 1
 --- !u!65 &1627445863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48645,7 +48844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1931393703
 Transform:
   m_ObjectHideFlags: 0
@@ -49521,8 +49720,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destnation: {fileID: 919644448}
   AnabolDiabol:
-  - {fileID: 1457610656}
-  - {fileID: 1931393702}
+  - {fileID: 149971105}
+  - {fileID: 2060808526}
   FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
   setFogColr: 1
 --- !u!65 &1981015360
@@ -52641,3 +52840,5 @@ SceneRoots:
   - {fileID: 2122217795}
   - {fileID: 1291608095}
   - {fileID: 1327955912}
+  - {fileID: 398762416}
+  - {fileID: 617716945}

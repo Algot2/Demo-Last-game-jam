@@ -104,7 +104,7 @@ public class PlayerUIController : MonoBehaviour
 
     public void SetSensitivity(float value)
     {
-        int finalSensitivity = (int)Mathf.Lerp(1, 200, value);
+        int finalSensitivity = (int)Mathf.Lerp(1, 350, value);
 
         NewPlayerInput.globalSensitivity = finalSensitivity;
 
