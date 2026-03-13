@@ -517,7 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy1: {fileID: 2570682181458789243, guid: f0d9166ffe98e3b44815d525fc9d3557, type: 3}
   Prodektile: {fileID: 3814647229669160960, guid: 7ffd054f99b92cf47815530c4ba238f2, type: 3}
-  Enemy2: {fileID: 8246770863410518043, guid: e0fdd03270e20b04e8235c37ec4495b4, type: 3}
+  Enemy2: {fileID: 3231231198568517006, guid: df2432794d6b4794e8eb621e4ea0b4b9, type: 3}
   moment: {fileID: 5669898516849688345}
   Vishols: {fileID: 3855785597921776659}
   sponDilay: 10
