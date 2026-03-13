@@ -6799,7 +6799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7895,7 +7895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9654,6 +9654,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6763719247077462281, guid: 1ff43d86741ea8a4195e760ea6cb687e, type: 3}
   m_PrefabInstance: {fileID: 1005430463}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &429535875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8092624107911937092, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+  m_PrefabInstance: {fileID: 421540331}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &431513422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10330,6 +10335,9 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 149971105}
   - {fileID: 2060808526}
+  - {fileID: 429535875}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.17254902, g: 0.18039216, b: 0.29411766, a: 1}
   setFogColr: 1
 --- !u!65 &450452525
@@ -11261,7 +11269,7 @@ PrefabInstance:
       objectReference: {fileID: 1197962613}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21289,7 +21297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22116,6 +22124,9 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 149971105}
   - {fileID: 2060808526}
+  - {fileID: 429535875}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
   setFogColr: 1
 --- !u!65 &861556718
@@ -23721,7 +23732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28076,6 +28087,9 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 149971105}
   - {fileID: 2060808526}
+  - {fileID: 429535875}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.17139499, g: 0.1819897, b: 0.295, a: 1}
   setFogColr: 1
 --- !u!65 &1189224766
@@ -29758,6 +29772,9 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 149971105}
   - {fileID: 2060808526}
+  - {fileID: 429535875}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
   setFogColr: 1
 --- !u!1001 &1253807178
@@ -30070,6 +30087,9 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 149971105}
   - {fileID: 2060808526}
+  - {fileID: 429535875}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 0}
   setFogColr: 1
 --- !u!65 &1274580318
@@ -30451,6 +30471,9 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 149971105}
   - {fileID: 2060808526}
+  - {fileID: 429535875}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.17254902, g: 0.18039216, b: 0.29411766, a: 1}
   setFogColr: 1
 --- !u!65 &1286205965
@@ -43246,6 +43269,9 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 149971105}
   - {fileID: 2060808526}
+  - {fileID: 429535875}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.17254902, g: 0.18039216, b: 0.29411766, a: 1}
   setFogColr: 1
 --- !u!65 &1627445863
@@ -44200,6 +44226,10 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 1612076740}
+    - target: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: StartingStetpont
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -49722,6 +49752,9 @@ MonoBehaviour:
   AnabolDiabol:
   - {fileID: 149971105}
   - {fileID: 2060808526}
+  - {fileID: 429535875}
+  - {fileID: 763800066}
+  - {fileID: 1554169720}
   FogColor: {r: 0.3372549, g: 0.32941177, b: 0.36862746, a: 1}
   setFogColr: 1
 --- !u!65 &1981015360
