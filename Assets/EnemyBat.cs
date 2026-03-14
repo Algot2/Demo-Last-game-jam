@@ -20,6 +20,11 @@ public class EnemyBat : MonoBehaviour
          StartCoroutine(Timer.StartTimer(Random.Range(1f, 4f), (f) => canAtack = !f));
     }
     void Update() {
+
+        if (Physics.Raycast(transform.position + Vector3.up * 2, Vector3.down, out RaycastHit hit, GameManager.Instance.ground, 50)) 
+           if (transform.position.y - hit.point.y < 1.2f) 
+                transform.position = hit.point+Vector3.up; 
+
         List<BaseEnemyLogic> en = GameManager.Instance.enemies;
         for (int i = 0; i < en.Count; i++) {
             Vector3 dis = transform.position - en[i].transform.position;

@@ -61,12 +61,16 @@ public class PlayerUIController : MonoBehaviour
         transition.DOColor(endColor, 1).OnComplete(() =>
         {
             Cursor.lockState = CursorLockMode.Locked;
-            
+            NewHuerBox.CanDamage = true;
             Time.timeScale = 1;
-        
+            foreach (BaseEnemyLogic en in GameManager.Instance.enemies) {
+                Destroy(en.gameObject);
+            }
+            GameManager.Instance.enemies.Clear();
+
             deathUIObj.SetActive(false);
             CheckpointController.LoadGame();
-            
+
             Color startColor = new(0, 0, 0, 0);
             transition.DOColor(startColor, 1);
         });

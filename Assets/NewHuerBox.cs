@@ -11,6 +11,7 @@ public class NewHuerBox : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
+        
         if(!CanDamage) return;
 
         if ( SetEmune) {

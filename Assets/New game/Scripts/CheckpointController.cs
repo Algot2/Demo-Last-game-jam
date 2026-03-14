@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UltEvents;
 using UnityEngine;
@@ -20,135 +19,170 @@ public class CheckpointController : MonoBehaviour
     
     void Start()
     {
-        if (StartingStetpont)
-        {
-            if (!BoltsSave.GetBool("hasSave"))
-                SaveGame();
-            else
-                LoadGame();
+        if (StartingStetpont) {
+            SaveGame(); 
+            LoadGame();
+
+            Efects.SetActive(true);
         }
         
         onLoadGame.Invoke();
     }
-    public void SaveGame()
-    {
+
+    public void SetAsNoneCurentChekpont() {
+        Efects.SetActive(false);
+    }
+    public void SaveGame()  {
         bool runSave = true;
-        
-        if(spawner != null)
-        {
+
+        if (spawner != null) {
             runSave = spawner.hasTriggered && spawner.enemiesAlive == 0;
         }
 
-        if (runSave)
-        {
-            BoltsSave.SaveBoolValue("hasSave", true);
-            
-            Efects.SetActive(true);
+        if (runSave) {
+
+            // Un-set curent chekpont
+            GameManager.Instance.chekponts[PlayerPrefs.GetInt("Save")].SetAsNoneCurentChekpont();
+
+            // Save game
+            PlayerPrefs.SetInt("Save", GameManager.Instance.chekponts.IndexOf(this));
             GameManager.chekpont = gameObject;
-            StartCoroutine(Timer.RunAfterCondishen(() => { Efects.SetActive(false); },
-                () => GameManager.chekpont != gameObject));
-
-            Debug.Log("Saved Game");
-
-            // Saves The Player Position
-            BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
 
             // Sets Players HP To Full
             GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
                 GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
 
             GetComponent<Trigger>().hasTriggered = true;
-
-            BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
-
-            // Saves All Trigger States
-            List<Trigger> triggers = GameManager.Instance.triggers;
-            for (int i = 0; i < triggers.Count; i++)
-            {
-                string boolName = $"Trigger: Index = ({i})";
-                BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
-            }
-
-            // Old Stuff
-            /*
-            // Resets The List So It Can Be Used Again
-            BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
-
-            // Saves All Enemies
-            List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
-
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                string enemyName = enemies[i].gameObject.name;
-                string[] nameSplit = enemyName.Split(" (");
-                enemyName = nameSplit[0];
-
-                SavedEnemy newSavedEnemy = new()
-                { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
-                BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
-            }*/
-
-            // Save Changes
         }
+        Efects.SetActive(true);
+
+        //if (runSave)
+        //{
+        //    BoltsSave.SaveBoolValue("hasSave", true);
+
+        //    Efects.SetActive(true);
+        //    GameManager.chekpont = gameObject;
+        //    StartCoroutine(Timer.RunAfterCondishen(() => { Efects.SetActive(false); },
+        //        () => GameManager.chekpont != gameObject));
+
+        //    Debug.Log("Saved Game");
+
+        //    // Saves The Player Position
+        //    BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
+
+        //    // Sets Players HP To Full
+        //    GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
+        //        GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
+
+        //    GetComponent<Trigger>().hasTriggered = true;
+
+        //    BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
+
+        //    // Saves All Trigger States
+        //    List<Trigger> triggers = GameManager.Instance.triggers;
+        //    for (int i = 0; i < triggers.Count; i++)
+        //    {
+        //        string boolName = $"Trigger: Index = ({i})";
+        //        BoltsSave.SaveBoolValue(boolName, triggers[i].hasTriggered);
+        //    }
+
+        //    // Old Stuff
+        //    /*
+        //    // Resets The List So It Can Be Used Again
+        //    BoltsSave.ResetSavedClassesWithName("Enemy: Index = (");
+
+        //    // Saves All Enemies
+        //    List<BaseEnemyLogic> enemies = GameManager.Instance.enemies;
+
+        //    for (int i = 0; i < enemies.Count; i++)
+        //    {
+        //        string enemyName = enemies[i].gameObject.name;
+        //        string[] nameSplit = enemyName.Split(" (");
+        //        enemyName = nameSplit[0];
+
+        //        SavedEnemy newSavedEnemy = new()
+        //        { obj = enemyName, current = enemies[i].health.curnt, pos = enemies[i].transform.position };
+        //        BoltsSave.SaveClassVariable($"Enemy: Index = ({i})", newSavedEnemy);
+        //    }*/
+
+        //    // Save Changes
+        //}
     }
 
     public static void LoadGame() {
+
+        GameManager.Instance.chekponts[PlayerPrefs.GetInt("Save")].Efects.SetActive(true);
         //GameManager.Instance.BaseShader.SetColor("_FongColer", GameManager.Instance.FogStartColor);
         NewPlayerInput plIn = GameManager.player.GetComponent<NewPlayerInput>();
+        
+        GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
+          GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
+
         plIn.isDed = false;
         plIn.animator.SetBool("Ded", false);
 
-        GameManager.player.GetComponent<PlMoment>().HellfSlider.setValu(
-            GameManager.player.GetComponent<PlMoment>().HellfSlider.max);
-        
+      
+
+        float ang = Random.Range(0, 2*Mathf.PI);
+        float r = 2.5f;
         // Sets The Player Position To The Saved One
-        Vector3 savedPos = BoltsSave.GetVector3(staticPositionString);
+        Vector3 savedPos = GameManager.Instance.chekponts[PlayerPrefs.GetInt("Save")].transform.position + new Vector3 {
+            x = Mathf.Cos(ang),
+            y = 1/r,
+            z = Mathf.Sin(ang)
+        } * r;
         GameManager.player.position = savedPos;
         DragonAI.Instens.gameObject.SetActive(false);
         DragonAI.Instens.transform.position = savedPos;
         DragonAI.Instens.gameObject.SetActive(true);
 
-        // Loads All Trigger States
-        List<Trigger> triggers = GameManager.Instance.triggers;
-        List<SaveBool> allBools = BoltsSave.GetAllBools();
-        for (int i = 0; i < triggers.Count; i++)
-        {
-            triggers[i].hasTriggered = allBools[i].value;
+        List<Trigger> enemySponers = GameManager.Instance.triggers;
 
-            if (triggers[i] is SpawnEnemiesTrigger)
-            {
-                SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
-                if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
-                {
-                    spawner.enemiesAlive = 0;
-                    spawner.hasSpawnedEnemies = false;
-                    spawner.hasTriggered = false;
-                }
-            }
+        foreach (Trigger sponer in enemySponers) {
+            sponer.hasTriggered = false;
         }
-
-        for (int i = 0; i < GameManager.Instance.enemies.Count; i++)
-        {
-            Destroy(GameManager.Instance.enemies[i].gameObject);
-        }
-        
-        GameManager.Instance.enemies.Clear();
-        
-        NewHuerBox.CanDamage = true;
-        
-        staticOnLoadGame.Invoke();
-        
-        // Loads All Enemies
-        //List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");
-        //foreach (var e in savedEnemyClassNames)
+        //// Loads All Trigger States
+        //List<Trigger> triggers = GameManager.Instance.triggers;
+        //List<SaveBool> allBools = BoltsSave.GetAllBools();
+        //for (int i = 0; i < triggers.Count; i++)
         //{
-        //    SavedEnemy newEnemy = BoltsSave.LoadClass<SavedEnemy>(e);
-        //    GameObject newEnemyObj = Instantiate(Resources.Load<GameObject>(newEnemy.obj), newEnemy.pos, Quaternion.identity);
-        //    newEnemyObj.GetComponent<BaseEnemyLogic>().health.setValu(newEnemy.current);
+        //    triggers[i].hasTriggered = allBools[i].value;
+
+        //    if (triggers[i] is SpawnEnemiesTrigger)
+        //    {
+        //        SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
+        //        if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
+        //        {
+        //            spawner.enemiesAlive = 0;
+        //            spawner.hasSpawnedEnemies = false;
+        //            spawner.hasTriggered = false;
+        //        }
+        //    }
         //}
 
-        // Load Changes
+        //for (int i = 0; i < GameManager.Instance.enemies.Count; i++)
+        //{
+        //    Destroy(GameManager.Instance.enemies[i].gameObject);
+        //}
+
+        //GameManager.Instance.enemies.Clear();
+
+        //NewHuerBox.CanDamage = true;
+
+        //staticOnLoadGame.Invoke();
+
+        //// Loads All Enemies
+        ////List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");
+        ////foreach (var e in savedEnemyClassNames)
+        ////{
+        ////    SavedEnemy newEnemy = BoltsSave.LoadClass<SavedEnemy>(e);
+        ////    GameObject newEnemyObj = Instantiate(Resources.Load<GameObject>(newEnemy.obj), newEnemy.pos, Quaternion.identity);
+        ////    newEnemyObj.GetComponent<BaseEnemyLogic>().health.setValu(newEnemy.current);
+        ////}
+
+        //// Load Changes
     }
+    //__________________________________________
 
     public static void TeleportPlayer(Vector3 pos)
     {

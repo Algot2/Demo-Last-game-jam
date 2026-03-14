@@ -6801,6 +6801,10 @@ PrefabInstance:
       propertyPath: canTriger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: triggerOnce
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7896,6 +7900,10 @@ PrefabInstance:
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: triggerOnce
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11270,6 +11278,10 @@ PrefabInstance:
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: triggerOnce
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21299,6 +21311,10 @@ PrefabInstance:
       propertyPath: canTriger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: triggerOnce
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23726,6 +23742,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2021576363919823571, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: StartingStetpont
       value: 1
@@ -23733,6 +23753,10 @@ PrefabInstance:
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: triggerOnce
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42887,6 +42911,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fe13699e902f44f875ebbd8d5e41c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chekponts:
+  - {fileID: 1051984153}
+  - {fileID: 1399274826}
+  - {fileID: 1157966018}
+  - {fileID: 1527322034}
+  - {fileID: 75741269}
+  - {fileID: 937325046}
   dragon: {fileID: 2485638738524498555, guid: 2986d8a4411e1ae4396a25358ec140cd, type: 3}
   ground:
     serializedVersion: 2
@@ -42896,7 +42927,22 @@ MonoBehaviour:
   FogStartColor: {r: 0.1331657, g: 0.12482198, b: 0.14150941, a: 1}
   PL: {fileID: 421540332}
   enemies: []
-  triggers: []
+  triggers:
+  - {fileID: 1612076740}
+  - {fileID: 1197962613}
+  - {fileID: 1407983126}
+  - {fileID: 1214445122}
+  - {fileID: 1542540345}
+  - {fileID: 1794072081}
+  - {fileID: 1488977206}
+  - {fileID: 1114595468}
+  - {fileID: 1466466038}
+  - {fileID: 599094279}
+  - {fileID: 296902651}
+  - {fileID: 920072704}
+  - {fileID: 1343522744}
+  - {fileID: 676547788}
+  - {fileID: 743535231}
 --- !u!4 &1612895229
 Transform:
   m_ObjectHideFlags: 0
@@ -44228,6 +44274,10 @@ PrefabInstance:
       objectReference: {fileID: 1612076740}
     - target: {fileID: 4992028079349173877, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: StartingStetpont
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: triggerOnce
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

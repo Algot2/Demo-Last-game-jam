@@ -14,6 +14,7 @@ public class NewHitBox : MonoBehaviour
 
 
     public void onHit(float dam, Vector3 back) {
+        Debug.Log("hit");
         Slider.setValu(Slider.curnt - dam*efeckt);
         if (IsEnemy||Slider.Inmune) ParticleSystem.Play();
 
