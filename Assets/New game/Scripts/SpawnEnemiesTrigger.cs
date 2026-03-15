@@ -44,7 +44,7 @@ public class SpawnEnemiesTrigger : Trigger
                 enemiesAlive++;
             }
         }
-       // hasSpawnedEnemies = true;
+           // hasSpawnedEnemies = true;
 
     }
 

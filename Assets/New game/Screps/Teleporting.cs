@@ -9,7 +9,7 @@ public class TeleportingScrep : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            CheckpointController.TeleportPlayer(destination.position, shwoSnow);
+            CheckpointController.TeleportPlayer(destination.position);
 
             foreach (GameObject G in AnabolDisabol) 
                 G.SetActive(!G.active);

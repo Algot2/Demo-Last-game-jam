@@ -9095,7 +9095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: Sped
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: dodshMove
@@ -14034,7 +14034,7 @@ Transform:
   m_GameObject: {fileID: 676547784}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 211.78, y: 170.1, z: 164.7}
+  m_LocalPosition: {x: 211.78, y: 170.1, z: 155.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14060,7 +14060,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 71.2, y: 29.4, z: 3.86}
-  m_Center: {x: -17.3, y: 9.070759, z: 29.1}
+  m_Center: {x: -15.52, y: 9.070759, z: 29.1}
 --- !u!114 &676547787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14109,7 +14109,7 @@ MonoBehaviour:
     _PersistentCalls: []
   spawnSettings:
     bounds: {x: 15, y: 15}
-    offset: {x: 0, y: 0, z: 0}
+    offset: {x: -24.6, y: 0, z: 2.04}
     enemiesToSpawn:
     - enemy: {fileID: 2570682181458789243, guid: f0d9166ffe98e3b44815d525fc9d3557, type: 3}
       count: 3
@@ -26771,7 +26771,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1141272592
 Transform:
   m_ObjectHideFlags: 0
@@ -31029,7 +31029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1302648196
 Transform:
   m_ObjectHideFlags: 0

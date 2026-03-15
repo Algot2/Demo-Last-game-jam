@@ -1,11 +1,12 @@
-using System.Collections.Generic;
 using DG.Tweening;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 public class PlayerUIController : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PlayerUIController : MonoBehaviour
 
     public bool cheatActive;
     public float normalMaxHP;
-
+    bool fading = false;
     public void PlayerDied()
     {
         deathUIObj.SetActive(true);
@@ -57,23 +58,31 @@ public class PlayerUIController : MonoBehaviour
     
     public void LoadSave()
     {
-        Color endColor = new(0, 0, 0, 1);
-        transition.DOColor(endColor, 1).OnComplete(() =>
+        if (!fading)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            NewHuerBox.CanDamage = true;
-            Time.timeScale = 1;
-            foreach (BaseEnemyLogic en in GameManager.Instance.enemies) {
-                Destroy(en.gameObject);
-            }
-            GameManager.Instance.enemies.Clear();
+            fading = true;
+            Color endColor = new(0, 0, 0, 1);
+            transition.DOColor(endColor, 1).OnComplete(() =>
+            {
+                fading = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                NewHuerBox.CanDamage = true;
+                Time.timeScale = 1;
+                foreach (BaseEnemyLogic en in GameManager.Instance.enemies)
+                {
+                    Destroy(en.gameObject);
+                }
+                GameManager.Instance.enemies.Clear();
 
-            deathUIObj.SetActive(false);
-            CheckpointController.LoadGame();
+                deathUIObj.SetActive(false);
 
-            Color startColor = new(0, 0, 0, 0);
-            transition.DOColor(startColor, 1);
-        });
+
+                Color startColor = new(0, 0, 0, 0);
+                transition.DOColor(startColor, 1);
+
+                CheckpointController.LoadGame();
+            });
+        }
     }
 
     public void QuitGame()
