@@ -383,6 +383,36 @@ namespace BoltsTools
             SaveData newSD = new SaveData();
             SaveFile(newSD);
         }
+        
+        public static List<SaveBool> GetAllBools()
+        {
+            SaveData sd = LoadOrCreate();
+
+            if (_settings == null)
+            {
+                Debug.LogError("SaveSystem not initialized. Call SaveSystem.Initialize() once before saving.");
+
+                return new();
+            }
+
+            return sd.bools;
+        }
+
+        public static void ResetAllBoolsWithName(string name)
+        {
+            SaveData sd = LoadOrCreate();
+
+            if (_settings == null)
+            {
+                Debug.LogError("SaveSystem not initialized. Call SaveSystem.Initialize() once before saving.");
+
+                return;
+            }
+
+            sd.bools.RemoveAll(b => b.name.StartsWith(name));
+
+            SaveFile(sd);
+        }
     }
 
     [Serializable]

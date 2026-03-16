@@ -17,15 +17,25 @@ public class CheckpointController : MonoBehaviour
 
     public UltEvent onLoadGame;
     public static UltEvent staticOnLoadGame;
+
+    public static bool hasTriggered;
     
     void Start()
     {
-        if (StartingStetpont) {
-            SaveGame(); 
-            LoadGame();
+        if(!BoltsSave.GetBool("hasSave"))
+        {
+            if (StartingStetpont)
+            {
+                SaveGame();
+                LoadGame();
 
-            Efects.SetActive(true);
+                hasTriggered = false;
+
+                Efects.SetActive(true);
+            }
         }
+        else
+            LoadGame();
         
         onLoadGame.Invoke();
     }
@@ -33,7 +43,10 @@ public class CheckpointController : MonoBehaviour
     public void SetAsNoneCurentChekpont() {
         Efects.SetActive(false);
     }
-    public void SaveGame()  {
+    public void SaveGame()
+    {
+        hasTriggered = true;
+        
         bool runSave = true;
 
         if (spawner != null) {
@@ -79,7 +92,7 @@ public class CheckpointController : MonoBehaviour
 
             GetComponent<Trigger>().hasTriggered = true;
 
-            //BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
+            BoltsSave.ResetAllBoolsWithName("Trigger: Index = (");
 
             // Saves All Trigger States
             List<Trigger> triggers = GameManager.Instance.triggers;
@@ -124,7 +137,8 @@ public class CheckpointController : MonoBehaviour
         plIn.isDed = false;
         plIn.animator.SetBool("Ded", false);
 
-        TeleportPlayer(BoltsSave.GetVector3("playerPos"));
+        if(hasTriggered)
+            TeleportPlayer(BoltsSave.GetVector3(staticPositionString));
 
         //float ang = Random.Range(0, 2 * Mathf.PI);
         //float r = 2.5f;
@@ -150,23 +164,23 @@ public class CheckpointController : MonoBehaviour
         staticOnLoadGame.Invoke();
 
         // Loads All Trigger States
-        //List<Trigger> triggers = GameManager.Instance.triggers;
-        //List<SaveBool> allBools = BoltsSave.GetAllBools();
-        //for (int i = 0; i < triggers.Count; i++)
-        //{
-        //    triggers[i].hasTriggered = allBools[i].value;
+        List<Trigger> triggers = GameManager.Instance.triggers;
+        List<SaveBool> allBools = BoltsSave.GetAllBools();
+        for (int i = 0; i < triggers.Count; i++)
+        {
+            triggers[i].hasTriggered = allBools[i].value;
 
-        //    if (triggers[i] is SpawnEnemiesTrigger)
-        //    {
-        //        SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
-        //        if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
-        //        {
-        //            spawner.enemiesAlive = 0;
-        //            spawner.hasSpawnedEnemies = false;
-        //            spawner.hasTriggered = false;
-        //        }
-        //    }
-        //}
+            if (triggers[i] is SpawnEnemiesTrigger)
+            {
+                SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
+                if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
+                {
+                    spawner.enemiesAlive = 0;
+                    spawner.hasSpawnedEnemies = false;
+                    spawner.hasTriggered = false;
+                }
+            }
+        }
 
         for (int i = 0; i < GameManager.Instance.enemies.Count; i++)
         {
