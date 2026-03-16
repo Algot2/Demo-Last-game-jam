@@ -1,14 +1,20 @@
 using System.IO;
 using UnityEngine;
 
-public class SavingConfigAsset : ScriptableObject
+namespace BoltsTools
 {
-    public string fileName = "save.json";
-    public bool usePersistentDataPath = true;
-    public bool useEncryption;
+    [Icon("Assets/BoltsTools/Sprites/SettingsLogo.png")]
+    public class SavingConfigAsset : ScriptableObject
+    {
+        public string fileName = "save.json";
+        public bool usePersistentDataPath = true;
+        public bool useEncryption;
 
-    public string path;
 
-    public string GetFullPath()
-    { return Path.Combine(path, fileName); }
+        public string GetFullPath()
+        {
+            string path = usePersistentDataPath ? Application.persistentDataPath : Application.dataPath;
+            return Path.Combine(path, fileName);
+        }
+    }
 }
