@@ -129,14 +129,16 @@ namespace BoltsTools
         
         void Update()
         {
-            frames = (float)Decimal.Round((decimal)(1 / Time.deltaTime));
-            time += Time.deltaTime;
-            if (time >= 1)
-            {
-                frames = 0;
-                time = 0;
-            }
+            if (Time.timeScale > 0) {
+                frames = (float)Decimal.Round((decimal)(1 / Time.deltaTime));
+                time += Time.deltaTime;
 
+                if (time >= 1)
+                {
+                    frames = 0;
+                    time = 0;
+                }
+            }
             if (Input.GetKeyDown(LoadBoltsDebugMenu._settings.keyToOpenDebug))
                 showDebug = !showDebug;
 

@@ -16,7 +16,6 @@ public class SideFing : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
         currentButton = null;
-        Debug.Log(results.Count);
         
         foreach (RaycastResult result in results) {
             Button b = result.gameObject.GetComponent<Button>();
