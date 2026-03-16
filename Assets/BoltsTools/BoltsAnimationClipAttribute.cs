@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class BoltsAnimationClipAttribute : PropertyAttribute
+namespace BoltsTools
 {
-    public string animator;
-
-    public BoltsAnimationClipAttribute(string animator)
+    public class BoltsAnimationClipAttribute : PropertyAttribute
     {
-        this.animator = animator;
+        public string animator;
+
+        public BoltsAnimationClipAttribute(string animator)
+        {
+            this.animator = animator;
+        }
     }
 }

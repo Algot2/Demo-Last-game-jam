@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using BoltsTools;
 
 public class BaseEnemyLogic : MonoBehaviour
 {

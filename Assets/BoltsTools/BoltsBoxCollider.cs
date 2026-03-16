@@ -50,15 +50,13 @@ public class BoltsBoxCollider : MonoBehaviour
         boxCollider.size = min - max;
     }
     
-    private void OnValidate()
+    private void OnEnable()
     {
         if (boxCollider == null)
         {
             boxCollider = gameObject.GetComponent<BoxCollider>() == null ? gameObject.AddComponent<BoxCollider>() : 
                 gameObject.GetComponent<BoxCollider>();
         }
-        
-        boxCollider.hideFlags = HideFlags.HideInInspector;
     }
 
     private void Awake()
@@ -68,15 +66,13 @@ public class BoltsBoxCollider : MonoBehaviour
             boxCollider = gameObject.GetComponent<BoxCollider>() == null ? gameObject.AddComponent<BoxCollider>() : 
                 gameObject.GetComponent<BoxCollider>();
         }
-        
-        boxCollider.hideFlags = HideFlags.HideInInspector;
     }
 
     private void OnDestroy()
     {
-       if(boxCollider == null) return;
-       if(!gameObject.scene.isLoaded) return;
+        if(boxCollider == null) return;
+        if(!gameObject.scene.isLoaded) return;
        
-       DestroyImmediate(boxCollider);
+        DestroyImmediate(boxCollider);
     }
 }

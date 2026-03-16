@@ -1,9 +1,9 @@
 using UnityEditor;
 
 [CustomEditor(typeof(BaseEnemyLogic))]
-public class BaseEnemyLogicDrawer : Editor
+public class BaseEnemyLogicDrawer : UnityEditor.Editor
 {
-    private Editor healthEditor;
+    private UnityEditor.Editor healthEditor;
     private bool showValues;
 
     public override void OnInspectorGUI()

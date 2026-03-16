@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using NaughtyAttributes;
 using UnityEngine;
+using BoltsTools;
 
 public class FinalBoss : MonoBehaviour
 {

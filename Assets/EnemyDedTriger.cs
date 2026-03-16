@@ -1,5 +1,6 @@
 using UltEvents;
 using UnityEngine;
+using BoltsTools;
 
 public class EnemyDedTriger : MonoBehaviour
 {

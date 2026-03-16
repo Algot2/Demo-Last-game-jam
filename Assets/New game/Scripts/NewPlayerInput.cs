@@ -1,4 +1,5 @@
 using UnityEngine;
+using BoltsTools;
 
 public class NewPlayerInput : MonoBehaviour
 {
