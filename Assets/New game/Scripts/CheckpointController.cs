@@ -190,9 +190,9 @@ public class CheckpointController : MonoBehaviour
 
         Instantiate(GameManager.Instance.dragon, pos, Quaternion.identity);
 
-        GameManager.player.GetComponent<CharacterController>().enabled = false;
+        GameManager.player.gameObject.SetActive(false);
         GameManager.player.position = pos;
-        GameManager.player.GetComponent<CharacterController>().enabled = true;
+        GameManager.player.gameObject.SetActive(true);
     }
     
     public static void TeleportPlayer(Vector3 pos, bool showSnow)
