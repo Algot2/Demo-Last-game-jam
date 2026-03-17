@@ -6811,6 +6811,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: triggerOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: hasTriggered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7917,6 +7921,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: triggerOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: hasTriggered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11224,6 +11232,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: triggerOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: hasTriggered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21264,6 +21276,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: triggerOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: hasTriggered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -23713,6 +23729,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: triggerOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: hasTriggered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -44493,6 +44513,10 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 8abb80431bc5da74a80f91335c40e523, type: 3}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: triggerOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: hasTriggered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

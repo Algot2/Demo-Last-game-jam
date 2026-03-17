@@ -9,7 +9,7 @@ public class NewHitBox : MonoBehaviour
     public Transform BodyPart;
     public ParticleSystem ParticleSystem;
     public AudioSource AudioSource;
-    public AudioClip AudioClip;
+    public AudioClip Block, Hit;
     public float efeckt = 1;
     Vector3 PosOfset = new();
     Quaternion rotashenOfset = new();
@@ -19,12 +19,19 @@ public class NewHitBox : MonoBehaviour
         Debug.Log("hit");
         Slider.setValu(Slider.curnt - dam*efeckt);
         if (IsEnemy||Slider.Inmune) ParticleSystem.Play();
+        
         if (Slider.Inmune) { 
-            AudioSource.PlayOneShot(AudioClip);
+            AudioSource.PlayOneShot(Block);
             AudioSource.volume = Random.Range(0.1f, 0.15f);
             AudioSource.pitch = Random.Range(0.7f, 0.9f);
         }
-        if (IsPlayer && !Slider.Inmune && hitEfect != null) StartCoroutine(Timer.StartTimer(0.2f, (f) => hitEfect.SetActive(f)));
+
+        if (IsPlayer && !Slider.Inmune) {
+            StartCoroutine(Timer.StartTimer(0.2f, (f) => hitEfect.SetActive(f)));
+            AudioSource.PlayOneShot(Hit);
+            AudioSource.volume = Random.Range(0.1f, 0.15f);
+            AudioSource.pitch = Random.Range(0.8f, 1.2f);
+        }
     }
 
     void OnEnable()

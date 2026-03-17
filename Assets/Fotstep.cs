@@ -14,7 +14,7 @@ public class Fotstep : MonoBehaviour
         if (can) {
             if (SFX)
             {
-                AudioSource.volume = Random.Range(0.1f, 0.15f);
+                AudioSource.volume = Random.Range(0.2f, 0.25f);
                 AudioSource.pitch = Random.Range(0.7f, 0.9f);
                 AudioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
             }

@@ -26,6 +26,6 @@ public class MusikMan : MonoBehaviour
         if (!inCombat) {
            AudioSource.volume = VoumeCure.Evaluate(GetDistensToClosest()) * maxVolum;
         }
-        else AudioSource.volume = Mathf.Lerp(AudioSource.volume, maxVolum * 2, Time.deltaTime*10);
+        else AudioSource.volume = Mathf.Lerp(AudioSource.volume, maxVolum * 1.5f, Time.deltaTime*10);
     }
 }
