@@ -21,9 +21,11 @@ public class MusikMan : MonoBehaviour
         return (dist.magnitude)/chenpontInfluens;
     }
     void Update() {
+        inCombat = GameManager.Instance.enemies.Count > 0;
+
         if (!inCombat) {
            AudioSource.volume = VoumeCure.Evaluate(GetDistensToClosest()) * maxVolum;
         }
-        else AudioSource.volume = maxVolum;
+        else AudioSource.volume = Mathf.Lerp(AudioSource.volume, maxVolum * 2, Time.deltaTime*10);
     }
 }
