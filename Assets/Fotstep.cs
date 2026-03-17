@@ -3,11 +3,21 @@ using UnityEngine;
 public class Fotstep : MonoBehaviour
 {
     bool can = true;
+    public bool SFX = false;
+    public AudioClip[] audioClips;
+    public AudioSource AudioSource;
+
     public float scale;
 
     void OnTriggerEnter(Collider other) {
         LayerMask ground = GameManager.Instance.ground;
         if (can) {
+            if (SFX)
+            {
+                AudioSource.volume = Random.Range(0.1f, 0.15f);
+                AudioSource.pitch = Random.Range(0.7f, 0.9f);
+                AudioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+            }
             Transform T = transform.GetChild(0);
             GameObject fotStep = Instantiate(T.gameObject, T.position, T.rotation);
 

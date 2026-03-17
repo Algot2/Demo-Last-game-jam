@@ -451,6 +451,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &7037538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1933,6 +1935,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &73795893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6797,6 +6801,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6148648758967570451, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8abb80431bc5da74a80f91335c40e523, type: 3}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
       value: 1
@@ -7709,6 +7717,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &370240509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7897,6 +7907,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6148648758967570451, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8abb80431bc5da74a80f91335c40e523, type: 3}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
       value: 1
@@ -9016,7 +9030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: Sped
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5966069730297437065, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: dodshMove
@@ -11200,6 +11214,10 @@ PrefabInstance:
       propertyPath: 'NeseserySpanTrigers.Array.data[1]'
       value: 
       objectReference: {fileID: 1197962613}
+    - target: {fileID: 6148648758967570451, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8abb80431bc5da74a80f91335c40e523, type: 3}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
       value: 1
@@ -11845,6 +11863,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &559835081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15135,6 +15155,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &742680903
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21232,6 +21254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6148648758967570451, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8abb80431bc5da74a80f91335c40e523, type: 3}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
       value: 1
@@ -21754,6 +21780,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &843514405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23675,6 +23703,10 @@ PrefabInstance:
       propertyPath: StartingStetpont
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6148648758967570451, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8abb80431bc5da74a80f91335c40e523, type: 3}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: canTriger
       value: 1
@@ -23740,6 +23772,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &941230172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23949,6 +23983,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &961815950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24691,6 +24727,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &1010221433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36008,6 +36046,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &1532505094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36383,6 +36423,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &1551816609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42815,6 +42857,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1612895229}
   - component: {fileID: 1612895228}
+  - component: {fileID: 1612895231}
+  - component: {fileID: 1612895230}
+  - component: {fileID: 1612895232}
   m_Layer: 0
   m_Name: EnemyManetsher
   m_TagString: Untagged
@@ -42881,6 +42926,249 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1612895230
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612895227}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4ea3970747cce704f9cf9488bf26bde9, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4ea3970747cce704f9cf9488bf26bde9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.8
+  m_Pitch: 0.75
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1612895231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612895227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778a5734606c7bc4d94a25701cf2ad8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 4ea3970747cce704f9cf9488bf26bde9, type: 3}
+  AudioSource: {fileID: 1612895230}
+  maxVolum: 0.18
+  VoumeCure:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.00036239624
+      value: 0.20074463
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.99124146
+      value: 0.999733
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  checponts:
+  - {fileID: 524661444}
+  - {fileID: 524673731}
+  - {fileID: 604279280}
+  - {fileID: 375324583}
+  - {fileID: 75741263}
+  - {fileID: 937325040}
+  chenpontInfluens: 15
+  inCombat: 0
+--- !u!82 &1612895232
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612895227}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 83210ef4a4035c641931412bb98630a9, type: 3}
+  m_Resource: {fileID: 8300000, guid: 83210ef4a4035c641931412bb98630a9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
+  m_Pitch: 0.8
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1617937689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44199,6 +44487,10 @@ PrefabInstance:
       propertyPath: StartingStetpont
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6148648758967570451, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8abb80431bc5da74a80f91335c40e523, type: 3}
     - target: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
       propertyPath: triggerOnce
       value: 0
@@ -45447,6 +45739,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &1762454598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45639,6 +45933,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &1775840702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47046,6 +47342,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &1833255949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48494,6 +48792,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &1914165257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50020,6 +50320,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &2003271085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51946,6 +52248,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &2121683799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52807,6 +53111,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!65 &9066224065117378249
 BoxCollider:
   m_ObjectHideFlags: 0

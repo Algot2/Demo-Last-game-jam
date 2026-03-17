@@ -15,7 +15,10 @@ public class SpawnEnemiesTrigger : Trigger
     public int enemiesAlive = -1;
 
     public bool hasSpawnedEnemies;
-    
+    private void Start()
+    {
+        hasTriggered = false;
+    }
     public void SpawnEnemies()
     {
         enemiesAlive = 0;

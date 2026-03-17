@@ -6,6 +6,8 @@ public class NewHuerBox : MonoBehaviour
     public bool IsEnemy;
     public bool SetEmune;
     public float dam;
+    public AudioSource Sorse;
+    public AudioClip SordHit;
 
     public static bool CanDamage = true;
 
@@ -23,7 +25,11 @@ public class NewHuerBox : MonoBehaviour
         Vector3 back = (other.transform.position-transform.position).normalized * (noNokBack ? 0 : 1) * 50;
         hitBox.onHit(dam, back);
 
-        if (!IsEnemy && !noNokBack) { 
+        if (!IsEnemy && !noNokBack) {
+            Sorse.PlayOneShot(SordHit);
+            Sorse.volume = Random.Range(0.1f, 0.2f);
+            Sorse.pitch = Random.Range(0.8f, 1.2f);
+
             StartCoroutine(Efects.camShake(0.1f, 0.2f)); 
             StartCoroutine(Efects.timeFrez(0.3f));
         }
