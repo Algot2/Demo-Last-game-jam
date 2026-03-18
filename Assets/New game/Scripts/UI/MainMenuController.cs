@@ -8,12 +8,14 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    public TMP_InputField sText;
-    public Slider sSlider;
+    public TMP_InputField sText, bText;
+    public Slider sSlider, bSlider;
 
     public Image transition;
     
     public int savedSensitivity;
+    
+    public float savedBrightnes;
     
     public void LoadScene(int index)
     {
@@ -64,11 +66,6 @@ public class MainMenuController : MonoBehaviour
         sText.text = $"{textToFloat}";
     }
 
-    public void SaveSettings()
-    {
-        BoltsSave.SaveIntValue("Sensitivity", savedSensitivity);
-    }
-
     private void Start()
     {
         transition.color = Color.black;
@@ -78,13 +75,63 @@ public class MainMenuController : MonoBehaviour
         
         int getSensitivity = BoltsSave.GetInt("Sensitivity");
 
+        float getBrightnes = BoltsSave.GetFloat("Brightnes");
+        
         if (getSensitivity == -1)
             getSensitivity = 100;
 
         savedSensitivity = getSensitivity;
 
+        if (getBrightnes == -1)
+            getBrightnes = 2;
+
+        savedBrightnes = getBrightnes;
+        
         sSlider.value = Mathf.Lerp(0, 1, ((float)getSensitivity / 200));
         sText.text = $"{getSensitivity}";
+        
+        bSlider.value = Mathf.Lerp(0.5f, 5, getBrightnes / 5);
+        bText.text = $"{getBrightnes}";
+    }
+    
+    public void SetBrightnes(float value)
+    {
+        int finalBrightnes = (int)Mathf.Lerp(0.5f, 5, value);
+
+        NewPlayerInput.globalBrightnes = finalBrightnes;
+
+        savedBrightnes = finalBrightnes;
+        
+        bText.text = $"{finalBrightnes}";
+    }
+
+    public void SetBrightnes(string value)
+    {
+        if(string.IsNullOrEmpty(value))
+            return;
+     
+        float textToFloat = float.Parse(value);
+
+        if (textToFloat > 5)
+            textToFloat = 5;
+        if (textToFloat < 0.5f)
+            textToFloat = 0.5f;
+
+        NewPlayerInput.globalBrightnes = textToFloat;
+
+        savedBrightnes = textToFloat;
+        
+        float sliderValue = Mathf.Lerp(0, 1, (textToFloat / 5));
+        bSlider.value = sliderValue;
+        
+        bText.text = $"{textToFloat}";
+    }
+    
+    public void SaveSettings()
+    {
+        BoltsSave.SaveIntValue("Sensitivity", savedSensitivity);
+        
+        BoltsSave.SaveFloatValue("Brightnes", savedBrightnes);
     }
 
     public void Quit()
