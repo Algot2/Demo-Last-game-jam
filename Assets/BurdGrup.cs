@@ -27,6 +27,8 @@ public class BurdGrup : MonoBehaviour
             float t = 0;
             StartCoroutine(Timer.StartFrameRepitTill(() => BurdFly(), () => (t += Time.deltaTime) < 5));
             StartCoroutine(Timer.RunAfterCondishen(() => DestrayBurd(), () => (t += Time.deltaTime) > 5));
+            activeBurds.Last().GetComponent<AudioSource>().Play();
+
         }
            
     }
@@ -39,9 +41,10 @@ public class BurdGrup : MonoBehaviour
     }
     
     void BurdFly() {
+
         int i = 0;
         foreach (GameObject B in activeBurds) {
-              B.transform.position += (transform.forward + transform.up*0.5f + Vector3.up * Mathf.Sin(Time.time*10 + (i++)*0.1f)) * 10 * Time.deltaTime;
+            B.transform.position += (transform.forward + transform.up*0.5f + Vector3.up * Mathf.Sin(Time.time*10 + (i++)*0.1f)) * 10 * Time.deltaTime;
         }
     }
 }
