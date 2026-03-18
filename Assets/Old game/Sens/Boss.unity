@@ -952,6 +952,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 953315541344872817, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953315541344872817, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4374418403995437397, guid: 212fb6a08fa1dfe4b964a7f006d60042, type: 3}
       propertyPath: inputs
       value: 
@@ -2724,6 +2732,8 @@ MonoBehaviour:
   IsEnemy: 1
   SetEmune: 0
   dam: 500
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!1001 &1408664109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3049,10 +3059,10 @@ MonoBehaviour:
   minDist: 5
   BaseShader: {fileID: 2100000, guid: fcc2fcdc5f088c54194781b0b12477a8, type: 2}
   FogStartColor: {r: 0.17725167, g: 0.22827518, b: 0.24528301, a: 1}
+  CaveColor: {r: 0, g: 0, b: 0, a: 0}
   PL: {fileID: 421540332}
   enemies: []
-  triggers:
-  - {fileID: 2053975935}
+  triggers: []
 --- !u!4 &1612895229
 Transform:
   m_ObjectHideFlags: 0
@@ -4116,17 +4126,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0a18ee60faf84a429669a94d687063d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2053975935 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6173059549790402436, guid: 653ea70a22de6bf48933d0fa1deb9a12, type: 3}
-  m_PrefabInstance: {fileID: 2010915656}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3019f40a95b8fef469a551ccc06a7da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
