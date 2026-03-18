@@ -1,5 +1,7 @@
 using UnityEngine;
 using BoltsTools;
+using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class NewPlayerInput : MonoBehaviour
 {
@@ -9,19 +11,19 @@ public class NewPlayerInput : MonoBehaviour
     public Animator animator;
     public PlAtackMan plAtacks;
     public HellfSlider hellfSlider;
+    public Slider Stamina;
     public float sensetivety;
     public bool[] canDo;
     public bool isDed;
     public bool isPaused;
-
     public Material screenShade;
     [BoltsShaderProperty("screenShade")]
     public string shade;
-
+    public bool runTogel;
     public static float globalSensitivity = 50, globalBrightnes = 2;
 
     float currentBrightnes;
-
+    
     public enum state {
         idel,
         move,
@@ -40,6 +42,18 @@ public class NewPlayerInput : MonoBehaviour
     void Update()  {
         if (!isDed)
         {
+            if (Input.GetKeyDown(KeyCode.R))
+                runTogel = !runTogel;
+            
+            if (Stamina.value <= 0 || new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")).magnitude == 0 || Input.GetMouseButtonDown(0)) 
+                runTogel = false;
+            animator.speed = (runTogel ? 2.6f : 1.3f);
+            if (runTogel) plMoment.Sped = 6;
+            else {
+                plMoment.Sped = 3;
+                if (Stamina.value < 1) Stamina.value += Time.deltaTime; 
+            }
+
             cam.setCamraDireksen(-new Vector2(Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety, Input.mouseScrollDelta.y);
 
             if (State == state.idel)
@@ -91,13 +105,15 @@ public class NewPlayerInput : MonoBehaviour
                 }
 
 
-
             if (State == state.move || State == state.idel)
             {
                 if (new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")).magnitude > 0)
                 {
                     plMoment.canMove = true;
                     plMoment.Move(new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")));
+                  
+                    
+                        if (runTogel) Stamina.value -= Time.deltaTime * 0.5f;
                 }
                 else
                     plMoment.canMove = false;

@@ -4,15 +4,15 @@ public class TeleportingScre : MonoBehaviour
 {
     public Transform destnation;
     public GameObject[] AnabolDiabol;
-    public Color FogColor;
     public bool setFogColr;
+    public bool Otside;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             if (setFogColr)
             {
-                GameManager.Instance.BaseShader.SetColor("_FongColer", FogColor);
+                GameManager.Instance.BaseShader.SetColor("_FongColer", Otside ? GameManager.Instance.FogStartColor : GameManager.Instance.CaveColor);
             }
             CheckpointController.TeleportPlayer(destnation.position);
 

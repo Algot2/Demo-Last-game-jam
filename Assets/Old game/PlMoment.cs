@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlMoment : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class PlMoment : MonoBehaviour
     public bool isDodsh;
 
     public bool canMove = true;
-    
     public Transform head;
     public Transform body;
     public Transform vishols;

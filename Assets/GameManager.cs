@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public float minDist = 5;
     public Material BaseShader;
     public Color FogStartColor;
-    
+    public Color CaveColor;
+
     public Transform PL;
     public static Transform player;
 
