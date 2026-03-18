@@ -1,3 +1,4 @@
+using System;
 using BoltsTools;
 using DG.Tweening;
 using TMPro;
@@ -91,5 +92,10 @@ public class MainMenuController : MonoBehaviour
         Application.Quit();
        
         Debug.Log("Quit");
+    }
+
+    void Awake()
+    {
+        BoltsSave.Initialize();
     }
 }

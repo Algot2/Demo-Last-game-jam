@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BoltsTools;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
  
     void Awake()
     {
+        BoltsSave.Initialize();
+        
         chekpont = gameObject;
         Instance = this;
         player = PL;
