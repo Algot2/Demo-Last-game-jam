@@ -12,7 +12,7 @@ public class DragonAI : MonoBehaviour
     public float MinDisToEn;
     public float disToPl;
     public float normalSpeed = 3.5f;
-    public float maxSpeed = 2;
+    public float maxSpeed = 6;
     public float atacDis;
     public float TimeInbetinAtacks;
     public Transform Body;
@@ -103,9 +103,9 @@ public class DragonAI : MonoBehaviour
             }
         }
 
-        Agent.speed = Mathf.Lerp(normalSpeed,
-            normalSpeed * maxSpeed * Vector3.Distance(transform.position, player.position),
-            Vector3.Distance(transform.position, player.position) > disToPl ? 1 : 0);
+        float D = Vector3.Distance(transform.position, player.position);
+        Agent.speed = Mathf.Lerp(Agent.speed, D > disToPl ? maxSpeed : normalSpeed, Time.deltaTime * 100);
+        Animator.speed = Agent.speed / normalSpeed;
 
         Agent.SetDestination(TargetPos);
 
