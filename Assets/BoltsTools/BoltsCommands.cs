@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -13,7 +14,7 @@ namespace  BoltsTools
         
         List<Command> commands = new();
 
-        public bool isTyping;
+        public static bool isTyping;
 
         string commandTyped = "";
         
@@ -23,6 +24,12 @@ namespace  BoltsTools
                 Input.GetKeyDown(LoadBoltsDebugMenu._settings.keyToOpenCommands) && !isTyping)
             {
                 isTyping = true;
+            }
+
+            if (isTyping && Input.GetKeyDown(KeyCode.Escape))
+            {
+                commandTyped = "";
+                isTyping = false;
             }
         }
 
@@ -67,6 +74,9 @@ namespace  BoltsTools
         {
             string[] fullCommand = commandTyped.Split(" ");
 
+            if (!commandTyped.Contains(" "))
+                fullCommand = new[] { commandTyped };
+
             int commandIndex = -1;
             commandIndex = commands.FindIndex(x => x.name == fullCommand[0]);
 
@@ -80,7 +90,6 @@ namespace  BoltsTools
                         Convert.ChangeType(fullCommand[i + 1], method.GetParameters()[i].ParameterType);
                             
                     arguments.Add(convertedArgument);
-                    Debug.Log(convertedArgument);
                 }
 
                 method.Invoke(commands[commandIndex].target, arguments.ToArray());
@@ -114,7 +123,7 @@ namespace  BoltsTools
         }
     }
     
-    public class Command
+    class Command
     {
         public string name;
         public MethodInfo method;

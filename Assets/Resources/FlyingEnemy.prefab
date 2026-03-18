@@ -1135,7 +1135,7 @@ MonoBehaviour:
   Bat: {fileID: 3231231198568517006, guid: df2432794d6b4794e8eb621e4ea0b4b9, type: 3}
   Prodektile: {fileID: 3814647229669160960, guid: 292f2733cdcbb9742a54fa86c2d575dd, type: 3}
   moment: {fileID: 1880855359226150454}
-  Vishols: {fileID: 0}
+  Vishols: {fileID: 7488453108512283180}
   sponDilay: 5
   aldileDistToPlayer: 6
   canSpone: 1
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   - renderer: {fileID: 8621992715746582851}
     endValue: 0
     materialToChangeTo: {fileID: 2100000, guid: fe943ef74f2659a4780474214545dda9, type: 2}
-    cutOff: _WorkflowMode
+    cutOff: _Cutoff
   owner: {fileID: 0}
   isDead: 0
 --- !u!54 &6267134292989894204

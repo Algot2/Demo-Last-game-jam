@@ -47,11 +47,11 @@ public class NewPlayerInput : MonoBehaviour
             
             if (Stamina.value <= 0 || new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")).magnitude == 0 || Input.GetMouseButtonDown(0)) 
                 runTogel = false;
-            animator.speed = (runTogel ? 2 : 1);
+            animator.speed = (runTogel ? 1.5f : 1);
             
-            if (runTogel) plMoment.Sped = 6;
+            if (runTogel) plMoment.currentSpeed = plMoment.Sped * 1.5f;
             else {
-                plMoment.Sped = 3;
+                plMoment.currentSpeed = plMoment.Sped;
                 if (Stamina.value < Stamina.maxValue) Stamina.value += Time.deltaTime; 
             }
 
@@ -86,9 +86,6 @@ public class NewPlayerInput : MonoBehaviour
                     hellfSlider.imune--;
                 }
             }
-
-            if (plMoment.currentSpeed != plMoment.parrySpeed)
-                plMoment.currentSpeed = plMoment.Sped;
 
             if (State == state.idel)
                 if (canDo[2] && Input.GetKeyDown(KeyCode.Space))
@@ -133,7 +130,7 @@ public class NewPlayerInput : MonoBehaviour
                     StartCoroutine(Timer.RunAfterTimer(10, () => canDo[4] = true));
                 }
 
-            if (Input.GetKeyDown(KeyCode.Escape) && hellfSlider.curnt > 0)
+            if (Input.GetKeyDown(KeyCode.Escape) && hellfSlider.curnt > 0 && !BoltsCommands.isTyping)
             {
                 isPaused = !isPaused;
 
