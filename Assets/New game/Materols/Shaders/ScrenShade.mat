@@ -50,6 +50,6 @@ Material:
     - _FogStregf: -100
     - _TexterScale: 0.1
     m_Colors:
-    - _FongColer: {r: 0.101960786, g: 0.08627451, b: 0.10980392, a: 0}
+    - _FongColer: {r: 0.058666665, g: 0.06133333, b: 0.1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

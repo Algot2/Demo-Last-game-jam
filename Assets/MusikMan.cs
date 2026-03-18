@@ -3,13 +3,12 @@ using UnityEngine;
 public class MusikMan : MonoBehaviour
 {
     public AudioClip[] audioClips;
-    public AudioSource AudioSource;
+    public AudioSource Musik, Wind;
     public float maxVolum;
     public AnimationCurve VoumeCure;
     public Transform[] checponts;
     public float chenpontInfluens;
     public bool inCombat;
-
     float GetDistensToClosest() {
         Vector3 dist = Vector3.right * chenpontInfluens;
         
@@ -24,8 +23,8 @@ public class MusikMan : MonoBehaviour
         inCombat = GameManager.Instance.enemies.Count > 0;
 
         if (!inCombat) {
-           AudioSource.volume = VoumeCure.Evaluate(GetDistensToClosest()) * maxVolum;
+           Musik.volume = VoumeCure.Evaluate(GetDistensToClosest()) * maxVolum;
         }
-        else AudioSource.volume = Mathf.Lerp(AudioSource.volume, maxVolum * 1.5f, Time.deltaTime*10);
+        else Musik.volume = Mathf.Lerp(Musik.volume, maxVolum, Time.deltaTime*10);
     }
 }

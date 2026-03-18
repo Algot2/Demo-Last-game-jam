@@ -6,6 +6,6 @@ public class PlayerEfects : MonoBehaviour
     public HellfSlider Imunetys;
     public Color GlowColor;
     void Update() {
-        player.SetColor("_EmissionColor", GlowColor * (Imunetys.imune+2));
+        player.SetColor("_EmissionColor", GlowColor * (Imunetys.imune+1));
     }
 }
