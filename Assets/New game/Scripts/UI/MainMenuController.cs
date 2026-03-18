@@ -94,6 +94,11 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("Quit");
     }
 
+    public void ResetSave()
+    {
+        BoltsSave.ResetSave();
+    }
+
     void Awake()
     {
         BoltsSave.Initialize();

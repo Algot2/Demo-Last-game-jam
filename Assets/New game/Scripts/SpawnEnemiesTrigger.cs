@@ -21,6 +21,7 @@ public class SpawnEnemiesTrigger : Trigger
     }
     public void SpawnEnemies()
     {
+        hasSpawnedEnemies = true;
         enemiesAlive = 0;
         
         Vector3 center = transform.position + transform.TransformDirection(spawnSettings.offset);
@@ -48,8 +49,6 @@ public class SpawnEnemiesTrigger : Trigger
                 enemiesAlive++;
             }
         }
-           // hasSpawnedEnemies = true;
-
     }
 
     private void OnDrawGizmos()

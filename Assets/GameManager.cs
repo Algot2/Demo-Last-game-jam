@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using BoltsTools;
 using Unity.VisualScripting;
@@ -31,6 +32,34 @@ public class GameManager : MonoBehaviour
         player = PL;
         BaseShader.SetColor("_FongColer", FogStartColor);
       
+    }
+
+    void Start()
+    {
+        BoltsCommands.command.AddCommand("kill", "KillEnemies", this);
+        BoltsCommands.command.AddCommand("trigger", "TriggerAllEnemies", this);
+    }
+
+    public void KillEnemies()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            enemies[i].health.Inmune = false;
+            enemies[i].health.setValu(0);
+        }
+    }
+
+    public void TriggerAllEnemies()
+    {
+        for (int i = 0; i < triggers.Count; i++)
+        {
+            if (triggers[i] is SpawnEnemiesTrigger)
+            {
+                triggers[i].hasTriggered = triggers[i].triggerOnce;
+                SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
+                spawner.SpawnEnemies();
+            }
+        }
     }
 
     //void Update()

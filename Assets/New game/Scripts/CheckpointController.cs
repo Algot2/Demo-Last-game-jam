@@ -27,7 +27,7 @@ public class CheckpointController : MonoBehaviour
             if (StartingStetpont)
             {
                 SaveGame();
-                LoadGame();
+                // LoadGame();
 
                 hasTriggered = false;
 

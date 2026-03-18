@@ -17,6 +17,13 @@ namespace BoltsTools
         {
             Initialize();
         }
+
+        [MenuItem("Tools/Bolts Tools/Reset Save")]
+        public static void ResetTheSave()
+        {
+            ResetSave();
+            Debug.Log("Saved Reset");
+        }
 #endif
 
         public static void SaveFloatValue(string name, float value)
