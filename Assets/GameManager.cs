@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     {
         BoltsCommands.command.AddCommand("kill", "KillEnemies", this);
         BoltsCommands.command.AddCommand("trigger", "TriggerAllEnemies", this);
+        BoltsCommands.command.AddCommand("killp", "KillPlayer", this);
+        BoltsCommands.command.AddCommand("tp","TeleportToCheckpoint", this);
     }
 
     public void KillEnemies()
@@ -61,6 +63,18 @@ public class GameManager : MonoBehaviour
                 spawner.SpawnEnemies();
             }
         }
+    }
+
+    public void KillPlayer()
+    {
+        player.GetComponent<NewPlayerInput>().hellfSlider.setValu(0);
+    }
+    
+    public void TeleportToCheckpoint(int index)
+    {
+        Vector3 pos = triggers[index].transform.position;
+        pos.y += 2;
+        CheckpointController.TeleportPlayer(pos);
     }
 
     //void Update()

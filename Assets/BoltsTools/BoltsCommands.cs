@@ -80,6 +80,7 @@ namespace  BoltsTools
                         Convert.ChangeType(fullCommand[i + 1], method.GetParameters()[i].ParameterType);
                             
                     arguments.Add(convertedArgument);
+                    Debug.Log(convertedArgument);
                 }
 
                 method.Invoke(commands[commandIndex].target, arguments.ToArray());

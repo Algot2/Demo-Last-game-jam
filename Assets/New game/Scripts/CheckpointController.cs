@@ -36,8 +36,6 @@ public class CheckpointController : MonoBehaviour
         }
         else
             LoadGame();
-        
-        onLoadGame.Invoke();
     }
 
     public void SetAsNoneCurentChekpont() {
@@ -151,33 +149,28 @@ public class CheckpointController : MonoBehaviour
         //    z = Mathf.Sin(ang)
         //} * r;
         //GameManager.player.position = savedPos;
-
-
-        List<Trigger> enemySponers = GameManager.Instance.triggers;
-
-        foreach (Trigger sponer in enemySponers) {
-            sponer.hasTriggered = false;
-        }
+        
 
         NewHuerBox.CanDamage = true;
-
-        staticOnLoadGame.Invoke();
 
         // Loads All Trigger States
         List<Trigger> triggers = GameManager.Instance.triggers;
         List<SaveBool> allBools = BoltsSave.GetAllBools();
-        for (int i = 0; i < triggers.Count; i++)
+        if (allBools.Count == triggers.Count)
         {
-            triggers[i].hasTriggered = allBools[i].value;
-
-            if (triggers[i] is SpawnEnemiesTrigger)
+            for (int i = 0; i < triggers.Count; i++)
             {
-                SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
-                if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
+                triggers[i].hasTriggered = allBools[i].value;
+
+                if (triggers[i] is SpawnEnemiesTrigger)
                 {
-                    spawner.enemiesAlive = 0;
-                    spawner.hasSpawnedEnemies = false;
-                    spawner.hasTriggered = false;
+                    SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
+                    if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
+                    {
+                        spawner.enemiesAlive = 0;
+                        spawner.hasSpawnedEnemies = false;
+                        spawner.hasTriggered = false;
+                    }
                 }
             }
         }
@@ -188,8 +181,8 @@ public class CheckpointController : MonoBehaviour
         }
 
         GameManager.Instance.enemies.Clear();
-
-
+        
+        staticOnLoadGame.Invoke();
 
         // Loads All Enemies
         //List<string> savedEnemyClassNames = BoltsSave.GetAllClassesNameWithName("Enemy: Index = (");
