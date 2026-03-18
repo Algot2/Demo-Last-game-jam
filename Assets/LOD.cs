@@ -36,11 +36,11 @@ public class LOD : MonoBehaviour
             Lev = lev;
         }
 
-        if (lev != Dist.Length - 1)
-        {
-            float dotProdoct = Vector3.Dot(difrens.normalized, Camera.main.transform.forward);
-            LODLevels[Lev].SetActive(dotProdoct > 0.2f);
-        }
+        //if (lev != Dist.Length - 1)
+        //{
+        //    float dotProdoct = Vector3.Dot(difrens.normalized, Camera.main.transform.forward);
+        //    LODLevels[Lev].SetActive(dotProdoct > 0.2f);
+        //}
 
     }
 }

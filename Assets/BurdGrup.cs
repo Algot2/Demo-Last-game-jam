@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BurdGrup : MonoBehaviour
@@ -18,6 +19,7 @@ public class BurdGrup : MonoBehaviour
             Ray ray = new Ray(Lpos + transform.position + Vector3.up * 0.5f, Vector3.down);
             if (Physics.Raycast(ray, out var hit, 10, Grond)) {
                 activeBurds.Add(Instantiate(burd, hit.point, Quaternion.LookRotation(hit.normal)));
+                activeBurds.Last().transform.SetParent(transform);
             }
         }
         if (dis.magnitude < 6 && canSpone) {
@@ -37,8 +39,6 @@ public class BurdGrup : MonoBehaviour
     }
     
     void BurdFly() {
-
-        Debug.Log("a");
         int i = 0;
         foreach (GameObject B in activeBurds) {
               B.transform.position += (transform.forward + transform.up*0.5f + Vector3.up * Mathf.Sin(Time.time*10 + (i++)*0.1f)) * 10 * Time.deltaTime;
