@@ -25,7 +25,7 @@ public class NewHitBox : MonoBehaviour
             AudioSource.volume = Random.Range(0.1f, 0.15f);
             AudioSource.pitch = Random.Range(0.7f, 0.9f);
         }
-
+       
         if (IsPlayer && !Slider.ImuneSwitsh) {
             StartCoroutine(Timer.StartTimer(0.2f, (f) => hitEfect.SetActive(f)));
             AudioSource.PlayOneShot(Hit);
