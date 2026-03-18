@@ -22,7 +22,9 @@ public class NewHuerBox : MonoBehaviour
 
         Vector3 back = (other.transform.position-transform.position).normalized * (noNokBack ? 0 : 1) * 50;
         hitBox.onHit(dam, back);
-
+        if (SetEmune) {
+            StartCoroutine(Timer.StartTimer(0.2f, (f) => GameManager.Instance.PL.GetComponentInChildren<HellfSlider>().imune += f ? 1:-1));
+        }
         if (!IsEnemy && !noNokBack) {
             Sorse.PlayOneShot(SordHit);
             Sorse.volume = Random.Range(0.1f, 0.2f);
