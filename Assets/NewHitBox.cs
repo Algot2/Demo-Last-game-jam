@@ -18,15 +18,15 @@ public class NewHitBox : MonoBehaviour
     public void onHit(float dam, Vector3 back) {
         Debug.Log("hit");
         Slider.setValu(Slider.curnt - dam*efeckt);
-        if (IsEnemy||Slider.Inmune) ParticleSystem.Play();
+        if (IsEnemy||Slider.ImuneSwitsh) ParticleSystem.Play();
         
-        if (Slider.Inmune) { 
+        if (Slider.ImuneSwitsh) { 
             AudioSource.PlayOneShot(Block);
             AudioSource.volume = Random.Range(0.1f, 0.15f);
             AudioSource.pitch = Random.Range(0.7f, 0.9f);
         }
 
-        if (IsPlayer && !Slider.Inmune) {
+        if (IsPlayer && !Slider.ImuneSwitsh) {
             StartCoroutine(Timer.StartTimer(0.2f, (f) => hitEfect.SetActive(f)));
             AudioSource.PlayOneShot(Hit);
             AudioSource.volume = Random.Range(0.1f, 0.15f);

@@ -53,7 +53,7 @@ public class PlMoment : MonoBehaviour
 
         Vector3 orgPos = transform.position;
         orgPos.y = 0;
-        StartCoroutine(Timer.StartTimer(0.5f, (f) => HellfSlider.Inmune = f));
+        StartCoroutine(Timer.StartTimer(0.5f, (f) => HellfSlider.imune += f ? 1 : -1));
         StartCoroutine(Timer.StartFrameRepitTill(() =>
             {
                 moveDir = lastMoveDir * dodshSped * Time.deltaTime;

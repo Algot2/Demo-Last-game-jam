@@ -8,7 +8,8 @@ public class HellfSlider : MonoBehaviour
 {
     public float max, curnt;
     public Slider valu, frontjump;
-    public bool Inmune;
+    public bool ImuneSwitsh;
+    public int imune;
     public bool IsPlayer;
     public Action Onhit = () => { };
 
@@ -23,15 +24,15 @@ public class HellfSlider : MonoBehaviour
     public void setValu(float val)
     {
         Onhit();
-        if (!Inmune) {
+        if (!ImuneSwitsh) {
             curnt = val;
             frontjump.value = val;
         }
 
         if (IsPlayer && curnt <= 0) PlayerUIController.Instance.PlayerDied();
 
-        if (IsPlayer && Inmune) {
-            StartCoroutine(Timer.RunAfterTimer(0.5f, () => Inmune = false));
+        if (IsPlayer && ImuneSwitsh) {
+            StartCoroutine(Timer.RunAfterTimer(0.1f, () => imune--));
             StartCoroutine(Timer.StartTimer(5, (f) => NewPlayerInput.Instance.canDo[3] = !f)); 
         }
 
@@ -39,6 +40,8 @@ public class HellfSlider : MonoBehaviour
     }
 
     void Update() {
+        ImuneSwitsh = imune > 0;
+        if (imune < 0) imune = 0;
 
         transform.LookAt(Camera.main.transform);
         transform.forward = -transform.forward;

@@ -16,9 +16,7 @@ public class NewHuerBox : MonoBehaviour
         
         if(!CanDamage) return;
 
-        if ( SetEmune) {
-            StartCoroutine(Timer.StartTimer(0.2f, (f)=>GameManager.Instance.PL.GetComponentInChildren<HellfSlider>().Inmune = f));
-        }
+      
         NewHitBox hitBox = other.transform.root.GetComponentInChildren<NewHitBox>();
         if (hitBox == null || hitBox.IsEnemy == IsEnemy) return;
 

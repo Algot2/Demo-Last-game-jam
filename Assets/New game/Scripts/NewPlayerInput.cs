@@ -47,11 +47,12 @@ public class NewPlayerInput : MonoBehaviour
             
             if (Stamina.value <= 0 || new Vector3(Input.GetAxisRaw("H"), 0, Input.GetAxisRaw("V")).magnitude == 0 || Input.GetMouseButtonDown(0)) 
                 runTogel = false;
-            animator.speed = (runTogel ? 2.6f : 1.3f);
+            animator.speed = (runTogel ? 2 : 1);
+            
             if (runTogel) plMoment.Sped = 6;
             else {
                 plMoment.Sped = 3;
-                if (Stamina.value < 1) Stamina.value += Time.deltaTime; 
+                if (Stamina.value < Stamina.maxValue) Stamina.value += Time.deltaTime; 
             }
 
             cam.setCamraDireksen(-new Vector2(Input.mousePositionDelta.x / Screen.width, Input.mousePositionDelta.y / Screen.height) * sensetivety, Input.mouseScrollDelta.y);
@@ -73,18 +74,21 @@ public class NewPlayerInput : MonoBehaviour
                     plAtacks.PreformAtack(0, 2);
                 }
 
-            if (State == state.idel)
-                if (canDo[3] && Input.GetMouseButton(1))
-                {
-                    hellfSlider.Inmune = true;
-                    plMoment.currentSpeed = 1.5f;
-                }
-                else
-                {
-                    hellfSlider.Inmune = false;
-                    plMoment.currentSpeed = plMoment.Sped;
+            if (State == state.idel) { 
+
+                if (canDo[3] && Input.GetMouseButtonDown(1)) {
+                    hellfSlider.imune++;
+                    plMoment.currentSpeed = plMoment.parrySpeed;
                 }
 
+                if ((!canDo[3] && plMoment.currentSpeed == plMoment.parrySpeed) || Input.GetMouseButtonUp(1)) {
+                    plMoment.currentSpeed = plMoment.Sped;
+                    hellfSlider.imune--;
+                }
+            }
+
+            if (plMoment.currentSpeed != plMoment.parrySpeed)
+                plMoment.currentSpeed = plMoment.Sped;
 
             if (State == state.idel)
                 if (canDo[2] && Input.GetKeyDown(KeyCode.Space))
@@ -150,7 +154,8 @@ public class NewPlayerInput : MonoBehaviour
                 screenShade.SetFloat(shade, currentBrightnes);
             }
         }
-        else { animator.SetBool("Ded", true); 
+        else { 
+            animator.SetBool("Ded", true); 
             plMoment.canMove = false;
         }
     }

@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < enemies.Count; i++)
         {
-            enemies[i].health.Inmune = false;
+            enemies[i].health.ImuneSwitsh = false;
             enemies[i].health.setValu(0);
         }
     }
