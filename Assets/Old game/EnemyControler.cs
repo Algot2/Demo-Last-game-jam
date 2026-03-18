@@ -33,21 +33,21 @@ public class EnemyControler : MonoBehaviour
 
             if (!ded)
             {
-                if (Vector3.Distance(rb.transform.position, player.position) > 4 || Atackdureashen < 0)
+                if (Vector3.Distance(rb.transform.position, player.position) > 10 || Atackdureashen < 0)
                     movment.agent.speed = 5;
 
-                if (Vector3.Distance(rb.transform.position, player.position) < 4 && Atackdureashen > 0)
+                if (Vector3.Distance(rb.transform.position, player.position) < 10 && Atackdureashen > 0)
                 {
                     movment.agent.speed = 0;
 
-                    if (Vector3.Distance(rb.transform.position, player.position) < 3)
+                    if (Vector3.Distance(rb.transform.position, player.position) < 6)
                     {
                         movment.agent.speed = -5;
                     }
                 }
 
 
-                if (Vector3.Distance(rb.transform.position, player.position) < 5)
+                if (Vector3.Distance(rb.transform.position, player.position) < 10)
                 {
                     Atackdureashen -= Time.deltaTime;
                     rb.transform.LookAt(player);
