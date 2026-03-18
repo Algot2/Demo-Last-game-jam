@@ -22,9 +22,10 @@ public class PlAtackMan : MonoBehaviour
                 () => StartCoroutine(Timer.StartTimer(atacks[i].attackTime, (f) => atacks[i].HurtBox.SetActive(f)))));
 
            
-            StartCoroutine(Timer.RunAfterTimer(0.5f, 
+        StartCoroutine(Timer.RunAfterTimer(0.5f, 
                 () => StartCoroutine(Timer.StartTimer(1f, (f) => HellfSlider.imune += f ? 1 : -1))));
-            Animator.SetTrigger("Atck");
+            
+        Animator.SetTrigger("Atck");
 
             //float sped = PlMoment.Sped;
             //PlMoment.Sped = 0;
