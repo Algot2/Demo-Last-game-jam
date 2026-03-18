@@ -11,6 +11,8 @@ public class DragonAI : MonoBehaviour
     public Animator Animator;
     public float MinDisToEn;
     public float disToPl;
+    public float normalSpeed = 3.5f;
+    public float maxSpeed = 2;
     public float atacDis;
     public float TimeInbetinAtacks;
     public Transform Body;
@@ -87,7 +89,6 @@ public class DragonAI : MonoBehaviour
 
         if ((Vector3.Distance(transform.position, setY(TargetPos, transform.position)) < 0.5f && !canAtack && (timer += Time.deltaTime) > Random.Range(5f, 10f)) ||
            Vector3.Distance(transform.position, player.position) > disToPl) {
-            tryHellPlayer = false;
             timer = 0;
             TargetPos = SnapToNavMesh(pikeNewTarget());
         }
@@ -101,6 +102,10 @@ public class DragonAI : MonoBehaviour
                 player.GetComponentInChildren<HellfSlider>().setValu(player.GetComponentInChildren<HellfSlider>().curnt + 25);
             }
         }
+
+        Agent.speed = Mathf.Lerp(normalSpeed,
+            normalSpeed * maxSpeed * Vector3.Distance(transform.position, player.position),
+            Vector3.Distance(transform.position, player.position) > disToPl ? 1 : 0);
 
         Agent.SetDestination(TargetPos);
 
