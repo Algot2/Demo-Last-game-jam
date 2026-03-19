@@ -866,16 +866,16 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Monten game demo
-  metroPackageVersion: 
-  metroCertificatePath: 
-  metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroPackageName: Montengamedemo
+  metroPackageVersion: 1.0.0.0
+  metroCertificatePath: UnityBuild.pfx
+  metroCertificatePassword: "\0\0\0\0\0\0"
+  metroCertificateSubject: Orion
+  metroCertificateIssuer: Orion
+  metroCertificateNotAfter: 80c9471c74d6dd01
   metroApplicationDescription: Monten game demo
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Orion
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -922,7 +922,8 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -944,11 +945,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: d0f8ee69-13ff-4700-a38b-f922751f1cd1
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Orion
-  organizationId: unassigned-studios
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
