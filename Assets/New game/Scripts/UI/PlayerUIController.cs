@@ -248,6 +248,8 @@ public class PlayerUIController : MonoBehaviour
         
         bSlider.value = Mathf.Lerp(0.5f, 5, getBrightnes / 5);
         bText.text = $"{getBrightnes}";
+        
+        BoltsCommands.command.AddCommand("cheat", "ChatActive", this);
     }
 
     void Update()

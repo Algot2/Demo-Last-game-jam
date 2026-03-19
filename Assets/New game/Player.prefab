@@ -471,7 +471,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: b0e767705f58216468bfc379c3d46047, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 9a7219dff6652c84586a1a106f5bb916, type: 2}
 --- !u!1 &535974123183077738
 GameObject:
   m_ObjectHideFlags: 0
@@ -14232,7 +14232,6 @@ MonoBehaviour:
   head: {fileID: 8408888774861730787}
   disToCam: 3
   cam: {fileID: 836170026125536502}
-  some: 0
 --- !u!114 &5966069730297437065
 MonoBehaviour:
   m_ObjectHideFlags: 0
