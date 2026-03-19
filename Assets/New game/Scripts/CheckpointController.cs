@@ -170,17 +170,16 @@ public class CheckpointController : MonoBehaviour
             for (int i = 0; i < triggers.Count; i++)
             {
                 triggers[i].hasTriggered = allBools[i].value;
+            }
+        }
 
-                if (triggers[i] is SpawnEnemiesTrigger)
-                {
-                    SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
-                    if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
-                    {
-                        spawner.enemiesAlive = -1;
-                        spawner.hasSpawnedEnemies = false;
-                        spawner.hasTriggered = false;
-                    }
-                }
+        for (int i = 0; i < GameManager.Instance.EnemiesTriggers.Count; i++)
+        {
+            if (GameManager.Instance.EnemiesTriggers[i].hasSpawnedEnemies && GameManager.Instance.EnemiesTriggers[i].enemiesAlive > 0)
+            {
+                GameManager.Instance.EnemiesTriggers[i].enemiesAlive = -1;
+                GameManager.Instance.EnemiesTriggers[i].hasSpawnedEnemies = false;
+                GameManager.Instance.EnemiesTriggers[i].hasTriggered = false;
             }
         }
 

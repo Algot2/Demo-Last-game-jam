@@ -18,6 +18,10 @@ public class SpawnEnemiesTrigger : Trigger
     private void Start()
     {
         hasTriggered = false;
+        
+        if (GameManager.Instance != null)
+            if(!GameManager.Instance.EnemiesTriggers.Contains(this))
+                GameManager.Instance.EnemiesTriggers.Add(this);
     }
     public void SpawnEnemies()
     {
