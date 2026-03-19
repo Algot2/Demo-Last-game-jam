@@ -19,9 +19,18 @@ public class CheckpointController : MonoBehaviour
     public static UltEvent staticOnLoadGame;
 
     public static bool hasTriggered;
+
+    public bool isBoos;
     
     void Start()
     {
+        if (isBoos)
+        {
+            BoltsSave.SaveBoolValue("hasSave", true);
+            BoltsSave.SaveVector3Value(positionString, GameManager.player.position);
+        }
+        
+        
         if(!BoltsSave.GetBool("hasSave"))
         {
             if (StartingStetpont)
