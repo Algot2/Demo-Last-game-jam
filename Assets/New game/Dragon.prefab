@@ -349,6 +349,8 @@ MonoBehaviour:
   Animator: {fileID: 1376980734582003513}
   MinDisToEn: 4.5
   disToPl: 5
+  normalSpeed: 3.5
+  maxSpeed: 6
   atacDis: 1
   TimeInbetinAtacks: 2
   Body: {fileID: 345455058781095847}
@@ -1609,7 +1611,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noNokBack: 1
   IsEnemy: 0
+  SetEmune: 0
   dam: 5
+  Sorse: {fileID: 0}
+  SordHit: {fileID: 0}
 --- !u!1001 &3524381985891521219
 PrefabInstance:
   m_ObjectHideFlags: 0

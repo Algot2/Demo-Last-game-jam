@@ -100,6 +100,7 @@ public class NewPlayerInput : MonoBehaviour
                 if (canDo[1] && Input.GetKeyDown(KeyCode.LeftShift))
                 {
                     canDo[1] = false;
+                    plAtacks.atacks[0].HurtBox.SetActive(false);
                     plMoment.Dodsh();
                     StartCoroutine(Timer.RunAfterTimer(1, () => canDo[1] = true));
                     animator.SetTrigger("Jump");
