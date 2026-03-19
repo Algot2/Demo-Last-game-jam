@@ -176,7 +176,7 @@ public class CheckpointController : MonoBehaviour
                     SpawnEnemiesTrigger spawner = triggers[i] as SpawnEnemiesTrigger;
                     if (spawner.hasSpawnedEnemies && spawner.enemiesAlive > 0)
                     {
-                        spawner.enemiesAlive = 0;
+                        spawner.enemiesAlive = -1;
                         spawner.hasSpawnedEnemies = false;
                         spawner.hasTriggered = false;
                     }
