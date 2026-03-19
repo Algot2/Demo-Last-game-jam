@@ -7,4 +7,9 @@ public class FadeOute : MonoBehaviour
     void Update() {
         material.SetFloat("_Transparensy", 1 - Vector3.Distance(transform.position, Camera.main.transform.position)/a);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, a);
+    }
 }
