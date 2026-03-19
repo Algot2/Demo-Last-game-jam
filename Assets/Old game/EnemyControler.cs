@@ -40,7 +40,7 @@ public class EnemyControler : MonoBehaviour
                     movment.agent.speed = 0;
 
                     if (Vector3.Distance(rb.transform.position, player.position) < 6) {
-                        rb.AddForce((rb.transform.position - player.position) * Time.deltaTime * 1000);
+                        rb.AddForce((rb.transform.position - player.position) * Time.deltaTime * 100);
                     }
                 }
 

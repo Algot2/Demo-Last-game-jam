@@ -1,11 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerEfects : MonoBehaviour
 {
-    public Material player;
     public HellfSlider Imunetys;
-    public Color GlowColor;
+    public Slider slider;
     void Update() {
-        player.SetColor("_EmissionColor", GlowColor * (Imunetys.imune+1));
+        slider.value = Imunetys.imune;
     }
 }

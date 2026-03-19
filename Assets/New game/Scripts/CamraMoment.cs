@@ -6,8 +6,8 @@ public class CamraMoment : MonoBehaviour
     public Transform head;
     public float disToCam;
     public Transform cam;
-    public float some = 0;
-    Vector2 mosePos;
+    public static float some = 0;
+    static Vector2 mosePos = new Vector2(180, 0);
     public void setCamraDireksen(Vector2 mosePosDelta, float s) {
         some += s * Time.deltaTime*10;
         mosePos += mosePosDelta * Time.deltaTime;

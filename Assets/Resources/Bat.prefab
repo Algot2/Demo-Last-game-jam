@@ -1189,7 +1189,8 @@ MonoBehaviour:
   curnt: 100
   valu: {fileID: 3032405613832761897}
   frontjump: {fileID: 4487325416867565378}
-  Inmune: 0
+  ImuneSwitsh: 0
+  imune: 0
   IsPlayer: 0
 --- !u!1 &8826408858080375889
 GameObject:
@@ -1418,7 +1419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2303068117784027505, guid: b350e1358b9a5094d872310337bffab5, type: 3}
       propertyPath: m_LocalScale.z
