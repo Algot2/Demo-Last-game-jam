@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FlikerLite : MonoBehaviour
@@ -10,6 +11,8 @@ public class FlikerLite : MonoBehaviour
     float curentTime = 0;
 
     private void Start() {
+        if (light.IsUnityNull())
+            light.GetComponent<Light>();
         britnes = light.intensity;
     }
     void Update() {
