@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public List<BaseEnemyLogic> enemies;
 
     public List<Trigger> triggers;
+    public List<SpawnEnemiesTrigger> EnemiesTriggers;
     public static GameObject chekpont ;
 
  
