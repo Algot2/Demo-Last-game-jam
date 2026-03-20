@@ -17,6 +17,7 @@ namespace BoltsTools
         public static bool isTyping;
 
         string commandTyped = "";
+        string lastCommand = "";
 
         void Update()
         {
@@ -26,10 +27,10 @@ namespace BoltsTools
                 isTyping = true;
             }
 
-            if (isTyping && Input.GetKeyDown(KeyCode.Escape))
+            if (isTyping)
             {
-                commandTyped = "";
-                isTyping = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
 
@@ -87,6 +88,7 @@ namespace BoltsTools
                 return;
 
             string commandName = tokens[0];
+            lastCommand = commandName;
 
             int commandIndex = -1;
             commandIndex = commands.FindIndex(x => x.name == commandName);
@@ -113,8 +115,9 @@ namespace BoltsTools
                 }
 
                 object converted;
-
-                if (parameters[i].ParameterType == typeof(Vector3))
+                Type paramType = parameters[i].ParameterType;
+                
+                if (paramType == typeof(Vector3))
                 {
                     string[] parts = tokens[tokenIndex].Split(",");
                     if (parts.Length != 3 ||
@@ -128,7 +131,7 @@ namespace BoltsTools
 
                     converted = new Vector3(x, y, z);
                 }
-                else if (parameters[i].ParameterType == typeof(Vector2))
+                else if (paramType == typeof(Vector2))
                 {
                     string[] parts = tokens[tokenIndex].Split(",");
                     if (parts.Length != 2 ||
@@ -141,6 +144,38 @@ namespace BoltsTools
 
                     converted = new Vector2(x, y);
                 }
+                else if (paramType.GetFields().Any(f => f.GetCustomAttributes<CommandArgAttribute>() != null))
+                {
+                    object instance = Activator.CreateInstance(paramType);
+
+                    FieldInfo[] fields = paramType.GetFields()
+                        .Where(f => f.GetCustomAttributes<CommandArgAttribute>() != null)
+                        .ToArray();
+
+                    foreach (FieldInfo field in fields)
+                    {
+                        if (tokenIndex >= tokens.Count)
+                        {
+                            Debug.LogError($"Not Enough Arguments To Fill All Fields Of {paramType.Name}");
+                            return;
+                        }
+
+                        try
+                        {
+                            object fieldValue = Convert.ChangeType(tokens[tokenIndex], field.FieldType);
+                            
+                            field.SetValue(instance, fieldValue);
+                            tokenIndex++;
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.LogError($"Could Not Set Field '{field.Name}' From '{tokens[tokenIndex]}': {e.Message}");
+                            return;
+                        }
+                    }
+
+                    converted = instance;
+                } 
                 else
                 {
                     try
@@ -161,6 +196,7 @@ namespace BoltsTools
             cmd.method.Invoke(cmd.target, arguments.ToArray());
         }
 
+        public string focusedArea = "Command";
         void OnGUI()
         {
             if (isTyping)
@@ -168,13 +204,35 @@ namespace BoltsTools
                 GUIStyle style = new GUIStyle(GUI.skin.textArea);
                 style.fontSize = 50;
 
+                Rect commandRect = new(0, Screen.height - 200, Screen.width, 150);
+
                 GUI.SetNextControlName("Command");
-                commandTyped = GUI.TextArea(new(0, Screen.height - 200, Screen.width, 150), commandTyped, style);
-
-                GUI.FocusControl("Command");
-
+                commandTyped = GUI.TextArea(commandRect, commandTyped, style);
+                
                 if (commandTyped.EndsWith("\n") && commandTyped.Length > 0)
                     RunCommand();
+
+                if (lastCommand.Length <= 0) return;
+                float width = style.CalcSize(new GUIContent(lastCommand)).x;
+                float height = style.CalcHeight(new GUIContent(lastCommand), width);
+
+                GUIStyle lastCommandStyle = new GUIStyle(GUI.skin.box)
+                    { alignment = TextAnchor.MiddleLeft, fontSize = 50, richText = true };
+
+                Rect lastCommandRect = new Rect(0, Screen.height - 210 - height, width, height);
+                
+                GUI.SetNextControlName("LastCommand");
+                GUI.TextArea(lastCommandRect,
+                    "<color=white>" + lastCommand,
+                    lastCommandStyle);
+
+                if (Event.current.type == EventType.KeyDown)
+                {
+                    if (Event.current.keyCode == KeyCode.Tab)
+                        focusedArea = focusedArea == "Command" ? "LastCommand" : "Command";
+                }
+                
+                GUI.FocusControl(focusedArea);
             }
         }
 
@@ -185,20 +243,20 @@ namespace BoltsTools
 
             for (int i = 0; i < words.Length; i++)
             {
-                if (words[i].StartsWith("{"))
+                if (words[i].StartsWith("["))
                 {
                     string grouped = "";
                     for (int j = i; j < words.Length; j++)
                     {
                         grouped += (j == i ? "" : " ") + words[j];
-                        if (words[i].EndsWith("}"))
+                        if (words[i].EndsWith("]"))
                         {
                             i = j;
                             break;
                         }
                     }
 
-                    tokens.Add(grouped.Replace("{", "").Replace("}", ""));
+                    tokens.Add(grouped.Replace("[", "").Replace("]", ""));
                 }
                 else if (!string.IsNullOrEmpty(words[i]))
                     tokens.Add(words[i]);
@@ -207,9 +265,20 @@ namespace BoltsTools
             return tokens;
         }
 
+        public void ShowCommands()
+        {
+            string allCommands = $"Command: {commands[0].name}    Method: {commands[0].method.Name}";
+            for (int i = 1; i < commands.Count; i++)
+                allCommands += $"\nCommand: {commands[i].name}    Method: {commands[i].method.Name}";
+
+            lastCommand = allCommands;
+        }
+
         void Awake()
         {
             command = this;
+            
+            AddCommand("help", "ShowCommands", this);
         }
     }
 
@@ -219,4 +288,7 @@ namespace BoltsTools
         public MethodInfo method;
         public object target;
     }
+    
+    [AttributeUsage(AttributeTargets.Field)]
+    public class CommandArgAttribute : Attribute{}
 }

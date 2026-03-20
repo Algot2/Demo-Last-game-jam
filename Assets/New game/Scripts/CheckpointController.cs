@@ -144,6 +144,9 @@ public class CheckpointController : MonoBehaviour
         plIn.isDed = false;
         plIn.animator.SetBool("Ded", false);
 
+        for (int i = 0; i < plIn.canDo.Length; i++)
+            plIn.canDo[i] = true;
+        
         if(hasTriggered)
             TeleportPlayer(BoltsSave.GetVector3(staticPositionString));
 

@@ -64,17 +64,10 @@ public class PlayerUIController : MonoBehaviour
             {
                 fading = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                NewHuerBox.CanDamage = true;
                 Time.timeScale = 1;
-                foreach (BaseEnemyLogic en in GameManager.Instance.enemies)
-                {
-                    Destroy(en.gameObject);
-                }
-                GameManager.Instance.enemies.Clear();
 
                 deathUIObj.SetActive(false);
-
-
+                
                 Color startColor = new(0, 0, 0, 0);
                 transition.DOColor(startColor, 1);
 
