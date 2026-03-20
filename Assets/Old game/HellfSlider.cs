@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System;
+using BoltsTools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,6 +21,9 @@ public class HellfSlider : MonoBehaviour
 
         valu.value = curnt;
         frontjump.value = curnt;
+        
+        if(IsPlayer)
+            BoltsCommands.command.AddCommand("health", "SetHealth", this);
     }
     public void setValu(float val)
     {
@@ -48,9 +52,14 @@ public class HellfSlider : MonoBehaviour
         valu.value = Mathf.Lerp(valu.value, curnt, Time.deltaTime * 10);
     }
 
-    [Button]
-    void KillPlayer()
+    public void SetHealth(float newHealth)
     {
-        setValu(0);
+        if (newHealth > max)
+            max = newHealth;
+        
+        setValu(newHealth);
+        
+        BoltsDebugMenu.BoltsDebugAddText("player health", $"New Health Is {newHealth}");
+        Timer.RunAfterTimer(1, () => BoltsDebugMenu.BoltsDebugRemoveText("player health"));
     }
 }

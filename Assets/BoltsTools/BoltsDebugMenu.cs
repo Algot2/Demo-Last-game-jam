@@ -16,7 +16,7 @@ namespace BoltsTools
         static List<DebugText> textToShow = new();
         static List<DebugButton> buttonsToShow = new();
 
-        public static Transform player;
+        static Transform player;
         
         void OnGUI()
         {
@@ -49,10 +49,20 @@ namespace BoltsTools
             for (int i = 0; i < textToShow.Count; i++)
             {
                 DebugText currentText = textToShow[i];
-                if (currentText.size.y == 0)
-                    currentText.size.y = 100 * (i + 1);
+                float yPos = 100 * i;
+
+                GUIStyle style = new GUIStyle(GUI.skin.box);
+
+                float width = style.CalcSize(new GUIContent(currentText.value)).x;
+                float height = style.CalcHeight(new GUIContent(currentText.value), width);
+
+                Rect size = new();
+                size.x = 0;
+                size.y = yPos;
+                size.width = width;
+                size.height = height;
                 
-                GUI.Box(currentText.size, currentText.value);
+                GUI.Box(size, currentText.value, style);
             }
 
             for (int i = 0; i < buttonsToShow.Count; i++)
@@ -77,21 +87,18 @@ namespace BoltsTools
         /// </summary>
         /// <param name="name">The Name Of The Text</param>
         /// <param name="value">What The Text Should Say</param>
-        /// <param name="size">The Size And Position. Can Be Left Empty></param>
-        public static void BoltsDebugAddText(string name, string value, Rect size = new Rect())
+        public static void BoltsDebugAddText(string name, string value)
         {
+            Debug.Log("Text Added");
+            
             int index = -1;
             if (textToShow.Count > 0)
                 index = textToShow.FindIndex(x => x.textName == name);
-
-            Rect theSize = new Rect(0, 0, 100, 100);
-            if (size.x > 0 || size.y > 0)
-                theSize = size;
             
             if (index > -1)
                 textToShow[index].value = value;
             else
-                textToShow.Add(new(){textName = name, value = value, size = theSize});
+                textToShow.Add(new(){textName = name, value = value});
         }
 
         
@@ -121,10 +128,46 @@ namespace BoltsTools
             else
                 buttonsToShow.Add(new(){textName = name, value = value, onClick = onClick, size = theSize});
         }
-        
+        /// <summary>
+        /// Change Which Transform Is The Player
+        /// </summary>
+        /// <param name="newPlayer">The New Transform Of The Player</param>
+        /// <example>UpdatePlayerOBJ(newPlayerOBJ)</example>
         public static void UpdatePlayerOBJ(Transform newPlayer)
         {
             player = newPlayer;
+        }
+
+        /// <summary>
+        /// Add A Button To The Debug Screen
+        /// </summary>
+        /// <param name="name">The Name Of The Text To Remove</param>
+        /// <example>BoltsDebugRemoveText("playerSpeed)</example>
+        public static void BoltsDebugRemoveText(string name)
+        {
+            int index = -1;
+            index = textToShow.FindIndex(x => x.textName == name);
+            
+            if(index > -1)
+                textToShow.RemoveAt(index);
+            else
+                Debug.LogError($"Could Not Find Debug Text Named {name}");
+        }
+
+        /// <summary>
+        /// Add A Button To The Debug Screen
+        /// </summary>
+        /// <param name="name">The Name Of The Button To Remove</param>
+        /// <example>BoltsDebugRemoveButton("killPlayer")</example>
+        public static void BoltsDebugRemoveButton(string name)
+        {
+            int index = -1;
+            index = buttonsToShow.FindIndex(x => x.textName == name);
+            
+            if(index > -1)
+                buttonsToShow.RemoveAt(index);
+            else
+                Debug.LogError($"Could Not Find Debug Button Named {name}");
         }
         
         void Update()
@@ -174,8 +217,6 @@ namespace BoltsTools
     {
         public string textName;
         public string value;
-
-        public Rect size = new Rect(100, 100, 100, 100);
     }
 
     [Serializable]

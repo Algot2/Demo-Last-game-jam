@@ -31,7 +31,7 @@ public class NewHuerBox : MonoBehaviour
             Sorse.pitch = Random.Range(0.8f, 1.2f);
 
             StartCoroutine(Efects.camShake(0.1f, 0.2f)); 
-            StartCoroutine(Efects.timeFrez(0.3f));
+            StartCoroutine(Efects.timeFrez(0.1f));
         }
     }
 

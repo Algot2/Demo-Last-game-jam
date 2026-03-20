@@ -144,12 +144,13 @@ namespace BoltsTools
 
                     converted = new Vector2(x, y);
                 }
-                else if (paramType.GetFields().Any(f => f.GetCustomAttributes<CommandArgAttribute>() != null))
+                else if (!paramType.IsPrimitive && paramType != typeof(string) && paramType.GetFields().Any(f => f.GetCustomAttributes<CommandArgAttribute>() != null && !f.IsLiteral && !f.IsInitOnly))
                 {
                     object instance = Activator.CreateInstance(paramType);
 
                     FieldInfo[] fields = paramType.GetFields()
-                        .Where(f => f.GetCustomAttributes<CommandArgAttribute>() != null)
+                        .Where(f => f.GetCustomAttributes<CommandArgAttribute>() != null && !f.IsInitOnly &&
+                                    !f.IsLiteral)
                         .ToArray();
 
                     foreach (FieldInfo field in fields)
@@ -181,6 +182,7 @@ namespace BoltsTools
                     try
                     {
                         converted = Convert.ChangeType(tokens[tokenIndex], parameters[i].ParameterType);
+                        tokenIndex++;
                     }
                     catch (Exception e)
                     {
@@ -196,7 +198,7 @@ namespace BoltsTools
             cmd.method.Invoke(cmd.target, arguments.ToArray());
         }
 
-        public string focusedArea = "Command";
+        string focusedArea = "Command";
         void OnGUI()
         {
             if (isTyping)

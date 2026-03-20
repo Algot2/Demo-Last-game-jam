@@ -18,7 +18,9 @@ public class PlAtackMan : MonoBehaviour
     public PlMoment PlMoment;
     public Animator Animato;
 
-    public bool isHolding;
+    bool isHolding;
+
+    Coroutine attacktimer;
 
     void Update()
     {
@@ -30,7 +32,7 @@ public class PlAtackMan : MonoBehaviour
         if(i == 0)
             StartCoroutine(AfterAni());
         
-        StartCoroutine(Timer.RunAfterTimer(atacks[i].timeToAttack, 
+        attacktimer = StartCoroutine(Timer.RunAfterTimer(atacks[i].timeToAttack, 
                 () => StartCoroutine(Timer.StartTimer(atacks[i].attackTime, (f) => atacks[i].HurtBox.SetActive(f)))));
 
            
@@ -46,8 +48,10 @@ public class PlAtackMan : MonoBehaviour
         // StartCoroutine(Timer.RunAfterTimer(atacks[i].time, () => PlMoment.Sped = sped));
     }
 
-    IEnumerator AfterAni() 
+    IEnumerator AfterAni()
     {
+        float timePlayed = 0;
+        
         while (!Animato.GetCurrentAnimatorStateInfo(0).IsName("AtckSlow"))
         {
             yield return null;
@@ -55,10 +59,14 @@ public class PlAtackMan : MonoBehaviour
         
         while(Animato.GetCurrentAnimatorStateInfo(0).IsName("AtckSlow"))
         {
+            timePlayed += Time.deltaTime;
+            
             yield return null;
-            if (!isHolding) 
+            if (!isHolding && timePlayed < 0.25f) 
             {
                 atacks[0].HurtBox.SetActive(false);
+                Animato.SetBool("Run", false);
+                StopCoroutine(attacktimer);
                 PreformAtack(1);
                 break;
             }

@@ -1,4 +1,5 @@
 using System;
+using BoltsTools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ public class PlMoment : MonoBehaviour
 {
     public CharacterController controller;
     public HellfSlider HellfSlider;
-    public float Sped;
+    [CommandArg] public float Sped;
     public float parrySpeed = 1.5f;
     public float currentSpeed;
     
@@ -95,5 +96,18 @@ public class PlMoment : MonoBehaviour
     private void Awake()
     {
         currentSpeed = Sped;
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        Sped = newSpeed;
+        
+        BoltsDebugMenu.BoltsDebugAddText("player speed", $"New Speed Is {newSpeed}");
+        Timer.RunAfterTimer(1, () => BoltsDebugMenu.BoltsDebugRemoveText("player speed"));
+    }
+
+    void Start()
+    {
+        BoltsCommands.command.AddCommand("speed", "SetSpeed", this);
     }
 }
