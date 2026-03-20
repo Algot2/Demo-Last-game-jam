@@ -153,6 +153,20 @@ namespace BoltsTools
             else if(Instance != this)
                 Destroy(gameObject);
         }
+
+        public static int CalculateFontSize(string text, float boxWidth, GUIStyle style)
+        {
+            int fontSize = 1;
+            style.fontSize = fontSize;
+
+            while (style.CalcSize(new GUIContent(text)).x < boxWidth)
+            {
+                fontSize++;
+                style.fontSize = fontSize;
+            }
+
+            return fontSize - 1;
+        }
     }
 
     [Serializable]
