@@ -11,7 +11,7 @@ public class Buterfly : MonoBehaviour
 
         return pl + new Vector3 {
             x = Random.Range(-1f, 1f),
-            y = Random.Range(0, 0.5f),
+            y = Random.Range(0.1f, 0.5f),
             z = Random.Range(-1f, 1f)
         }.normalized * Random.Range(0, 10);
     }
@@ -29,7 +29,7 @@ public class Buterfly : MonoBehaviour
         if (Vector3.Distance(Rotpont, GameManager.player.transform.position) > 10) {
             Rotpont = pikeNewPos();
         }
-        Vector3 move = Vector3.Cross(dis.normalized, transform.up) * dir;
+        Vector3 move = Vector3.Cross(new Vector3(dis.x, dis.y*dir, dis.z).normalized, transform.up) * dir;
         if (Mathf.Abs(dis.magnitude - prefurdDis) > 1) 
             move += dis.normalized * (dis.magnitude < prefurdDis ? -1 : 1);
         transform.forward = Vector3.Lerp(transform.forward, move, Time.deltaTime * 10);

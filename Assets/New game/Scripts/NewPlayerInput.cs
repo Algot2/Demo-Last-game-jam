@@ -71,7 +71,7 @@ public class NewPlayerInput : MonoBehaviour
                         canDo[0] = true;
                         plMoment.canMove = true;
                     }));
-                    plAtacks.PreformAtack(0, 2);
+                    plAtacks.PreformAtack(0);
                 }
 
             if (State == state.idel) { 

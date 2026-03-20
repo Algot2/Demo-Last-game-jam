@@ -66,15 +66,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2639638324218457063, guid: dc99a6cbae5326544b8830d28d7703b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 48.199215
+      value: 35.047855
       objectReference: {fileID: 0}
     - target: {fileID: -2639638324218457063, guid: dc99a6cbae5326544b8830d28d7703b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 175.86118
+      value: 175.85222
       objectReference: {fileID: 0}
     - target: {fileID: -2639638324218457063, guid: dc99a6cbae5326544b8830d28d7703b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 175.91063
+      value: 175.91959
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc99a6cbae5326544b8830d28d7703b9, type: 3}
       propertyPath: m_Name
@@ -98,15 +98,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9044806412961212599, guid: dc99a6cbae5326544b8830d28d7703b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -27.509575
+      value: -18.318844
       objectReference: {fileID: 0}
     - target: {fileID: 9044806412961212599, guid: dc99a6cbae5326544b8830d28d7703b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 119.92746
+      value: 125.13414
       objectReference: {fileID: 0}
     - target: {fileID: 9044806412961212599, guid: dc99a6cbae5326544b8830d28d7703b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -141.33961
+      value: -154.63463
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -135,9 +135,9 @@ Animation:
   m_GameObject: {fileID: 3922295067098974998}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 9741188177cd0464b8bc3d69238cde3b, type: 2}
+  m_Animation: {fileID: 7400000, guid: d8297be94f9b69943960bbf70a7cc7c0, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 9741188177cd0464b8bc3d69238cde3b, type: 2}
+  - {fileID: 7400000, guid: d8297be94f9b69943960bbf70a7cc7c0, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
