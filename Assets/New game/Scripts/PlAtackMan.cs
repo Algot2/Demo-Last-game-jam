@@ -56,7 +56,6 @@ public class PlAtackMan : MonoBehaviour
         while(Animato.GetCurrentAnimatorStateInfo(0).IsName("AtckSlow"))
         {
             yield return null;
-            Debug.Log("hej");
             if (!isHolding) 
             {
                 atacks[0].HurtBox.SetActive(false);
