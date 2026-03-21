@@ -8,7 +8,7 @@ public class MoveObj : MonoBehaviour {
     Vector3 org;
     public void Move() {
         Debug.Log("Obj has moved");
-        org = transform.position;
+        org = transform.localPosition;
         move = true;
     }
 
@@ -16,8 +16,7 @@ public class MoveObj : MonoBehaviour {
     private void Update()
     {
         if (move) {
-            transform.position += ofset.normalized * sped * Time.deltaTime;
-            move = (org - ofset).magnitude > ofset.magnitude;
+            transform.localPosition = Vector3.Lerp(transform.localPosition, ofset + org, Time.deltaTime*50*sped);
         }
     }
 }

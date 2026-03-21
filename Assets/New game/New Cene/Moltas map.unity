@@ -43785,7 +43785,7 @@ MonoBehaviour:
     m_Bits: 8
   minDist: 5
   BaseShader: {fileID: 2100000, guid: fcc2fcdc5f088c54194781b0b12477a8, type: 2}
-  FogStartColor: {r: 0.058666665, g: 0.06133333, b: 0.1, a: 0}
+  FogStartColor: {r: 0.12281951, g: 0.13223732, b: 0.2264151, a: 0}
   CaveColor: {r: 0.17254902, g: 0.18039216, b: 0.29411766, a: 0}
   PL: {fileID: 421540332}
   enemies: []
