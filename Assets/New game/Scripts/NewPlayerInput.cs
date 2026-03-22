@@ -39,7 +39,7 @@ public class NewPlayerInput : MonoBehaviour
         Instance = this;
         
         Cursor.lockState = CursorLockMode.Locked;
-        animator.SetTrigger("Sit");
+        
     }
     void Update()  {
         if (!isDed)
