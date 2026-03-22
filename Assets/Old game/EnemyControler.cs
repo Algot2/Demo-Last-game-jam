@@ -11,7 +11,6 @@ public class EnemyControler : MonoBehaviour
     public HellfSlider hellf;
     public Rigidbody rb;
     public GameObject[] Atacks;
-    public GameObject sper1, sper2;
     public Animator anim;
 
     public float Atackdureashen = 0.5f;
@@ -59,15 +58,7 @@ public class EnemyControler : MonoBehaviour
                     Atackdureashen = Random.Range(1f, 2f);
 
                 }
-
-
                 movment.target = player.position;
-
-                sper1.SetActive(Atackdureashen < 0);
-                sper2.SetActive(Atackdureashen < 0);
-
-
-                anim.SetBool("Run", movment.agent.speed != 0);
             }
     }
     
