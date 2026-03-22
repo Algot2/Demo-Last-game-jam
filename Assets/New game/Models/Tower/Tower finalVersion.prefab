@@ -186,7 +186,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1 &1837689247286622717
 GameObject:
@@ -374,7 +374,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1 &2327086617434951866
 GameObject:
@@ -562,7 +562,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1 &4967509231666081134
 GameObject:
@@ -750,7 +750,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1 &5360820914681061693
 GameObject:
@@ -5771,7 +5771,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1 &6996969357412153748
 GameObject:
@@ -5959,7 +5959,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1 &7022475331652078452
 GameObject:
@@ -6147,7 +6147,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1 &7489681310576039182
 GameObject:
@@ -6335,7 +6335,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1 &8993825108480844680
 GameObject:
@@ -6523,7 +6523,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  sped: 10
+  sped: 2
   britnes: 0
 --- !u!1001 &3891721950303846634
 PrefabInstance:

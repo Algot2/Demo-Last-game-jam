@@ -17,6 +17,7 @@ public class Buterfly : MonoBehaviour
     }
     private void Start()
     {
+        transform.localScale *= Random.Range(0.9f, 1.2f);
         dir = Random.Range(0, 2) == 0 ? -1 : 1;
         seed = Random.Range(5, 10);
         prefurdDis = Random.Range(5f, 10f);

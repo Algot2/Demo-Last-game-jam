@@ -23,7 +23,8 @@ public class NewPlayerInput : MonoBehaviour
     public static float globalSensitivity = 50, globalBrightnes = 2;
 
     float currentBrightnes;
-    
+
+    float idelTimer = 35;
     public enum state {
         idel,
         move,
@@ -38,6 +39,7 @@ public class NewPlayerInput : MonoBehaviour
         Instance = this;
         
         Cursor.lockState = CursorLockMode.Locked;
+        animator.SetTrigger("Sit");
     }
     void Update()  {
         if (!isDed)
@@ -151,6 +153,12 @@ public class NewPlayerInput : MonoBehaviour
                 currentBrightnes = globalBrightnes;
                 screenShade.SetFloat(shade, currentBrightnes);
             }
+
+            if (idelTimer > 30) animator.SetTrigger("Sit");
+            if (State == state.idel) idelTimer += Time.deltaTime;
+            else idelTimer = 0;
+
+          
         }
         else { 
             animator.SetBool("Ded", true); 

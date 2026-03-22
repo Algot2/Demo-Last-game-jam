@@ -15,6 +15,8 @@ public class DragonAI : MonoBehaviour
     public float maxSpeed = 6;
     public float atacDis;
     public float TimeInbetinAtacks;
+    public ParticleSystem Happy;
+    public GameObject PetSine;
     public Transform Body;
     float timer = 0;
     Transform player;
@@ -64,7 +66,10 @@ public class DragonAI : MonoBehaviour
             Body.transform.RotateAround(Body.transform.TransformDirection(Vector3.up), ang);
         }
 
-      
+        if (Vector3.Distance(player.position, transform.position) < 2 && Input.GetKeyDown(KeyCode.E))
+            Happy.Play();
+
+        PetSine.SetActive(Vector3.Distance(player.position, transform.position) < 2);
 
         Animator.SetBool("Run", Agent.remainingDistance > 0.01f);
         targetEn = false;
