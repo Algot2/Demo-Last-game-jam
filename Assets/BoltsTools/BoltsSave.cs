@@ -338,7 +338,7 @@ namespace BoltsTools
             return false;
         }
 
-        public static T LoadClass<T>(string name) where T : class
+        public static T LoadClass<T>(string name) where T : class, new()
         {
             SaveData sd = LoadOrCreate();
 
@@ -355,7 +355,7 @@ namespace BoltsTools
                 return JsonUtility.FromJson<T>(sd.classes[index].value);
 
             Debug.LogError($"Could Not Find Class Named: {name}");
-            return null;
+            return new T();
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
