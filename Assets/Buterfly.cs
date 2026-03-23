@@ -11,7 +11,7 @@ public class Buterfly : MonoBehaviour
 
         return pl + new Vector3 {
             x = Random.Range(-1f, 1f),
-            y = Random.Range(0.1f, 0.5f),
+            y = Random.Range(0.1f, 0.2f),
             z = Random.Range(-1f, 1f)
         }.normalized * Random.Range(0, 10);
     }
@@ -36,11 +36,15 @@ public class Buterfly : MonoBehaviour
         transform.forward = Vector3.Lerp(transform.forward, move, Time.deltaTime * 10);
         transform.position += move * Time.deltaTime * seed;
 
-        if (Physics.Raycast(transform.position + Vector3.up * 5, Vector3.down, out var hit, 100, GameManager.Instance.ground)
-           && hit.point.y - transform.position.y > 0)
+        if (Physics.Raycast(transform.position + Vector3.up * 5, Vector3.down, out var hit, 5, GameManager.Instance.ground))
         {
-            transform.position += Vector3.up * Time.deltaTime * 10;
+            transform.position += Vector3.up * Time.deltaTime * (hit.point.y - transform.position.y + Rotpont.y);
 
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(Rotpont, 1);
     }
 }
