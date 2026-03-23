@@ -15,7 +15,7 @@ namespace Editor.BoltsTools
         string jsonFilePath;
         SaveData sd;
 
-        [MenuItem("Tools/Bolts Tools/Save Settings")]
+        [MenuItem("Tools/Bolts Tools/Save Settings &s")]
         static void ShowWindow()
         {
             BoltsSavingWindow window = GetWindow<BoltsSavingWindow>(true, "Save Settings Window", true);
