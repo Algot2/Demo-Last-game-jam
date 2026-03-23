@@ -18,11 +18,18 @@ namespace BoltsTools
             Initialize();
         }
 
-        [MenuItem("Tools/Bolts Tools/Reset Save")]
+        [MenuItem("Tools/Bolts Tools/Reset Save &#s")]
         public static void ResetTheSave()
         {
-            ResetSave();
-            Debug.Log("Saved Reset");
+            bool confirm = EditorUtility.DisplayDialog("Are You Sure?",
+                "Are You Sure You Want To Reset Your Save?" + 
+                "\nThis will Remove Your Current Save File", "Yes", "Cancel");
+
+            if (confirm)
+            {
+                ResetSave();
+                Debug.Log("Saved Reset");
+            }
         }
 #endif
 
