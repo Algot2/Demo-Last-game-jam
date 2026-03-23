@@ -101,9 +101,6 @@ public class PlMoment : MonoBehaviour
     public void SetSpeed(float newSpeed)
     {
         Sped = newSpeed;
-        
-        BoltsDebugMenu.BoltsDebugAddText("player speed", $"New Speed Is {newSpeed}");
-        Timer.RunAfterTimer(1, () => BoltsDebugMenu.BoltsDebugRemoveText("player speed"));
     }
 
     void Start()

@@ -58,8 +58,5 @@ public class HellfSlider : MonoBehaviour
             max = newHealth;
         
         setValu(newHealth);
-        
-        BoltsDebugMenu.BoltsDebugAddText("player health", $"New Health Is {newHealth}");
-        Timer.RunAfterTimer(1, () => BoltsDebugMenu.BoltsDebugRemoveText("player health"));
     }
 }
