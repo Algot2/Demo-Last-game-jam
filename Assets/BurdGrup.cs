@@ -55,7 +55,7 @@ public class BurdGrup : MonoBehaviour
         t += Time.deltaTime;
         foreach (GameObject B in activeBurds) {
             if (t > Vector3.Distance(B.transform.position, GameManager.player.transform.position)/10f) 
-                B.transform.position += (B.transform.up + transform.up*0.5f + Vector3.up * Mathf.Sin(Time.time*10 + (i++)*0.1f)) * 10 * Time.deltaTime;
+                B.transform.position += (-B.transform.up + transform.up*0.5f + Vector3.up * Mathf.Sin(Time.time*10 + (i++)*0.1f)) * 10 * Time.deltaTime;
         }
     }
 }
