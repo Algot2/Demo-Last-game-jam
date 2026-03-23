@@ -11,8 +11,12 @@ public class FlikerLite : MonoBehaviour
     float curentTime = 0;
 
     private void Start() {
-        if (theLight.IsUnityNull())
-            theLight.GetComponent<Light>();
+        if (theLight == null)
+        {
+            theLight = GetComponent<Light>() != null ? 
+                GetComponent<Light>() : 
+                GetComponentInChildren<Light>();
+        }
         britnes = theLight.intensity;
     }
     void Update() {
