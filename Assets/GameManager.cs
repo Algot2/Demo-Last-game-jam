@@ -73,7 +73,13 @@ public class GameManager : MonoBehaviour
     
     public void TeleportToCheckpoint(int index)
     {
-        Vector3 pos = triggers[index].transform.position;
+        if (index - 1 > chekponts.Count || index < 0)
+        {
+            Debug.Log($"Checkpoint {index} Dose Not Exists");
+            return;
+        }
+        
+        Vector3 pos = chekponts[index].transform.position;
         pos.y += 2;
         CheckpointController.TeleportPlayer(pos);
     }

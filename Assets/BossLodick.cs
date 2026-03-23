@@ -12,8 +12,8 @@ public class BossLodick : MonoBehaviour
     public Animator sord;
     public Fase curent;
     int rOrl = 1;
-    float higet = 1.5f;
-    public bool canSpone = false;
+    // float higet = 1.5f;
+    public bool canSpone;
 
 
     bool canMaleyAtack = true;
@@ -53,11 +53,10 @@ public class BossLodick : MonoBehaviour
 
         //LongReash moment
         if (curent == Fase.Fase1 || !canMaleyAtack) {
-            if (dis.magnitude < aldileDistToPlayer + 0.5f) moment.agent.speed = 0;
-            else moment.agent.speed = 3;
+            moment.agent.speed = dis.magnitude < aldileDistToPlayer + 0.5f ? 0 : 3;
 
-            if (dis.magnitude < aldileDistToPlayer + 0.5f) transform.position += dis.normalized * Time.deltaTime * 2;
-            else if (dis.magnitude > aldileDistToPlayer - 0.5f) transform.position += transform.right * rOrl * Time.deltaTime * 2;
+            if (dis.magnitude < aldileDistToPlayer + 0.5f) transform.position += dis.normalized * (Time.deltaTime * 2);
+            else if (dis.magnitude > aldileDistToPlayer - 0.5f) transform.position += transform.right * (rOrl * Time.deltaTime * 2);
 
             if (canSpone && dis.magnitude - aldileDistToPlayer < 5) {
                 GameObject obj = (Random.Range(0, curent==Fase.Fase3?2:5) == 0 && curent != Fase.Fase1) ? Enemy1 : Prodektile;

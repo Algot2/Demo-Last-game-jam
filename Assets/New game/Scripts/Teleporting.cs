@@ -17,7 +17,7 @@ public class TeleportingScre : MonoBehaviour
             CheckpointController.TeleportPlayer(destnation.position);
 
             foreach (GameObject G in AnabolDiabol)
-                G.SetActive(!G.active);
+                G.SetActive(!G.activeSelf);
         }
     }
 }

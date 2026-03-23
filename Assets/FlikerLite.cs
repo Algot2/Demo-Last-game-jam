@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FlikerLite : MonoBehaviour
 {
-    public Light light;
+    public Light theLight;
     public AnimationCurve curve;
     public float sped;
     public float britnes;
@@ -11,9 +11,9 @@ public class FlikerLite : MonoBehaviour
     float curentTime = 0;
 
     private void Start() {
-        if (light.IsUnityNull())
-            light.GetComponent<Light>();
-        britnes = light.intensity;
+        if (theLight.IsUnityNull())
+            theLight.GetComponent<Light>();
+        britnes = theLight.intensity;
     }
     void Update() {
         curentTime += Time.deltaTime*sped;
@@ -22,7 +22,7 @@ public class FlikerLite : MonoBehaviour
             curentTime--;
             molt = Random.Range(0.6f, 1.4f);
         }
-        light.intensity = curve.Evaluate(curentTime) * molt * britnes;
+        theLight.intensity = curve.Evaluate(curentTime) * molt * britnes;
 
     }
 }

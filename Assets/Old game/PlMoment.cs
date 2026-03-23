@@ -74,9 +74,9 @@ public class PlMoment : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up * 5, Vector3.down, out var hit, 100, GameManager.Instance.ground))
         {
             RotashenTarget.localRotation = Quaternion.Euler(Vector3.right);
-            float ang = RotashenTarget.transform.rotation.ToEuler().y;
+            float ang = RotashenTarget.transform.eulerAngles.y;
             RotashenTarget.transform.up = hit.normal;
-            RotashenTarget.transform.RotateAround(RotashenTarget.transform.TransformDirection(Vector3.up), ang);
+            RotashenTarget.transform.Rotate(RotashenTarget.transform.TransformDirection(Vector3.up), ang);
         }
         vishols.transform.rotation = Quaternion.Lerp(vishols.transform.rotation, RotashenTarget.transform.rotation, Time.deltaTime*5);
         body.forward = Vector3.Lerp(body.forward, Dir, Time.deltaTime * 15);

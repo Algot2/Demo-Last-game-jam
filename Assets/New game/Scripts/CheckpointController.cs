@@ -24,6 +24,12 @@ public class CheckpointController : MonoBehaviour
     
     void Start()
     {
+        if (GameManager.Instance != null)
+        {
+            if(!GameManager.Instance.chekponts.Contains(this))
+                GameManager.Instance.chekponts.Add(this);
+        }
+        
         if (isBoos)
         {
             BoltsSave.SaveBoolValue("hasSave", true);

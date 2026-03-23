@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,11 +17,11 @@ public class DragonAI : MonoBehaviour
     public ParticleSystem Happy;
     public GameObject PetSine;
     public Transform Body;
-    float timer = 0;
+    float timer;
     Transform player;
     bool canAtack = true;
-    bool targetEn = false;
-    public bool tryHellPlayer = false;
+    bool targetEn;
+    public bool tryHellPlayer;
     float R(float min, float max) => Random.Range(min,max);
     
     public Vector3 pikeNewTarget() {
@@ -61,9 +60,9 @@ public class DragonAI : MonoBehaviour
 
         if (Physics.Raycast(transform.position + Vector3.up * 5, Vector3.down, out var hit, 100, GameManager.Instance.ground)) {
             Body.localRotation = Quaternion.Euler(Vector3.right);
-            float ang = Body.transform.rotation.ToEuler().y;
+            float ang = Body.transform.eulerAngles.y;
             Body.transform.up = hit.normal;
-            Body.transform.RotateAround(Body.transform.TransformDirection(Vector3.up), ang);
+            Body.transform.Rotate(Body.transform.TransformDirection(Vector3.up), ang);
         }
 
         if (Vector3.Distance(player.position, transform.position) < 2 && Input.GetKeyDown(KeyCode.E))

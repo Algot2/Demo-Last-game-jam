@@ -12,7 +12,7 @@ public class TeleportingScrep : MonoBehaviour
             CheckpointController.TeleportPlayer(destination.position);
 
             foreach (GameObject G in AnabolDisabol) 
-                G.SetActive(!G.active);
+                G.SetActive(!G.activeSelf);
         }
     }
 }
