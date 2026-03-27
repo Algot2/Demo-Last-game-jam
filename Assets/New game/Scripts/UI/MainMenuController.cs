@@ -1,10 +1,10 @@
-using System;
 using BoltsTools;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -16,11 +16,18 @@ public class MainMenuController : MonoBehaviour
     public int savedSensitivity;
     
     public float savedBrightnes;
+
+    public VideoPlayer vp;
     
     public void LoadScene(int index)
     {
         Color endColor = Color.black;
         transition.DOColor(endColor, 1).OnComplete(() => SceneManager.LoadScene(index));
+    }
+
+    public void PlayVideo()
+    {
+        vp.Play();
     }
 
     public void LoadObj(GameObject obj)
@@ -149,5 +156,14 @@ public class MainMenuController : MonoBehaviour
     void Awake()
     {
         BoltsSave.Initialize();
+
+        vp.loopPointReached += OnVideoFinished;
+    }
+    void OnVideoFinished(VideoPlayer vp)
+    {
+        vp.loopPointReached -= OnVideoFinished;
+        
+        Color endColor = Color.black;
+        transition.DOColor(endColor, 1).OnComplete(() => SceneManager.LoadScene(1));
     }
 }
